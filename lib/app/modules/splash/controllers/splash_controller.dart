@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bips_app/app/modules/profile/views/profile_view.dart';
 import 'package:get/get.dart';
 
@@ -10,7 +12,6 @@ class SplashController extends GetxController {
       textIndex.value ++;
     });
   }
-
 
   changeScreen()async{
      Future.delayed(const Duration(seconds: 6), (){

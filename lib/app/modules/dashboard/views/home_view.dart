@@ -1,8 +1,10 @@
 import 'package:bips_app/app/constants/app_text_style.dart';
+import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends GetView<DashboardController> {
   const HomeView({super.key});
 
   @override
@@ -13,7 +15,6 @@ class HomeView extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.black,
         image: DecorationImage(
-
           image: AssetImage("assets/images/bg.jpg"),
           fit: BoxFit.fitHeight
         )
@@ -24,9 +25,21 @@ class HomeView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
              crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.search, size: 20.h),
-              Icon(Icons.location_on, size: 20.h),
-              Icon(Icons.add_alert_sharp, size: 20.h),
+              GestureDetector
+              (
+                onTap: (){
+                  controller.activePage.value = 1;
+                },
+                child: Icon(Icons.search, size: 25.h)),
+                const Spacer(),
+              Icon(Icons.location_on, size: 25.h),
+           
+              const Spacer(),
+              GestureDetector(
+                onTap: (){
+                  controller.activePage.value = 2;
+                },
+                child: Image.asset("assets/images/cart.png", height: 25.h, width: 40.w)),
             ],
           ),
 
@@ -57,7 +70,11 @@ class HomeView extends StatelessWidget {
              Padding(
                padding:  EdgeInsets.only(bottom: 30.h),
                child: Column(children: [
-                Image.asset("assets/images/box.png", height: 30.h,width: 30.w,),
+                GestureDetector(
+                  onTap: (){
+                    controller.activePage.value = 3;
+                  },
+                  child: Image.asset("assets/images/box.png", height: 30.h,width: 30.w,)),
                 SizedBox(height: 5.h),
                  Text("Bona", style: AppTextStyle.smallbold),
                  SizedBox(height: 7.h),

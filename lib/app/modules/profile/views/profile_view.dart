@@ -1,3 +1,4 @@
+import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/profile/views/otp_view.dart';
 import 'package:flutter/material.dart';
@@ -79,7 +80,7 @@ class ProfileView extends GetView<ProfileController> {
                 },
                  child: CircleAvatar(
                   radius: 20.r,
-                  backgroundColor: const Color.fromARGB(255, 201, 165, 7),
+                  backgroundColor: AppColors.lightbrown,
                   child:  Icon(Icons.arrow_forward, size: 25.h),),
                )
             ],

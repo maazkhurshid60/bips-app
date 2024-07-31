@@ -1,19 +1,32 @@
 import 'package:bips_app/app/constants/app_text_style.dart';
+import 'package:bips_app/app/modules/dashboard/views/bonos_view.dart';
 import 'package:bips_app/app/modules/dashboard/views/home_view.dart';
+import 'package:bips_app/app/modules/dashboard/views/notification_view.dart';
+import 'package:bips_app/app/modules/dashboard/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../controllers/dashboard_controller.dart';
 
-class DashboardView extends GetView<HomeController> {
+class DashboardView extends GetView<DashboardController> {
   const DashboardView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body:Column(
         children: [
-           const Expanded(child: HomeView()),
+            Obx(() {
+              if(controller.activePage.value == 1){
+             return const Expanded(child: SearchView());
+              }else if(controller.activePage.value == 2){
+                return const Expanded(child: NotifcationView());
+              }else if(controller.activePage.value == 3){
+                return const Expanded(child: BonosView());
+              } else{
+                return const Expanded(child: HomeView());
+              }
+            }),
 
           // -----------custom bottom sheets ------------
           Container(

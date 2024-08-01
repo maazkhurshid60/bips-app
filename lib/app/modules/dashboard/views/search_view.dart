@@ -59,7 +59,6 @@ class BackScreen extends StatelessWidget {
           border: Border.all(color: Colors.black),
          color:   AppColors.yellowbrown,
         ),
-         
           child:  Icon(Icons.clear,color: Colors.white, size: 25.h),),
        );
   }

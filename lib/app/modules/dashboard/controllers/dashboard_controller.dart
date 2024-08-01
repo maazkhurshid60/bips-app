@@ -16,6 +16,9 @@ class DashboardController extends GetxController {
   ];
   // -----------Notification main section start---------
   // -----------Notification main section end-----------
+  // -----------cashprice main section start---------
+  RxInt cashpriceCurrentIndex = 0.obs;
+  // -----------cashprice main section end-----------
 }
 
 List<Widget> screen= [

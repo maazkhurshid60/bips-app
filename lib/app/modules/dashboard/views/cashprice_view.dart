@@ -140,7 +140,7 @@ class Item1 extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(height: 20.h),
+        
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -172,7 +172,7 @@ class Item1 extends StatelessWidget {
               )
             ],
           ),
-          const Spacer(),
+         
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -205,7 +205,7 @@ class Item1 extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30).w,
+            padding: const EdgeInsets.symmetric(horizontal: 15).w,
             child:
                 const Text("400   500   600   700   800   900   100   1100"),
           )
@@ -282,7 +282,7 @@ class Item2 extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(height: 20.h),
+         
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -314,7 +314,7 @@ class Item2 extends StatelessWidget {
               )
             ],
           ),
-          const Spacer(),
+       
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -347,7 +347,7 @@ class Item2 extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30).w,
+            padding: const EdgeInsets.symmetric(horizontal: 15).w,
             child:
                 const Text("400   500   600   700   800   900   1000   1100"),
           )

@@ -9,6 +9,7 @@ class SplashView extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return   Scaffold(
+       resizeToAvoidBottomInset: false,
       body:  SafeArea(
         child: Center(
           child:Obx(() =>  controller.textIndex.value ==0? const Text1Widget(): const Text2Widget())

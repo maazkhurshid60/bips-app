@@ -20,6 +20,7 @@ class MoreOptionView extends GetView<DashboardController> {
           SizedBox(
               height: 200.h,
               child: Column(
+                
                 children: [
                   SizedBox(height: 30.h),
                   Row(
@@ -27,6 +28,7 @@ class MoreOptionView extends GetView<DashboardController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Icon(Icons.search, size: 25.h),
+                    
                       Icon(Icons.location_on, size: 25.h),
                       Image.asset("assets/images/cart.png",
                           height: 25.h, width: 40.w),
@@ -34,16 +36,27 @@ class MoreOptionView extends GetView<DashboardController> {
                   ),
                   SizedBox(height: 30.h),
                   Image.asset("assets/images/pop.png",
-                      height: 40.h, width: 30.w),
+                      height: 40.h, width: 40.w),
+
                 ],
               )),
-          const Row(
+           Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomimageShow(),
-                CustomimageShow(icon: Icons.sync, text: "Switcher"),
-                CustomimageShow(icon: Icons.help, text: "Aide")
+                 CustomimageShow(
+                  onTap: (){
+                  
+                    controller.activePage.value = 8;
+                 
+                  },
+                ),
+                CustomimageShow(
+                  onTap: (){
+                    controller.activePage.value = 7;
+                  },
+                  icon: Icons.sync, text: "Switcher"),
+                const CustomimageShow(icon: Icons.help, text: "Aide")
               ]),
 
               BackScreen(controller: controller)
@@ -58,26 +71,31 @@ class CustomimageShow extends StatelessWidget {
   const CustomimageShow({
     super.key,
     this.icon,
-    this.text
+    this.text,
+    this.onTap
   });
  final IconData? icon;
  final String? text;
+ final Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 70.h,
-          width: 80.w,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadiusDirectional.circular(20.r),
-              border: Border.all(width: 2, color: AppColors.lightbrown)),
-              child:  Icon(icon?? Icons.folder, size: 40.h),
-        ),
-        SizedBox(height: 30.h),
-         Text(text??"Crédibilité", style: AppTextStyle.mediumbold),
-         SizedBox(height: 30.h),
-      ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+            height: 70.h,
+            width: 80.w,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadiusDirectional.circular(20.r),
+                border: Border.all(width: 2, color: AppColors.lightbrown)),
+                child:  Icon(icon?? Icons.folder, size: 40.h),
+          ),
+          SizedBox(height: 30.h),
+           Text(text??"Crédibilité", style: AppTextStyle.mediumbold),
+           SizedBox(height: 30.h),
+        ],
+      ),
     );
   }
 }

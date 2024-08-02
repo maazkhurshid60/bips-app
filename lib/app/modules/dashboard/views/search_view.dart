@@ -30,6 +30,7 @@ class SearchView extends GetView<DashboardController> {
               image2: "assets/images/gym.png",
             ),
             const Spacer(),
+            
             BackScreen(controller: controller),
           ],
         ),
@@ -103,7 +104,7 @@ class RowWidget extends StatelessWidget {
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 224, 208, 137),
+                          color: AppColors.lightbrown,
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.r),
                               bottomRight: Radius.circular(20.r))),

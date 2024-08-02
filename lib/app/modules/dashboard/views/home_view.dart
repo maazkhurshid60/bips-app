@@ -16,7 +16,7 @@ class HomeView extends GetView<DashboardController> {
       decoration: const BoxDecoration(
           color: Colors.black,
           image: DecorationImage(
-              image: AssetImage("assets/images/bg.jpg"),
+              image: AssetImage("assets/images/bg1.jpg"),
               fit: BoxFit.fitHeight)),
       child: Column(
         children: [
@@ -65,7 +65,7 @@ class HomeView extends GetView<DashboardController> {
                     children: [
                       Text("Maria. K \nGardienne",
                           style: AppTextStyle.mediumbold
-                              .copyWith(color: Colors.white)),
+                              .copyWith(color: Colors.black)),
                       Text("***", style: AppTextStyle.mediumbold)
                     ],
                   ),

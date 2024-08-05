@@ -1,4 +1,3 @@
-import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:bips_app/app/modules/dashboard/views/notification_view.dart';
 import 'package:bips_app/app/modules/dashboard/views/search_view.dart';
@@ -12,7 +11,7 @@ class BonosView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 30.h),
+      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
       child:  Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -22,8 +21,9 @@ class BonosView extends GetView<DashboardController> {
             child: SizedBox(
               child: Column(
                 children: [
-                  Image.asset("assets/images/box.png", height: 50.h),
-                  Text("Bono",style: AppTextStyle.largebold),
+                  SizedBox(height: 30.h),
+                  Image.asset("assets/images/box.png", height: 40.h),
+                  Text("Bonô",style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
                 ],
               )),
           ),

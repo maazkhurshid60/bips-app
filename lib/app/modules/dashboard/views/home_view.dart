@@ -1,3 +1,4 @@
+import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:flutter/material.dart';
@@ -9,15 +10,13 @@ class HomeView extends GetView<DashboardController> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Container(
       height: double.infinity,
-      padding: EdgeInsets.only(top: 40.h, left: 10.w, right: 10.w),
+      padding: EdgeInsets.only(top: 40.h),
       decoration: const BoxDecoration(
           color: Colors.black,
           image: DecorationImage(
-              image: AssetImage("assets/images/bg1.jpg"),
-              fit: BoxFit.fitHeight)),
+              image: AssetImage("assets/images/bg.png"), fit: BoxFit.cover)),
       child: Column(
         children: [
           Row(
@@ -28,8 +27,22 @@ class HomeView extends GetView<DashboardController> {
                   onTap: () {
                     controller.activePage.value = 1;
                   },
-                  child: Icon(Icons.search, size: 25.h)),
-              const Spacer(),
+                  child: Container(
+                    height: 30.h,
+                    padding: EdgeInsets.all(5.r),
+                    decoration:  BoxDecoration(
+                      border: Border.all(color: AppColors.lightbrown),
+                      color: const Color.fromARGB(255, 187, 185, 185), borderRadius: BorderRadius.circular(50.h)),
+                    width: 160.w,
+                    child: Row(
+                      children: [
+                        const Icon(Icons.search),
+                        FittedBox(
+                          fit: BoxFit.contain,
+                          child: Text("De qui avez-vous besoin?", style: AppTextStyle.smallbold.copyWith(fontSize: 10.sp)))
+                      ],
+                    ),
+                  )),
               GestureDetector(
                   onTap: () {
                     controller.activePage.value = 5;
@@ -49,6 +62,7 @@ class HomeView extends GetView<DashboardController> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(width: 2.w),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
                   height: 40.h,
@@ -63,16 +77,24 @@ class HomeView extends GetView<DashboardController> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Maria. K \nGardienne",
-                          style: AppTextStyle.mediumbold
-                              .copyWith(color: Colors.black)),
-                      Text("***", style: AppTextStyle.mediumbold)
+                      Row(
+                        children: [
+
+                          Text("Marie. K \nGardienne",
+                              style: TextStyle(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w900)),
+                        Padding(
+                          padding:  EdgeInsets.only(bottom: 15.h),
+                          child: Image.asset("assets/images/sun.png", height: 25.h),
+                        )
+                        ],
+                      ),
+                      Image.asset("assets/images/star.png", height: 20.h,width: 40.w)
                     ],
                   ),
                 ),
                 const Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 30.h),
+                  padding: EdgeInsets.only(bottom: 80.h, right: 5.w),
                   child: Column(
                     children: [
                       GestureDetector(
@@ -80,26 +102,33 @@ class HomeView extends GetView<DashboardController> {
                             controller.activePage.value = 3;
                           },
                           child: Image.asset("assets/images/box.png",
-                              height: 30.h, width: 30.w)),
+                              height: 35.h, width: 35.w)),
                       SizedBox(height: 5.h),
-                      Text("Bona", style: AppTextStyle.smallbold),
-                      SizedBox(height: 7.h),
+                      Text("Bonô", style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w900),),
+                      SizedBox(height: 5.h),
                       Image.asset("assets/images/hand.png",
-                          height: 30.h, width: 30.w),
-                      SizedBox(height: 7.h),
+                          height: 35.h, width: 35.w),
+                      SizedBox(height: 5.h),
                       GestureDetector(
                           onTap: () {
                             controller.activePage.value = 4;
                           },
                           child: Image.asset("assets/images/cash.png",
-                              height: 30.h, width: 30.w)),
-                      SizedBox(height: 7.h),
+                              height: 35.h, width: 35.w)),
+                      SizedBox(height: 5.h),
+                    GestureDetector(
+                          onTap: () {
+                            controller.activePage.value = 4;
+                          },
+                          child: Image.asset("assets/images/messages.png",
+                              height: 35.h, width: 35.w)),
+                      SizedBox(height: 5.h),
                       GestureDetector(
                           onTap: () {
                             controller.activePage.value = 6;
                           },
                           child: Image.asset("assets/images/pop.png",
-                              height: 30.h, width: 30.w)),
+                              height: 35.h, width: 35.w)),
                     ],
                   ),
                 )

@@ -1,4 +1,3 @@
-import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:bips_app/app/modules/profile/controllers/profile_controller.dart';
@@ -12,18 +11,18 @@ class OtpVerificationView extends GetView<ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-       resizeToAvoidBottomInset: false,
-      body: SafeArea(child:Padding(
-        padding: const EdgeInsets.all(20.0).h,
-        child:  Center(
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+          child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0).h,
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
-            
-                    children: [
-             
-             Container(
+            children: [
+              SizedBox(height: 30.h),
+              Container(
                   height: 50.h,
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   alignment: Alignment.center,
@@ -34,42 +33,43 @@ class OtpVerificationView extends GetView<ProfileController> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                       SizedBox(height: 45.h, width: 20),
+                      SizedBox(height: 45.h, width: 20),
                       Text(
                         "Bip’S",
-                        style: AppTextStyle.largebold.copyWith(fontSize:35.h),
+                        style: AppTextStyle.largebold.copyWith(fontSize: 35.h),
                       ),
                       Icon(Icons.lock, size: 35.h)
                     ],
                   )),
-                    SizedBox(height: 120.h),
-                 const CustomTextInputField(hintText:"Insérer le code.....................................",
-               ),
-               SizedBox(height: 120.h),
-               Container(
+              SizedBox(height: 120.h),
+              const CustomTextInputField(
+                hintText:
+                    "Insérer le code.....................................",
+              ),
+              SizedBox(height: 120.h),
+              Container(
                 height: 25.h,
-                width: 180.w,
+                width: 220.w,
                 alignment: Alignment.center,
-                decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black)),
                 child: DropDownWidget(controller: controller),
-               ),
-
-               SizedBox(height: 80.h),
-                Text("Mot de passe oublié", style: AppTextStyle.mediumLight.copyWith(fontSize: 14.sp))
-                ,const Spacer(),
-                GestureDetector(
-                onTap: (){
-                  try{
-                    Get.to(()=> const DashboardView());
-                  }catch(e){
+              ),
+              SizedBox(height: 80.h),
+              Text("Mot de passe oublié",
+                  style: AppTextStyle.mediumLight.copyWith(fontSize: 14.sp)),
+              const Spacer(),
+              GestureDetector(
+                onTap: () {
+                  try {
+                    Get.offAll(() => const DashboardView());
+                  } catch (e) {
                     debugPrint(e.toString());
                   }
                 },
-                 child: CircleAvatar(
-                  radius: 20.r,
-                  backgroundColor: AppColors.lightbrown,
-                  child:  Icon(Icons.arrow_forward, size: 25.h),),
-               )
+                child: Image.asset("assets/images/tick1.png", height: 60.h,width: 60.w),
+                
+              )
             ],
           ),
         ),
@@ -95,16 +95,21 @@ class _DropDownWidgetState extends State<DropDownWidget> {
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
       child: DropdownButton(
+      alignment: Alignment.center,
+        isExpanded: true,
+        isDense: true,
         
-        
-        onChanged: (v){
-        setState(() {
-          widget.controller.selectedService = v!;
-        });
+        onChanged: (v) {
+          setState(() {
+            widget.controller.selectedService = v!;
+          });
         },
-        hint:  Text(widget.controller.selectedService),
+        icon: const Visibility(child: Icon(Icons.arrow_drop_down)),
+        hint: Text(widget.controller.selectedService),
         value: widget.controller.selectedService,
-        items: widget.controller.services.map((String e) => DropdownMenuItem(value:e, child:Text(e))).toList(),
+        items: widget.controller.services
+            .map((String e) => DropdownMenuItem(value: e, child: Text(e)))
+            .toList(),
       ),
     );
   }

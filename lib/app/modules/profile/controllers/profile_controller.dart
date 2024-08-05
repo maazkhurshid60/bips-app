@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
- List<String> services = ["none","service1","service2","service3",];
- String selectedService = 'none';
+ List<String> services = ["Les services","Les services à domicile (SÀD)","Les Entrepreneurs du tertiaire (ET)","Les Coworker’S",];
+ String selectedService = 'Les services';
 }

@@ -1,7 +1,6 @@
 import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,19 +12,40 @@ class SearchView extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(20.h),
+        padding: EdgeInsets.symmetric(vertical:  10.h, horizontal: 5.w),
         height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 80.h),
-            const CupertinoSearchTextField(),
-            SizedBox(height: 40.h),
+            SizedBox(height: 50.h),
+            GestureDetector(
+                  onTap: () {
+                    controller.activePage.value = 1;
+                  },
+                  child: Container(
+                    height: 35.h,
+                    padding: EdgeInsets.all(5.r),
+
+                    decoration:  BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                       borderRadius: BorderRadius.circular(50.h)),
+                    width: double.infinity.w,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Icon(Icons.search),
+                        SizedBox(width: 20.w),
+                        Text("De qui avez-vous besoin?", style: AppTextStyle.smallLight.copyWith(fontSize: 16.sp))
+                        ,SizedBox(height: 10.h,width: 40.w),
+                      ],
+                    ),
+                  )),
+            SizedBox(height: 60.h),
             const RowWidget(),
             SizedBox(height: 20.h),
             const RowWidget(
-              text1: "Colffeur",
-              tex2: "Entraineur",
+              text1: "Coiffeur",
+              tex2: "Entraineur sportif",
               image1: "assets/images/hair.png",
               image2: "assets/images/gym.png",
             ),
@@ -104,11 +124,11 @@ class RowWidget extends StatelessWidget {
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: AppColors.lightbrown,
+                          color: AppColors.lightbrown.withOpacity(0.7),
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.r),
                               bottomRight: Radius.circular(20.r))),
-                    child: Text(text1?? "Gardienne", style: AppTextStyle.mediumbold),
+                    child: Text(text1?? "Gardienne", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w900)),
                     ))
               ],
             ),
@@ -135,12 +155,12 @@ class RowWidget extends StatelessWidget {
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                           color: AppColors.lightbrown,
+                           color: AppColors.lightbrown.withOpacity(0.7),
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.r),
                               bottomRight: Radius.circular(20.r))
                               ),
-                      child: Text(tex2?? "Cuisinier", style: AppTextStyle.mediumbold),
+                      child: Text(tex2?? "Cuisinier", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w900)),
                     ))
               ],
             ),

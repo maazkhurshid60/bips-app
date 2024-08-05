@@ -1,4 +1,3 @@
-import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/profile/views/otp_view.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +14,11 @@ class ProfileView extends GetView<ProfileController> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20.h),
+
+          padding: EdgeInsets.symmetric(vertical:  10.h),
           child: Column(
             children: [
+              SizedBox(height: 30.h),
               Container(
                   height: 45.h,
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -79,10 +80,7 @@ class ProfileView extends GetView<ProfileController> {
                     debugPrint(e.toString());
                   }
                 },
-                 child: CircleAvatar(
-                  radius: 20.r,
-                  backgroundColor: AppColors.lightbrown,
-                  child:  Icon(Icons.arrow_forward, size: 25.h),),
+                 child: Image.asset("assets/images/tick.png", height: 80.h,width: 80.w),
                )
             ],
           ),
@@ -113,6 +111,7 @@ class CustomTextInputField extends StatelessWidget {
           keyboardType: hintText == null? null:TextInputType.number,
           decoration: InputDecoration(
               border: const OutlineInputBorder(borderSide: BorderSide.none),
+              hintStyle: AppTextStyle.mediumLight,
               hintText:
                   hintText ?? "Nom et Prénom /Nom de l’entreprise........"),
         ));

@@ -1,3 +1,4 @@
+import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:bips_app/app/modules/dashboard/views/search_view.dart';
@@ -11,28 +12,29 @@ class NotifcationView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
       child: Column(
         children: [
           SizedBox(height: 30.h),
-          Image.asset("assets/images/cart.png", height: 70.h),
+          Image.asset("assets/images/cart.png", height: 50.h),
           SizedBox(height: 30.h),
           Align(
               alignment: Alignment.centerLeft,
-              child: Text("5 Juin, 2024", style: AppTextStyle.extraMediumbold)),
+              child: Text("5 Juin, 2024", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w900))),
           SizedBox(height: 10.h),
-         Expanded(flex: 10,child: ListView.separated(itemBuilder:(context, index) {
-           return NotifcationRow( t1: notificationItem[index].t1,
-            t2: notificationItem[index].t2,
-           t3: notificationItem[index].t3,
-          t4: notificationItem[index].t4);
-         }, separatorBuilder:(context, index) {
-           return SizedBox(height: 10.h);
-         }, itemCount: notificationItem.length)),
+         
+         for(int i=0;i<notificationItem.length;i++)...{
+           NotifcationRow( t1: notificationItem[i].t1,
+              t2: notificationItem[i].t2,
+             t3: notificationItem[i].t3,
+            t4: notificationItem[i].t4),
+            SizedBox(height: 3.h),
+         },
+         
           SizedBox(height: 10.h),
           Align(
               alignment: Alignment.centerLeft,
-              child: Text("4 Juin, 2024", style: AppTextStyle.extraMediumbold)),
+              child: Text("4 Juin, 2024", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w900))),
           const Spacer(),
           BackScreen(controller: controller),
         ],
@@ -56,10 +58,10 @@ class NotifcationRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80.h,
+      height: 60.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),
-          border: Border.all(color: Colors.brown)),
+          border: Border.all(color: AppColors.lightbrown)),
       child: Row(
         children: [
           Stack(
@@ -81,7 +83,7 @@ class NotifcationRow extends StatelessWidget {
               FittedBox(
                   fit: BoxFit.contain,
                   child: Text(t2 ?? 'Marc.k / ebeniste',
-                      style: AppTextStyle.mediumbold)),
+                      style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w800))),
               FittedBox(
                 fit: BoxFit.contain,
                 child: Text(t3 ?? 'Propose ses services a 700/H',

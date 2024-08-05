@@ -46,7 +46,7 @@ class DashboardView extends GetView<DashboardController> {
 
           // -----------custom bottom sheets ------------
           Container(
-            height: 80.h,
+            height: 75.h,
             padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
             width: double.infinity,
             decoration: BoxDecoration(
@@ -95,13 +95,11 @@ class BottomItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset("assets/images/${imagePath ?? "home"}.png",
-            height: 30.h, width: 30.w),
-        FittedBox(
-            fit: BoxFit.contain,
-            child: Text(label ?? "Accueil",
-                style: label == null
-                    ? AppTextStyle.smallbold
-                    : AppTextStyle.smallLight))
+            height: 25.h, width: 25.w),
+        Text(label ?? "Accueil",
+            style: label == null
+                ? AppTextStyle.smallbold
+                : TextStyle(fontSize: 10.sp))
       ],
     );
   }

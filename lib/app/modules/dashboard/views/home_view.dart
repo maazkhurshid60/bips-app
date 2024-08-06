@@ -16,7 +16,7 @@ class HomeView extends GetView<DashboardController> {
       decoration: const BoxDecoration(
           color: Colors.black,
           image: DecorationImage(
-              image: AssetImage("assets/images/bg.png"), fit: BoxFit.cover)),
+              image: AssetImage("assets/images/bg1.jpg"), fit: BoxFit.fill)),
       child: Column(
         children: [
           Row(
@@ -30,16 +30,21 @@ class HomeView extends GetView<DashboardController> {
                   child: Container(
                     height: 30.h,
                     padding: EdgeInsets.all(5.r),
-                    decoration:  BoxDecoration(
-                      border: Border.all(color: AppColors.lightbrown),
-                      color: const Color.fromARGB(255, 187, 185, 185), borderRadius: BorderRadius.circular(50.h)),
+                    decoration:  const ShapeDecoration(
+                       color: Color.fromARGB(255, 187, 185, 185),
+                      shape: OvalBorder(
+                      side: BorderSide(
+                        color: AppColors.lightbrown
+                      ),
+                      
+                    )),
                     width: 160.w,
                     child: Row(
                       children: [
                         const Icon(Icons.search),
                         FittedBox(
                           fit: BoxFit.contain,
-                          child: Text("De qui avez-vous besoin?", style: AppTextStyle.smallbold.copyWith(fontSize: 10.sp)))
+                          child: Text("De qui avez-vous besoin?", style: AppTextStyle.otherTextStyle.copyWith(fontSize: 10.sp, fontWeight: FontWeight.bold)))
                       ],
                     ),
                   )),
@@ -47,14 +52,14 @@ class HomeView extends GetView<DashboardController> {
                   onTap: () {
                     controller.activePage.value = 5;
                   },
-                  child: Icon(Icons.location_on, size: 25.h)),
+                  child: Icon(Icons.location_on, size: 30.h)),
               const Spacer(),
               GestureDetector(
                   onTap: () {
                     controller.activePage.value = 2;
                   },
                   child: Image.asset("assets/images/cart.png",
-                      height: 25.h, width: 40.w)),
+                      height: 30.h, width: 40.w)),
             ],
           ),
           const Spacer(),
@@ -64,7 +69,7 @@ class HomeView extends GetView<DashboardController> {
               children: [
                 SizedBox(width: 2.w),
                 Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
+                  margin: EdgeInsets.only(bottom: 10.h),
                   height: 40.h,
                   width: 50.w,
                   decoration: BoxDecoration(
@@ -73,7 +78,7 @@ class HomeView extends GetView<DashboardController> {
                 ),
                 SizedBox(width: 5.w),
                 Padding(
-                  padding: EdgeInsets.only(top: 40.h),
+                  padding: EdgeInsets.only(top: 30.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -81,7 +86,7 @@ class HomeView extends GetView<DashboardController> {
                         children: [
 
                           Text("Marie. K \nGardienne",
-                              style: TextStyle(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w900)),
+                              style: AppTextStyle.slogenTextStyleGeneral.copyWith(fontSize: 15.sp, color: Colors.white)),
                         Padding(
                           padding:  EdgeInsets.only(bottom: 15.h),
                           child: Image.asset("assets/images/sun.png", height: 25.h),
@@ -94,7 +99,7 @@ class HomeView extends GetView<DashboardController> {
                 ),
                 const Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 80.h, right: 5.w),
+                  padding: EdgeInsets.only(bottom: 30.h, right: 5.w),
                   child: Column(
                     children: [
                       GestureDetector(
@@ -104,7 +109,7 @@ class HomeView extends GetView<DashboardController> {
                           child: Image.asset("assets/images/box.png",
                               height: 35.h, width: 35.w)),
                       SizedBox(height: 5.h),
-                      Text("Bonô", style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w900),),
+                      Text("Bonô", style: AppTextStyle.slogenTextStyleGeneral.copyWith(fontSize: 14.sp, fontWeight: FontWeight.w900)),
                       SizedBox(height: 5.h),
                       Image.asset("assets/images/hand.png",
                           height: 35.h, width: 35.w),

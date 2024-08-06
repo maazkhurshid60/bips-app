@@ -61,8 +61,8 @@ class Text2Widget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text("Bip’S", style: AppTextStyle.extralargebold.copyWith(fontSize: 80.sp)),
-        Text("Oser autrement!", style: AppTextStyle.mediumLight.copyWith(fontStyle: FontStyle.italic, fontWeight: FontWeight.w600)),
+        Text("Bip’S", style: AppTextStyle.logeTextStyle),
+        Text("Oser autrement!", style: AppTextStyle.slogenTextStyle),
              ]
     );
   }

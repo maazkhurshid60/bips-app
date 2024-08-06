@@ -12,10 +12,10 @@ class CashPriceView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 30.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       child: Column(
         children: [
-          SizedBox(height: 30.h),
+          SizedBox(height: 50.h),
 
           // ---------header------------------
           Image.asset(
@@ -27,19 +27,19 @@ class CashPriceView extends GetView<DashboardController> {
               controller.cashpriceCurrentIndex.value == 0
                   ? "Marie, K"
                   : "Sectoriel",
-              style: AppTextStyle.extraMediumLight)),
+              style: AppTextStyle.extraMediumbold.copyWith(fontWeight: FontWeight.w500))),
           SizedBox(height: 20.h),
 
           //------------main content------------
           const ChartWidget(),
           SizedBox(
-            height: 10.h,
+            height:  10.h,
           ),
 
           //--------------dots--------------------
           DotsWidget(controller: controller),
           SizedBox(
-            height: 10.h,
+            height: 50.h,
           ),
           BackScreen(controller: controller)
         ],
@@ -57,7 +57,7 @@ class ChartWidget extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 3,
+      flex: 2,
       child: PageView.builder(
         onPageChanged: (value) {
           controller.cashpriceCurrentIndex.value = value;
@@ -105,22 +105,26 @@ class Item1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("05 juin,2024", style: AppTextStyle.smallLight),
-              Text("Abobo / Selmer", style: AppTextStyle.smallLight),
+              Text("05 juin,2024", style: AppTextStyle.smallbold),
+              Text("Abobo / Selmer", style: AppTextStyle.smallbold),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.proposé", style: AppTextStyle.smallLight),
+              Text("P.proposé", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
               SizedBox(width: 3.w),
               Container(
-                height: 20.h,
+                height: 15.h,
                 width: 100.w,
-                decoration: BoxDecoration(
-                    color: AppColors.lightbrown,
-                    borderRadius: BorderRadius.circular(30).r),
+                decoration: const ShapeDecoration(
+                   color: Color.fromARGB(255, 167, 144, 88),
+                  
+                  shape: OvalBorder(
+                  
+                )),
+               
               ),
                Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
@@ -134,7 +138,7 @@ class Item1 extends StatelessWidget {
                     Positioned(
                       top: 10.h,
                       right: 15.w,
-                      child:  Text("800/J",style:AppTextStyle.smallLight))
+                      child:  Text("800/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
                   ],
                 ),
               )
@@ -145,15 +149,17 @@ class Item1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.minimum", style: AppTextStyle.smallLight),
+              Text("P.minimum", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
               SizedBox(width: 3.w),
               Container(
-                height: 20.h,
+                height: 15.h,
                 width: 80.w,
-                decoration: BoxDecoration(
-                    color: AppColors.lightbrown,
-                    borderRadius: BorderRadius.circular(30).r),
-              ),
+               decoration: const ShapeDecoration(
+                   color: Color.fromARGB(255, 167, 144, 88),
+                  
+                  shape: OvalBorder(
+                  
+                )),              ),
               Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
                 child: Stack(
@@ -166,7 +172,7 @@ class Item1 extends StatelessWidget {
                     Positioned(
                       top: 10.h,
                       right: 15.w,
-                      child:  Text("700/J",style:AppTextStyle.smallLight))
+                      child:  Text("700/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
                   ],
                 ),
               )
@@ -177,15 +183,16 @@ class Item1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.élevé", style: AppTextStyle.smallLight),
+              Text("P.élevé", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
               SizedBox(width: 3.w),
               Container(
                 height: 20.h,
                 width: 170.w,
-                decoration: BoxDecoration(
-                    color: AppColors.lightbrown,
-                    borderRadius: BorderRadius.circular(30).r),
-              ),
+                decoration: const ShapeDecoration(
+                   color: Color.fromARGB(255, 167, 144, 88),
+                  shape: OvalBorder(
+                  
+                )),              ),
                Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
                 child: Stack(
@@ -198,7 +205,7 @@ class Item1 extends StatelessWidget {
                     Positioned(
                       top: 10.h,
                       right: 15.w,
-                      child:  Text("900/J",style:AppTextStyle.smallLight))
+                      child:  Text("900/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
                   ],
                 ),
               )
@@ -247,22 +254,22 @@ class Item2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("05 juin,2024", style: AppTextStyle.smallLight),
-              Text("Abobo / Selmer", style: AppTextStyle.smallLight),
+              Text("05 juin,2024", style: AppTextStyle.smallbold),
+              Text("Abobo / Selmer", style: AppTextStyle.smallbold),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.minimum", style: AppTextStyle.smallLight),
+              Text("P.minimum", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
               SizedBox(width: 3.w),
               Container(
-                height: 20.h,
+                height: 15.h,
                 width: 100.w,
-                decoration: BoxDecoration(
-                    color: AppColors.lightbrown,
-                    borderRadius: BorderRadius.circular(30).r),
+                decoration: const ShapeDecoration(
+                    color: Color.fromARGB(255, 167, 144, 88),
+                    shape: OvalBorder()),
               ),
                Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
@@ -276,7 +283,7 @@ class Item2 extends StatelessWidget {
                     Positioned(
                       top: 10.h,
                       right: 15.w,
-                      child:  Text("800/J",style:AppTextStyle.smallLight))
+                      child:  Text("800/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
                   ],
                 ),
               )
@@ -287,14 +294,14 @@ class Item2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.moyen", style: AppTextStyle.smallLight),
+              Text("P.moyen", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
               SizedBox(width: 3.w),
               Container(
-                height: 20.h,
+                height: 15.h,
                 width: 150.w,
-                decoration: BoxDecoration(
-                    color: AppColors.lightbrown,
-                    borderRadius: BorderRadius.circular(30).r),
+               decoration: const ShapeDecoration(
+                    color: Color.fromARGB(255, 167, 144, 88),
+                    shape: OvalBorder()),
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
@@ -308,7 +315,7 @@ class Item2 extends StatelessWidget {
                     Positioned(
                       top: 10.h,
                       right: 15.w,
-                      child:  Text("900/J",style:AppTextStyle.smallLight))
+                      child:  Text("900/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
                   ],
                 ),
               )
@@ -319,14 +326,14 @@ class Item2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.élevé", style: AppTextStyle.smallLight),
+              Text("P.élevé", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
               SizedBox(width: 3.w),
               Container(
                 height: 20.h,
                 width: 200.w,
-                decoration: BoxDecoration(
-                    color: AppColors.lightbrown,
-                    borderRadius: BorderRadius.circular(30).r),
+                decoration: const ShapeDecoration(
+                    color: Color.fromARGB(255, 167, 144, 88),
+                    shape: OvalBorder()),
               ),
                Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
@@ -340,7 +347,7 @@ class Item2 extends StatelessWidget {
                     Positioned(
                       top: 10.h,
                       right: 15.w,
-                      child:  Text("1000/J",style:AppTextStyle.smallLight))
+                      child:  Text("1000/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
                   ],
                 ),
               )

@@ -1,3 +1,4 @@
+import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:bips_app/app/modules/dashboard/views/notification_view.dart';
 import 'package:bips_app/app/modules/dashboard/views/search_view.dart';
@@ -23,7 +24,7 @@ class BonosView extends GetView<DashboardController> {
                 children: [
                   SizedBox(height: 30.h),
                   Image.asset("assets/images/box.png", height: 40.h),
-                  Text("Bonô",style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
+                  Text("Bonô",style: AppTextStyle.otherTextStyle.copyWith(fontSize: 20.sp, fontWeight: FontWeight.bold)),
                 ],
               )),
           ),

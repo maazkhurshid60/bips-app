@@ -33,7 +33,7 @@ class ProfileView extends GetView<ProfileController> {
                       const SizedBox(height: 45, width: 20),
                       Text(
                         "Bip’S",
-                        style: AppTextStyle.largebold,
+                        style: AppTextStyle.logeTextStyle.copyWith(fontSize: 35.sp),
                       ),
                       Icon(Icons.lock, size: 35.h)
                     ],
@@ -56,7 +56,7 @@ class ProfileView extends GetView<ProfileController> {
                   child: Text(
                     "les termes et conditions",
                     style:
-                        AppTextStyle.mediumLight,
+                        AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp),
                   )),
               SizedBox(height: 20.h),
               Container(
@@ -69,7 +69,7 @@ class ProfileView extends GetView<ProfileController> {
                   child: Text(
                     "les politiques sur la vie privée",
                     style:
-                        AppTextStyle.mediumLight,
+                        AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp),
                   )),
               const Spacer(),
                GestureDetector(
@@ -111,9 +111,9 @@ class CustomTextInputField extends StatelessWidget {
           keyboardType: hintText == null? null:TextInputType.number,
           decoration: InputDecoration(
               border: const OutlineInputBorder(borderSide: BorderSide.none),
-              hintStyle: AppTextStyle.mediumLight,
+              hintStyle: AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp),
               hintText:
-                  hintText ?? "Nom et Prénom /Nom de l’entreprise........"),
+                  hintText ?? "Nom et Prénom /Nom de l’entreprise....................."),
         ));
   }
 }

@@ -46,13 +46,17 @@ class DashboardView extends GetView<DashboardController> {
 
           // -----------custom bottom sheets ------------
           Container(
-            height: 75.h,
+            height: 70.h,
             padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
             width: double.infinity,
+            
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(20.r), topRight: Radius.circular(20.r) )
+              border: Border.all(color: Colors.black),
+ 
             ),
             child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(child: BottomItem()),
                 Expanded(
@@ -99,7 +103,7 @@ class BottomItem extends StatelessWidget {
         Text(label ?? "Accueil",
             style: label == null
                 ? AppTextStyle.smallbold
-                : TextStyle(fontSize: 10.sp))
+                : AppTextStyle.otherTextStyle.copyWith(fontSize: 10.sp))
       ],
     );
   }

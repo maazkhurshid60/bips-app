@@ -12,15 +12,15 @@ class SwitcherView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
       child: Column(
         children: [
-          SizedBox(height: 30.h),
+          SizedBox(height: 50.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.search, size: 25.h),
+               Image.asset("assets/images/search.png", height: 25.h, width: 40.w),
               Icon(Icons.location_on, size: 25.h),
               Image.asset("assets/images/cart.png", height: 25.h, width: 40.w),
             ],
@@ -39,7 +39,7 @@ class SwitcherView extends GetView<DashboardController> {
                 Image.asset("assets/images/switcher.png",
                     height: 50.h, width: 40.w),
                 SizedBox(width: 10.w),
-                Text("Switcher", style: AppTextStyle.largeLight)
+                Text("Switcher", style: AppTextStyle.largebold.copyWith(fontWeight: FontWeight.w500))
               ],
             ),
           ),

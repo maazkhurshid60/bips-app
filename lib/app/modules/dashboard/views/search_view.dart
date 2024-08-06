@@ -17,30 +17,28 @@ class SearchView extends GetView<DashboardController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 50.h),
-            GestureDetector(
-                  onTap: () {
-                    controller.activePage.value = 1;
-                  },
-                  child: Container(
-                    height: 35.h,
-                    padding: EdgeInsets.all(5.r),
-
-                    decoration:  BoxDecoration(
-                      border: Border.all(color: Colors.black),
-                       borderRadius: BorderRadius.circular(50.h)),
-                    width: double.infinity.w,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Icon(Icons.search),
-                        SizedBox(width: 20.w),
-                        Text("De qui avez-vous besoin?", style: AppTextStyle.smallLight.copyWith(fontSize: 16.sp))
-                        ,SizedBox(height: 10.h,width: 40.w),
-                      ],
-                    ),
-                  )),
-            SizedBox(height: 60.h),
+            SizedBox(height: 100.h),
+            Container(
+              height: 30.h,
+              padding: EdgeInsets.symmetric(vertical:  5.r),
+            
+              decoration: const ShapeDecoration(
+                shape: OvalBorder(
+                  side: BorderSide()
+                )
+              ),
+              width: double.infinity.w,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                   Icon(Icons.search, size: 20.h),
+                  SizedBox(width: 10.w),
+                  Text("De qui avez-vous besoin?", style: AppTextStyle.smallLight.copyWith(fontSize: 16.sp))
+                  ,SizedBox(height: 10.h,width: 40.w),
+                ],
+              ),
+            ),
+            SizedBox(height: 30.h),
             const RowWidget(),
             SizedBox(height: 20.h),
             const RowWidget(
@@ -128,7 +126,7 @@ class RowWidget extends StatelessWidget {
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.r),
                               bottomRight: Radius.circular(20.r))),
-                    child: Text(text1?? "Gardienne", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w900)),
+                    child: Text(text1?? "Gardienne", style: AppTextStyle.otherTextStyle.copyWith(fontSize: 12.sp, fontWeight: FontWeight.bold)),
                     ))
               ],
             ),
@@ -160,7 +158,7 @@ class RowWidget extends StatelessWidget {
                               bottomLeft: Radius.circular(20.r),
                               bottomRight: Radius.circular(20.r))
                               ),
-                      child: Text(tex2?? "Cuisinier", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w900)),
+                      child: Text(tex2?? "Cuisinier", style: AppTextStyle.otherTextStyle.copyWith(fontSize: 12.sp, fontWeight: FontWeight.bold)),
                     ))
               ],
             ),

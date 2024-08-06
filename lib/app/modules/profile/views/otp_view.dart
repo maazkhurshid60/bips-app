@@ -36,7 +36,7 @@ class OtpVerificationView extends GetView<ProfileController> {
                       SizedBox(height: 45.h, width: 20),
                       Text(
                         "Bip’S",
-                        style: AppTextStyle.largebold.copyWith(fontSize: 35.h),
+                        style: AppTextStyle.logeTextStyle.copyWith(fontSize: 35.h),
                       ),
                       Icon(Icons.lock, size: 35.h)
                     ],
@@ -55,9 +55,11 @@ class OtpVerificationView extends GetView<ProfileController> {
                     BoxDecoration(border: Border.all(color: Colors.black)),
                 child: DropDownWidget(controller: controller),
               ),
+              SizedBox(height: 10.h),
+              Image.asset("assets/images/drpdown.jpg", height: 30.h),
               SizedBox(height: 80.h),
               Text("Mot de passe oublié",
-                  style: AppTextStyle.mediumLight.copyWith(fontSize: 14.sp)),
+                  style: AppTextStyle.otherTextStyle.copyWith(fontSize: 14.sp)),
               const Spacer(),
               GestureDetector(
                 onTap: () {
@@ -95,6 +97,7 @@ class _DropDownWidgetState extends State<DropDownWidget> {
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
       child: DropdownButton(
+        padding: EdgeInsets.symmetric(horizontal:  5.h),
       alignment: Alignment.center,
         isExpanded: true,
         isDense: true,
@@ -104,6 +107,7 @@ class _DropDownWidgetState extends State<DropDownWidget> {
             widget.controller.selectedService = v!;
           });
         },
+      style: AppTextStyle.otherTextStyle.copyWith(fontSize:  14.sp),
         icon: const Visibility(child: Icon(Icons.arrow_drop_down)),
         hint: Text(widget.controller.selectedService),
         value: widget.controller.selectedService,

@@ -20,7 +20,7 @@ class NotifcationView extends GetView<DashboardController> {
           SizedBox(height: 30.h),
           Align(
               alignment: Alignment.centerLeft,
-              child: Text("5 Juin, 2024", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w900))),
+              child: Text("5 Juin, 2024", style: AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
           SizedBox(height: 10.h),
          
          for(int i=0;i<notificationItem.length;i++)...{
@@ -34,7 +34,7 @@ class NotifcationView extends GetView<DashboardController> {
           SizedBox(height: 10.h),
           Align(
               alignment: Alignment.centerLeft,
-              child: Text("4 Juin, 2024", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w900))),
+              child: Text("4 Juin, 2024", style: AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
           const Spacer(),
           BackScreen(controller: controller),
         ],
@@ -69,7 +69,7 @@ class NotifcationRow extends StatelessWidget {
               Image.asset("assets/images/mbox.png", height: 50.h, width: 50.w),
               Positioned(
                 top: 12.h,
-                left: 17.h,
+                left: 15.h,
                 child: Text(t1 ?? 'B',
                     style:
                         AppTextStyle.mediumbold.copyWith(color: Colors.white)),
@@ -83,7 +83,7 @@ class NotifcationRow extends StatelessWidget {
               FittedBox(
                   fit: BoxFit.contain,
                   child: Text(t2 ?? 'Marc.k / ebeniste',
-                      style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w800))),
+                      style: AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
               FittedBox(
                 fit: BoxFit.contain,
                 child: Text(t3 ?? 'Propose ses services a 700/H',

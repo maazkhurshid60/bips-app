@@ -16,11 +16,9 @@ class MoreOptionView extends GetView<DashboardController> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          
           SizedBox(
               height: 200.h,
               child: Column(
-                
                 children: [
                   SizedBox(height: 30.h),
                   Row(
@@ -28,7 +26,6 @@ class MoreOptionView extends GetView<DashboardController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Icon(Icons.search, size: 25.h),
-                    
                       Icon(Icons.location_on, size: 25.h),
                       Image.asset("assets/images/cart.png",
                           height: 25.h, width: 40.w),
@@ -37,46 +34,38 @@ class MoreOptionView extends GetView<DashboardController> {
                   SizedBox(height: 30.h),
                   Image.asset("assets/images/pop.png",
                       height: 40.h, width: 40.w),
-
                 ],
               )),
-           Row(
+          Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                 CustomimageShow(
-                  onTap: (){
-                  
+                CustomimageShow(
+                  onTap: () {
                     controller.activePage.value = 8;
-                 
                   },
+                  img: "fold",
                 ),
                 CustomimageShow(
-                  onTap: (){
-                    controller.activePage.value = 7;
-                  },
-                  icon: Icons.sync, text: "Switcher"),
-                const CustomimageShow(icon: Icons.help, text: "Aide")
+                    onTap: () {
+                      controller.activePage.value = 7;
+                    },
+                    img: "sw",
+                    text: "Switcher"),
+                const CustomimageShow(img: "help", text: "Aide")
               ]),
-
-              BackScreen(controller: controller)
+          BackScreen(controller: controller)
         ],
-        
       ),
     );
   }
 }
 
 class CustomimageShow extends StatelessWidget {
-  const CustomimageShow({
-    super.key,
-    this.icon,
-    this.text,
-    this.onTap
-  });
- final IconData? icon;
- final String? text;
- final Function()? onTap;
+  const CustomimageShow({super.key, this.img, this.text, this.onTap});
+  final String? img;
+  final String? text;
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -89,11 +78,11 @@ class CustomimageShow extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadiusDirectional.circular(20.r),
                 border: Border.all(width: 2, color: AppColors.lightbrown)),
-                child:  Icon(icon?? Icons.folder, size: 40.h),
+            child: Image.asset("assets/images/$img.png", height: 30.h,width: 30.w),
           ),
+          SizedBox(height: 10.h),
+          Text(text ?? "Crédibilité", style: AppTextStyle.mediumbold),
           SizedBox(height: 30.h),
-           Text(text??"Crédibilité", style: AppTextStyle.mediumbold),
-           SizedBox(height: 30.h),
         ],
       ),
     );

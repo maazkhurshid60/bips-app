@@ -2,7 +2,6 @@ import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:bips_app/app/modules/dashboard/views/search_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,15 +12,15 @@ class CredibilityView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
       child:  Column(
         children: [
-          SizedBox(height: 30.h),
+          SizedBox(height: 50.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.search, size: 25.h),
+             Image.asset("assets/images/search.png", height: 25.h, width: 40.w),
               Icon(Icons.location_on, size: 25.h),
               Image.asset("assets/images/cart.png", height: 25.h, width: 40.w),
             ],
@@ -37,7 +36,7 @@ class CredibilityView extends GetView<DashboardController> {
             width: 250.w,
             child: Row(
               children: [
-               Icon(Icons.folder_copy, size: 30.h,),
+               Image.asset("assets/images/fold.png"),
                 SizedBox(width: 10.w),
                 Text("Crédibilité", style: AppTextStyle.extraMediumLight),
                 
@@ -47,7 +46,7 @@ class CredibilityView extends GetView<DashboardController> {
           SizedBox(height: 30.h),
           Row(
             children: [
-              Icon(Icons.house_siding, size: 30.h),
+              Image.asset("assets/images/h1.jpg",height: 25.h),
               SizedBox(width: 10.w),
                Padding(
                  padding:  EdgeInsets.only( top: 10.0.h),
@@ -56,11 +55,11 @@ class CredibilityView extends GetView<DashboardController> {
                SizedBox(width: 10.w),
                  Padding(
                    padding:  EdgeInsets.only( top: 10.0.h),
-                   child: Container(height: 15.h,width: 120.w, decoration: BoxDecoration(
-                    color: AppColors.lightbrown, 
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(20)
-                   ),),
+                   child: Container(height: 15.h,width: 120.w,  decoration: const ShapeDecoration(
+                    color: Color.fromARGB(255, 167, 144, 88),
+                    shape: OvalBorder(
+              side: BorderSide(color: Colors.black, width: 1)
+            )),),
                  ),
                 Padding(
                   padding: const EdgeInsets.only(bottom:  28.0),
@@ -71,7 +70,7 @@ class CredibilityView extends GetView<DashboardController> {
           SizedBox(height: 30.h),
           Row(
             children: [
-              Icon(Icons.home, size: 30.h),
+             Image.asset("assets/images/h2.jpg", height: 25.h),
               SizedBox(width: 10.w),
                Padding(
                  padding:  EdgeInsets.only( top: 10.0.h),
@@ -88,7 +87,7 @@ class CredibilityView extends GetView<DashboardController> {
           SizedBox(height: 40.h),
           Row(
             children: [
-              Icon(CupertinoIcons.person_3_fill, size: 40.h),
+              Image.asset("assets/images/p1.jpg",height: 25.h),
               SizedBox(width: 10.w),
                Padding(
                  padding:  EdgeInsets.only( top: 10.0.h),

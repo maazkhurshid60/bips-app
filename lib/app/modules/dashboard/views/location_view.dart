@@ -11,43 +11,46 @@ class LocationView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
       child: Column(
         children: [
-          SizedBox(height: 30.h),
+          SizedBox(height: 45.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.search, size: 25.h),
+             Image.asset("assets/images/search.png", height: 25.h, width: 40.w),
               Icon(Icons.location_on, size: 25.h),
               Image.asset("assets/images/cart.png", height: 25.h, width: 40.w),
             ],
           ),
-           Text("À.4 Km",style: AppTextStyle.smallbold),
-           SizedBox(height: 20.h),
-           SizedBox(height: 150.h,width: double.infinity, child: Image.asset("assets/images/kit.png"),),
-           SizedBox(height: 20.h),
-           
-           const CustomTextFormField(
-            
-           ),
-           SizedBox(height: 5.h),
-           const CustomTextFormField(text: "Région ..............................................."),
-           SizedBox(height: 5.h),
-           const CustomTextFormField(text: "Ville ..................................................."),
-           SizedBox(height: 5.h),
-           const CustomTextFormField(
-            text: "Commune .........................................."
-           ),
-           SizedBox(height: 5.h),
-           const CustomTextFormField(
-              text: "Quartier ............................................."
-           ),
-           SizedBox(height: 5.h),
-           const CustomTextFormField( text: "Rue ...................................................."),
-           const Spacer(),
-           BackScreen(controller: controller)
+          Text("À.4 Km", style: AppTextStyle.smallbold),
+          SizedBox(height: 20.h),
+          SizedBox(
+            height: 150.h,
+            width: double.infinity,
+            child: Image.asset("assets/images/kit.png"),
+          ),
+          SizedBox(height: 20.h),
+          const CustomTextFormField(),
+          
+          const CustomTextFormField(
+              text: "Région ..............................................."),
+          
+          const CustomTextFormField(
+              text:
+                  "Ville ..................................................."),
+          
+          const CustomTextFormField(
+              text: "Commune .........................................."),
+          
+          const CustomTextFormField(
+              text: "Quartier ............................................."),
+          
+          const CustomTextFormField(
+              text: "Rue ...................................................."),
+          const Spacer(),
+          BackScreen(controller: controller)
         ],
       ),
     );
@@ -55,31 +58,28 @@ class LocationView extends GetView<DashboardController> {
 }
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
-    super.key,
-    this.controller,
-    this.text
-  });
+  const CustomTextFormField({super.key, this.controller, this.text});
   final String? text;
   final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-     height: 40.h,
-    alignment: Alignment.center,
-     decoration: BoxDecoration(
-       border: Border.all(color: Colors.black, width: 1),
-       borderRadius: BorderRadius.circular(10.r),
-     
-     ),
-     child: TextFormField(
-       decoration:  InputDecoration(
-         border: const OutlineInputBorder(borderSide: BorderSide.none),
-         hintText:text?? "Pays ...................................................",
-         hintStyle: TextStyle(fontSize: 14.h)
-       ),
-     ),
+      height: 40.h,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black, width: 1),
+        borderRadius: BorderRadius.circular(10.r),
+      ),
+      child: TextFormField(
+        
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(5.h),
+            border: const OutlineInputBorder(borderSide: BorderSide.none),
+            hintText: text ??
+                "Pays .............................................................................",
+            hintStyle: AppTextStyle.otherTextStyle.copyWith(fontSize: 14.h, fontWeight: FontWeight.bold)),
+      ),
     );
   }
 }

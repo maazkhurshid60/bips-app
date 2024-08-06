@@ -39,6 +39,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10+1
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -82,8 +83,14 @@ flutter:
     - family: Avenir
       fonts:
         - asset: fonts/Avenir_Light.ttf
+    - family: Informal
+      fonts:
+        - asset: fonts/Informal.ttf
+    - family: times
+      fonts:
+        - asset: fonts/times.ttf
   #   - family: Trajan Pro
-  #     fonts:
+  #     fonts:s
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700

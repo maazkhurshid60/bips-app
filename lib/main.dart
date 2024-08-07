@@ -24,12 +24,10 @@ class MyApp extends StatelessWidget {
         splitScreenMode: false,
         builder: (context, child) {
          return GetMaterialApp(
-        title: 'Flutter Demo',
+        title: 'Bips App',
         initialBinding: Allbinding(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-         
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
         home: const SplashView(),

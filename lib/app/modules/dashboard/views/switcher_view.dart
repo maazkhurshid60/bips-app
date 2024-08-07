@@ -30,7 +30,7 @@ class SwitcherView extends GetView<DashboardController> {
             padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 5.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50.r),
-              border: Border.all(color: AppColors.lightbrown),
+              border: Border.all(color: AppColors.golden),
             ),
             height: 50.h,
             width: 250.w,

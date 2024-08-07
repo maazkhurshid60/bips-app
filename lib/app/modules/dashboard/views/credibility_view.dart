@@ -30,7 +30,7 @@ class CredibilityView extends GetView<DashboardController> {
             padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 5.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50.r),
-              border: Border.all(color: AppColors.lightbrown),
+              border: Border.all(color: AppColors.golden),
             ),
             height: 40.h,
             width: 250.w,
@@ -56,7 +56,7 @@ class CredibilityView extends GetView<DashboardController> {
                  Padding(
                    padding:  EdgeInsets.only( top: 10.0.h),
                    child: Container(height: 15.h,width: 120.w,  decoration: const ShapeDecoration(
-                    color: Color.fromARGB(255, 167, 144, 88),
+                    color: AppColors.golden,
                     shape: OvalBorder(
               side: BorderSide(color: Colors.black, width: 1)
             )),),

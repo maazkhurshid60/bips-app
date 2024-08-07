@@ -11,6 +11,7 @@ class SearchView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
         padding: EdgeInsets.symmetric(vertical:  10.h, horizontal: 5.w),
         height: double.infinity,
@@ -76,7 +77,7 @@ class BackScreen extends StatelessWidget {
         decoration:  BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(color: Colors.black),
-         color:   AppColors.yellowbrown,
+         color:   AppColors.golden,
         ),
           child:  Icon(Icons.clear,color: Colors.white, size: 25.h),),
        );
@@ -122,7 +123,7 @@ class RowWidget extends StatelessWidget {
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: AppColors.lightbrown.withOpacity(0.7),
+                          color: AppColors.golden,
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.r),
                               bottomRight: Radius.circular(20.r))),
@@ -153,7 +154,7 @@ class RowWidget extends StatelessWidget {
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                           color: AppColors.lightbrown.withOpacity(0.7),
+                           color: AppColors.golden,
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.r),
                               bottomRight: Radius.circular(20.r))

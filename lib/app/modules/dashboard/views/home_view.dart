@@ -89,7 +89,7 @@ class HomeView extends GetView<DashboardController> {
                               style: AppTextStyle.slogenTextStyleGeneral.copyWith(fontSize: 15.sp, color: Colors.white)),
                         Padding(
                           padding:  EdgeInsets.only(bottom: 15.h),
-                          child: Image.asset("assets/images/sun.png", height: 25.h),
+                          child: Image.asset("assets/images/sun.png", height: 20.h),
                         )
                         ],
                       ),

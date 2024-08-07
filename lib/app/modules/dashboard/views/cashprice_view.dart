@@ -84,7 +84,7 @@ class Item1 extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
       width: double.infinity,
       decoration: BoxDecoration(
-          border: Border.all(color: AppColors.lightbrown, width: 2),
+          border: Border.all(color: AppColors.golden, width: 2),
           borderRadius: BorderRadius.circular(40).r),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -119,7 +119,7 @@ class Item1 extends StatelessWidget {
                 height: 15.h,
                 width: 100.w,
                 decoration: const ShapeDecoration(
-                   color: Color.fromARGB(255, 167, 144, 88),
+                   color: AppColors.golden,
                   
                   shape: OvalBorder(
                   
@@ -155,7 +155,7 @@ class Item1 extends StatelessWidget {
                 height: 15.h,
                 width: 80.w,
                decoration: const ShapeDecoration(
-                   color: Color.fromARGB(255, 167, 144, 88),
+                   color: AppColors.golden,
                   
                   shape: OvalBorder(
                   
@@ -189,7 +189,7 @@ class Item1 extends StatelessWidget {
                 height: 20.h,
                 width: 170.w,
                 decoration: const ShapeDecoration(
-                   color: Color.fromARGB(255, 167, 144, 88),
+                   color: AppColors.golden,
                   shape: OvalBorder(
                   
                 )),              ),
@@ -233,7 +233,7 @@ class Item2 extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
       width: double.infinity,
       decoration: BoxDecoration(
-          border: Border.all(color: AppColors.lightbrown, width: 2),
+          border: Border.all(color: AppColors.golden, width: 2),
           borderRadius: BorderRadius.circular(40).r),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -268,7 +268,7 @@ class Item2 extends StatelessWidget {
                 height: 15.h,
                 width: 100.w,
                 decoration: const ShapeDecoration(
-                    color: Color.fromARGB(255, 167, 144, 88),
+                    color: AppColors.golden,
                     shape: OvalBorder()),
               ),
                Padding(
@@ -300,7 +300,7 @@ class Item2 extends StatelessWidget {
                 height: 15.h,
                 width: 150.w,
                decoration: const ShapeDecoration(
-                    color: Color.fromARGB(255, 167, 144, 88),
+                    color: AppColors.golden,
                     shape: OvalBorder()),
               ),
               Padding(
@@ -332,7 +332,7 @@ class Item2 extends StatelessWidget {
                 height: 20.h,
                 width: 200.w,
                 decoration: const ShapeDecoration(
-                    color: Color.fromARGB(255, 167, 144, 88),
+                    color: AppColors.golden,
                     shape: OvalBorder()),
               ),
                Padding(

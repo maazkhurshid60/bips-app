@@ -11,6 +11,7 @@ class ProfileView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
@@ -80,7 +81,7 @@ class ProfileView extends GetView<ProfileController> {
                     debugPrint(e.toString());
                   }
                 },
-                 child: Image.asset("assets/images/tick.png", height: 80.h,width: 80.w),
+                 child: Image.asset("assets/images/tick.png", height: 60.h,width: 60.w),
                )
             ],
           ),

@@ -10,6 +10,7 @@ class SplashView extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return   Scaffold(
+      backgroundColor: Colors.white,
        resizeToAvoidBottomInset: false,
       body:  SafeArea(
         child: Center(
@@ -43,7 +44,7 @@ class Text1Widget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-       Image.asset("assets/images/comma.png", height: 100.h,width: 100.w, color: const Color(0xffFFD700),),
+       Image.asset("assets/images/comma.png", height: 20.h,width: 20.w, color: const Color(0xffFFD700),),
         Text("Akwaba!", style: AppTextStyle.largebold),
         Text("Bienvenue!", style: AppTextStyle.largebold)
       ],

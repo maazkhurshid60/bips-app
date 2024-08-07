@@ -59,9 +59,10 @@ class NotifcationRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60.h,
+      padding: EdgeInsets.only(left: 5.w),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),
-          border: Border.all(color: AppColors.lightbrown)),
+          border: Border.all(color: AppColors.golden)),
       child: Row(
         children: [
           Stack(

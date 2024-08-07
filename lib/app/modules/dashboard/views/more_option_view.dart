@@ -77,7 +77,7 @@ class CustomimageShow extends StatelessWidget {
             width: 80.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadiusDirectional.circular(20.r),
-                border: Border.all(width: 2, color: AppColors.lightbrown)),
+                border: Border.all(width: 2, color: AppColors.golden)),
             child: Image.asset("assets/images/$img.png", height: 30.h,width: 30.w),
           ),
           SizedBox(height: 10.h),

@@ -19,6 +19,7 @@ class DashboardView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
        resizeToAvoidBottomInset: false,
       body: Column(
         children: [

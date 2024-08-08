@@ -1,3 +1,5 @@
+import 'package:bips_app/app/constants/app_text_style.dart';
+import 'package:bips_app/app/modules/profile/views/otp_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -9,11 +11,15 @@ class ProfileView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20.h),
+
+          padding: EdgeInsets.symmetric(vertical:  10.h),
           child: Column(
             children: [
+              SizedBox(height: 30.h),
               Container(
                   height: 45.h,
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -28,16 +34,15 @@ class ProfileView extends GetView<ProfileController> {
                       const SizedBox(height: 45, width: 20),
                       Text(
                         "Bip’S",
-                        style: TextStyle(
-                            fontSize: 30.sp, fontWeight: FontWeight.bold),
+                        style: AppTextStyle.logeTextStyle.copyWith(fontSize: 35.sp),
                       ),
                       Icon(Icons.lock, size: 35.h)
                     ],
                   )),
               SizedBox(height: 30.h),
-              CustomTextInputField(),
+              const CustomTextInputField(),
               SizedBox(height: 20.h),
-              CustomTextInputField(
+              const CustomTextInputField(
                 hintText:
                     "Mobile Money........................................",
               ),
@@ -52,7 +57,7 @@ class ProfileView extends GetView<ProfileController> {
                   child: Text(
                     "les termes et conditions",
                     style:
-                        TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w400),
+                        AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp),
                   )),
               SizedBox(height: 20.h),
               Container(
@@ -65,12 +70,19 @@ class ProfileView extends GetView<ProfileController> {
                   child: Text(
                     "les politiques sur la vie privée",
                     style:
-                        TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w400),
+                        AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp),
                   )),
               const Spacer(),
-               CircleAvatar(
-                radius: 20.r,
-                backgroundColor: const Color.fromARGB(255, 201, 165, 7),)
+               GestureDetector(
+                onTap: (){
+                  try{
+                    Get.to(()=> const OtpVerificationView());
+                  }catch(e){
+                    debugPrint(e.toString());
+                  }
+                },
+                 child: Image.asset("assets/images/tick.png", height: 60.h,width: 60.w),
+               )
             ],
           ),
         ),
@@ -80,10 +92,10 @@ class ProfileView extends GetView<ProfileController> {
 }
 
 class CustomTextInputField extends StatelessWidget {
-  CustomTextInputField({super.key, this.hintText, this.controller});
+  const CustomTextInputField({super.key, this.hintText, this.controller});
 
-  TextEditingController? controller;
-  String? hintText;
+ final  TextEditingController? controller;
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -92,14 +104,17 @@ class CustomTextInputField extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         alignment: Alignment.center,
         decoration: BoxDecoration(
+
             borderRadius: BorderRadius.circular(10).r,
             border: Border.all(width: 1, color: Colors.black)),
         child: TextFormField(
           controller: controller,
+          keyboardType: hintText == null? null:TextInputType.number,
           decoration: InputDecoration(
               border: const OutlineInputBorder(borderSide: BorderSide.none),
+              hintStyle: AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp),
               hintText:
-                  hintText ?? "Nom et Prénom /Nom de l’entreprise........"),
+                  hintText ?? "Nom et Prénom /Nom de l’entreprise....................."),
         ));
   }
 }

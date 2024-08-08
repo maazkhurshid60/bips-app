@@ -1,3 +1,4 @@
+import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -9,9 +10,23 @@ class SplashView extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return   Scaffold(
+      backgroundColor: Colors.white,
+       resizeToAvoidBottomInset: false,
       body:  SafeArea(
         child: Center(
-          child:Obx(() =>  controller.textIndex.value ==0? const Text1Widget(): const Text2Widget())
+          
+          child:Padding(
+            padding:  EdgeInsets.symmetric(vertical: 40.h),
+            child: Container(
+
+              decoration:  BoxDecoration(
+                border: Border.all(color: Colors.black)
+                ,borderRadius: BorderRadius.circular(50.r)
+              ),
+             
+              width: double.infinity,
+              child: Obx(() =>  controller.textIndex.value ==0? const Text1Widget(): const Text2Widget())),
+          )
         ),
       ),
     );
@@ -29,9 +44,9 @@ class Text1Widget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(",", style: TextStyle(fontSize:40.sp, fontWeight: FontWeight.bold),),
-        Text("Akwaba!", style: TextStyle(fontSize:30.sp, fontWeight: FontWeight.bold),),
-        Text("Bienvenue!", style: TextStyle(fontSize:30.sp, fontWeight: FontWeight.bold),)
+       Image.asset("assets/images/comma.png", height: 20.h,width: 20.w, color: const Color(0xffFFD700),),
+        Text("Akwaba!", style: AppTextStyle.largebold),
+        Text("Bienvenue!", style: AppTextStyle.largebold)
       ],
     );
   }
@@ -47,9 +62,9 @@ class Text2Widget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text("Bip’S", style: TextStyle(fontSize:50.sp, fontWeight: FontWeight.bold),),
-        Text("Oser autrement!", style: TextStyle(fontSize:20.sp, fontWeight: FontWeight.w600),),
-             ],
+        Text("Bip’S", style: AppTextStyle.logeTextStyle),
+        Text("Oser autrement!", style: AppTextStyle.slogenTextStyle),
+             ]
     );
   }
 }

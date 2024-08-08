@@ -1,23 +1,6 @@
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
-  //TODO: Implement ProfileController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+ List<String> services = ["Les services","Les services à domicile (SÀD)","Les Entrepreneurs du tertiaire (ET)","Les Coworker’S",];
+ String selectedService = 'Les services';
 }

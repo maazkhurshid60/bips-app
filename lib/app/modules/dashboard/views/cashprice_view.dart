@@ -27,7 +27,7 @@ class CashPriceView extends GetView<DashboardController> {
               controller.cashpriceCurrentIndex.value == 0
                   ? "Marie, K"
                   : "Sectoriel",
-              style: AppTextStyle.extraMediumbold.copyWith(fontWeight: FontWeight.w500))),
+              style: AppTextStyle.otherTextStyle.copyWith(fontWeight: FontWeight.w500))),
           SizedBox(height: 20.h),
 
           //------------main content------------

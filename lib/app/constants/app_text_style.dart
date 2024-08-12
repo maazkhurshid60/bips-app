@@ -16,10 +16,9 @@ class AppTextStyle{
   static TextStyle extraSmallLight = TextStyle(color:Colors.black,fontSize:10.sp, fontWeight: FontWeight.w400,fontFamily: 'Avenir');
 
   //-------------------new Fonts with family-------------------
-  static TextStyle logeTextStyle = TextStyle(color:Colors.black,fontSize:85.sp, fontWeight: FontWeight.bold,fontFamily: 'Informal');
+  static TextStyle logeTextStyle = TextStyle(color:Colors.black,fontSize:110.sp, fontWeight: FontWeight.bold,fontFamily: 'Informal');
   static TextStyle slogenTextStyle = TextStyle(color:Colors.black,fontSize:16.sp, fontWeight: FontWeight.bold,fontFamily: 'times', fontStyle: FontStyle.italic);
   static TextStyle slogenTextStyleGeneral = TextStyle(color:Colors.black,fontSize:16.sp, fontWeight: FontWeight.bold,fontFamily: 'times');
   static TextStyle otherTextStyle = TextStyle(color:Colors.black,fontSize:12.sp, fontWeight: FontWeight.normal,fontFamily: 'Avenir');
   
-
 }

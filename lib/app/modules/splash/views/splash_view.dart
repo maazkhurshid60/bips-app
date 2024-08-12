@@ -9,25 +9,22 @@ class SplashView extends GetView<SplashController> {
   const SplashView({super.key});
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-       resizeToAvoidBottomInset: false,
-      body:  SafeArea(
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
         child: Center(
-          
-          child:Padding(
-            padding:  EdgeInsets.symmetric(vertical: 40.h),
-            child: Container(
-
-              decoration:  BoxDecoration(
-                border: Border.all(color: Colors.black)
-                ,borderRadius: BorderRadius.circular(50.r)
-              ),
-             
+            child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 40.h),
+          child: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(50.r)),
               width: double.infinity,
-              child: Obx(() =>  controller.textIndex.value ==0? const Text1Widget(): const Text2Widget())),
-          )
-        ),
+              child: Obx(() => controller.textIndex.value == 0
+                  ? const Text1Widget()
+                  : const Text2Widget())),
+        )),
       ),
     );
   }
@@ -44,13 +41,13 @@ class Text1Widget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-       Image.asset("assets/images/comma.png", height: 20.h,width: 20.w, color: const Color(0xffFFD700),),
-        Text("Akwaba!", style: AppTextStyle.largebold),
-        Text("Bienvenue!", style: AppTextStyle.largebold)
+       
+        Text("Bienvenue!", style: AppTextStyle.slogenTextStyleGeneral.copyWith(fontSize: 50.sp))
       ],
     );
   }
 }
+
 class Text2Widget extends StatelessWidget {
   const Text2Widget({
     super.key,
@@ -59,12 +56,11 @@ class Text2Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text("Bip’S", style: AppTextStyle.logeTextStyle),
-        Text("Oser autrement!", style: AppTextStyle.slogenTextStyle),
-             ]
-    );
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text("Bip’S", style: AppTextStyle.logeTextStyle),
+          Text("Oser autrement!", style: AppTextStyle.slogenTextStyle),
+        ]);
   }
 }

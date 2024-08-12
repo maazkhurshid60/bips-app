@@ -110,10 +110,10 @@ class _DropDownWidgetState extends State<DropDownWidget> {
         },
       style: AppTextStyle.otherTextStyle.copyWith(fontSize:  14.sp),
         icon: const Visibility(child: Icon(Icons.arrow_drop_down)),
-        hint: Text(widget.controller.selectedService),
+        hint: Text(widget.controller.selectedService, style: AppTextStyle.otherTextStyle),
         value: widget.controller.selectedService,
         items: widget.controller.services
-            .map((String e) => DropdownMenuItem(value: e, child: Text(e)))
+            .map((String e) => DropdownMenuItem(value: e, child: Text(e, style: AppTextStyle.otherTextStyle)))
             .toList(),
       ),
     );

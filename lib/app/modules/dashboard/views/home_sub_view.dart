@@ -18,23 +18,23 @@ class HomeSubViewss extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return Obx(() {
      if (controller.activePage.value == 1) {
-        return const Expanded(child: SearchView());
+        return const SearchView();
       } else if (controller.activePage.value == 2) {
-        return const Expanded(child: NotifcationView());
+        return const NotifcationView();
       } else if (controller.activePage.value == 3) {
-        return const Expanded(child: BonosView());
+        return const BonosView();
       } else if (controller.activePage.value == 4) {
-        return const Expanded(child: CashPriceView());
+        return const CashPriceView();
       } else if (controller.activePage.value == 5) {
-        return const Expanded(child: LocationView());
+        return const LocationView();
       } else if (controller.activePage.value == 6) {
-        return const Expanded(child: MoreOptionView());
+        return const MoreOptionView();
       } else if (controller.activePage.value == 7) {
-        return const Expanded(child: SwitcherView());
+        return const SwitcherView();
       } else if (controller.activePage.value == 8) {
-        return const Expanded(child: CredibilityView());
+        return const CredibilityView();
       } else {
-        return const Expanded(child: HomeView());
+        return const HomeView();
       }
     });
   }

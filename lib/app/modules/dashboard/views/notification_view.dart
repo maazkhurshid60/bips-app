@@ -12,7 +12,7 @@ class NotifcationView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
+      padding: EdgeInsets.only(left: 5.w,right:5.w, top: 15.h, bottom:20.h),
       child: Column(
         children: [
           SizedBox(height: 30.h),

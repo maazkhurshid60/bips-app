@@ -13,7 +13,7 @@ class SearchView extends GetView<DashboardController> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-        padding: EdgeInsets.symmetric(vertical:  10.h, horizontal: 5.w),
+        padding: EdgeInsets.only(left: 10.w,right:10.h, top: 10.h, bottom:20.h),
         height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -42,7 +42,7 @@ class Text1Widget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
        
-        Text("Bienvenue!", style: AppTextStyle.slogenTextStyleGeneral.copyWith(fontSize: 50.sp))
+        Text("Bienvenue!", style: AppTextStyle.slogenTextStyleGeneral.copyWith(fontSize: 60.sp))
       ],
     );
   }

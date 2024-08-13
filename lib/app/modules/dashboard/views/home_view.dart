@@ -12,7 +12,7 @@ class HomeView extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
-      padding: EdgeInsets.only(top: 40.h),
+      padding: EdgeInsets.only(top: 45.h, right: 5.w),
       decoration: const BoxDecoration(
           color: Colors.black,
           image: DecorationImage(
@@ -101,7 +101,7 @@ class HomeView extends GetView<DashboardController> {
                 ),
                 const Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 15.h, right: 8.w),
+                  padding: EdgeInsets.only(bottom: 15.h, right: 5.w),
                   child: Column(
                     children: [
                       GestureDetector(

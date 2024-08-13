@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 class DashboardController extends GetxController {
   // -----------dashbboard main section start-----------
   RxInt activePage = 0.obs;
+  RxInt activeBottomIndex = 2.obs;
   // -----------dashbboard main section end-------------
   // -----------Home main section start-----------------
   // -----------Home main section end-------------------

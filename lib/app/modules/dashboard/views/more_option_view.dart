@@ -12,7 +12,7 @@ class MoreOptionView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+      padding: EdgeInsets.only(left: 10.w,right:10.h, top: 10.h, bottom:20.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -20,7 +20,7 @@ class MoreOptionView extends GetView<DashboardController> {
               height: 200.h,
               child: Column(
                 children: [
-                  SizedBox(height: 30.h),
+                  SizedBox(height: 50.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,

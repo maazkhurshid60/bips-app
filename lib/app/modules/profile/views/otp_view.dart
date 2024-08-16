@@ -16,7 +16,7 @@ class OtpVerificationView extends GetView<ProfileController> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0).h,
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10).h,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

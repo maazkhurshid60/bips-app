@@ -12,7 +12,7 @@ class HomeView extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
-      padding: EdgeInsets.only(top: 45.h, right: 5.w),
+      padding: EdgeInsets.only(top: 45.h, right: 5.w, left: 5.w),
       decoration: const BoxDecoration(
           color: Colors.black,
           image: DecorationImage(
@@ -28,8 +28,8 @@ class HomeView extends GetView<DashboardController> {
                     controller.activePage.value = 1;
                   },
                   child: Container(
-                    height: 25.h,
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                    height: 20.h,
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
                     decoration:  const ShapeDecoration(
                        color: Color.fromARGB(255, 187, 185, 185),
                       shape: OvalBorder(
@@ -52,14 +52,14 @@ class HomeView extends GetView<DashboardController> {
                   onTap: () {
                     controller.activePage.value = 5;
                   },
-                  child: Icon(Icons.location_on, size: 25.h)),
+                  child: Icon(Icons.location_on, size: 20.h)),
               const Spacer(),
               GestureDetector(
                   onTap: () {
                     controller.activePage.value = 2;
                   },
                   child: Image.asset("assets/images/cart.png",
-                      height: 25.h, width: 40.w)),
+                      height: 20.h, width: 40.w)),
             ],
           ),
           const Spacer(),
@@ -109,34 +109,34 @@ class HomeView extends GetView<DashboardController> {
                             controller.activePage.value = 3;
                           },
                           child: Image.asset("assets/images/box.png",
-                              height: 30.h, width: 30.w)),
+                              height: 25.h, width: 25.w)),
                       SizedBox(height: 5.h),
                       Text("Bonô", style: AppTextStyle.otherTextStyle.copyWith(fontSize: 14.sp, fontWeight: FontWeight.w900)),
                       SizedBox(height: 5.h),
                       Image.asset("assets/images/hand.png",
-                          height: 30.h, width: 30.w),
+                          height: 25.h, width: 25.w),
                       SizedBox(height: 5.h),
                       GestureDetector(
                           onTap: () {
                             controller.activePage.value = 4;
                           },
                           child: Image.asset("assets/images/cash.png",
-                              height: 30.h, width: 30.w)),
+                              height: 25.h, width: 25.w)),
                       SizedBox(height: 5.h),
                     GestureDetector(
                           onTap: () {
                             controller.activePage.value = 4;
                           },
                           child: Image.asset("assets/images/messages.png",
-                              height: 30.h, width: 30.w)),
+                              height: 25.h, width: 25.w)),
                       SizedBox(height: 5.h),
                       GestureDetector(
                           onTap: () {
                             controller.activePage.value = 6;
                           },
                           child: Image.asset("assets/images/pop.png",
-                              height: 30.h, width: 30.w)),
-                    ],
+                              height: 25.h, width: 25.w)),
+                    ]
                   ),
                 )
               ]),

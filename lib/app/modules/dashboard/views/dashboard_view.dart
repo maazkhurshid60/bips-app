@@ -18,7 +18,7 @@ class DashboardView extends GetView<DashboardController> {
        
         buttonBackgroundColor:Colors.white,
      color: Colors.black,
-    backgroundColor: Colors.black.withOpacity(0.5),
+    backgroundColor: controller.activePage.value !=0 ? Colors.transparent: const Color.fromARGB(255, 209, 197, 166),
   
   index: controller.activeBottomIndex.value,
     items:  <Widget>[

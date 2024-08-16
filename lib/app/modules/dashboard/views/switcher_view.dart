@@ -12,7 +12,8 @@ class SwitcherView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 10.w,right:10.h, top: 10.h, bottom:20.h),
+      padding:
+          EdgeInsets.only(left: 10.w, right: 10.h, top: 10.h, bottom: 20.h),
       child: Column(
         children: [
           SizedBox(height: 50.h),
@@ -20,9 +21,10 @@ class SwitcherView extends GetView<DashboardController> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-               Image.asset("assets/images/search.png", height: 25.h, width: 40.w),
-              Icon(Icons.location_on, size: 25.h),
-              Image.asset("assets/images/cart.png", height: 25.h, width: 40.w),
+              Image.asset("assets/images/search.png",
+                  height: 20.h),
+              Icon(Icons.location_on, size: 20.h),
+              Image.asset("assets/images/cart.png", height: 20.h),
             ],
           ),
           SizedBox(height: 30.h),
@@ -39,16 +41,21 @@ class SwitcherView extends GetView<DashboardController> {
                 Image.asset("assets/images/switcher.png",
                     height: 50.h, width: 40.w),
                 SizedBox(width: 10.w),
-                Text("Switcher", style: AppTextStyle.largebold.copyWith(fontWeight: FontWeight.w500))
+                Text("Switcher",
+                    style: AppTextStyle.largebold
+                        .copyWith(fontWeight: FontWeight.w500))
               ],
             ),
           ),
           SizedBox(height: 30.h),
           const CustomRowWidget(),
           SizedBox(height: 30.h),
-          const CustomRowWidget(img: "gym", text: "Coworker'S",),
+          const CustomRowWidget(
+            img: "gym",
+            text: "Coworker'S",
+          ),
           SizedBox(height: 30.h),
-           const CustomRowWidget(text: "Offreur"),
+          const CustomRowWidget(text: "Offreur"),
           const Spacer(),
           BackScreen(controller: controller),
         ],
@@ -58,24 +65,21 @@ class SwitcherView extends GetView<DashboardController> {
 }
 
 class CustomRowWidget extends StatelessWidget {
-  const CustomRowWidget({
-    super.key,
-    this.img,
-    this.text
-  });
+  const CustomRowWidget({super.key, this.img, this.text});
   final String? img;
   final String? text;
 
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      Image.asset("assets/images/${img??"chief"}.png", height: 90.h, width: 90.w),
+      Image.asset("assets/images/${img ?? "chief"}.png",
+          height: 90.h, width: 90.w),
       SizedBox(width: 10.w),
       Padding(
         padding: const EdgeInsets.only(top: 80.0),
         child: FittedBox(
             fit: BoxFit.contain,
-            child: Text(text??"Entrepreneur du tertiaire",
+            child: Text(text ?? "Entrepreneur du tertiaire",
                 style: AppTextStyle.mediumbold
                     .copyWith(fontWeight: FontWeight.w900, fontSize: 12.sp))),
       ),

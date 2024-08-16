@@ -1,3 +1,4 @@
+import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,10 +16,10 @@ class SplashView extends GetView<SplashController> {
       body: SafeArea(
         child: Center(
             child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 40.h),
+          padding: EdgeInsets.symmetric(vertical: 40.h, horizontal: 10.w),
           child: Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black),
+                  border: Border.all(color: AppColors.golden),
                   borderRadius: BorderRadius.circular(50.r)),
               width: double.infinity,
               child: Obx(() => controller.textIndex.value == 0

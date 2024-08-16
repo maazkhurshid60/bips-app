@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/widgets/custom_cliper.dart';
 import 'package:bips_app/app/widgets/custom_nav_painter.dart';
 import 'package:bips_app/app/widgets/custom_navbar_button.dart';
@@ -140,7 +141,7 @@ class CustomCurvedNavigationBarState extends State<CustomCurvedNavigationBar>
                           ),
                           child: Container(
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.amber, width: 3),
+                              border: Border.all(color: AppColors.golden, width: 3),
                               shape: BoxShape.circle
                             ),
                             child: Material(

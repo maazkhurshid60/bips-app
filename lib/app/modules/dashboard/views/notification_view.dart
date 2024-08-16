@@ -12,12 +12,12 @@ class NotifcationView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 5.w,right:5.w, top: 15.h, bottom:20.h),
+      padding: EdgeInsets.only(left: 10.w,right:10.w, top: 15.h, bottom:20.h),
       child: Column(
         children: [
           SizedBox(height: 30.h),
           Image.asset("assets/images/cart.png", height: 50.h),
-          SizedBox(height: 30.h),
+          SizedBox(height: 60.h),
           Align(
               alignment: Alignment.centerLeft,
               child: Text("5 Juin, 2024", style: AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
@@ -100,7 +100,7 @@ class NotifcationRow extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 40.0),
             child: Icon(Icons.more_horiz),
           ),
-          SizedBox(width: 20.h)
+          SizedBox(width: 10.w)
         ],
       ),
     );

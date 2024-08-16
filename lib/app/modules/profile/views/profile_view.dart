@@ -16,7 +16,7 @@ class ProfileView extends GetView<ProfileController> {
       body: SafeArea(
         child: Padding(
 
-          padding: EdgeInsets.symmetric(vertical:  10.h),
+          padding: EdgeInsets.symmetric(vertical:  10.h, horizontal: 10.w),
           child: Column(
             children: [
               SizedBox(height: 30.h),

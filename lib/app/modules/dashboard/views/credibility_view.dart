@@ -20,9 +20,9 @@ class CredibilityView extends GetView<DashboardController> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-             Image.asset("assets/images/search.png", height: 25.h, width: 40.w),
-              Icon(Icons.location_on, size: 25.h),
-              Image.asset("assets/images/cart.png", height: 25.h, width: 40.w),
+             Image.asset("assets/images/search.png", height: 20.h),
+              Icon(Icons.location_on, size: 20.h),
+              Image.asset("assets/images/cart.png", height: 20.h),
             ],
           ),
           SizedBox(height: 30.h),

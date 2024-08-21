@@ -1,7 +1,6 @@
-import 'package:bips_app/app/constants/app_colors.dart';
-import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../controllers/splash_controller.dart';
@@ -14,54 +13,30 @@ class SplashView extends GetView<SplashController> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Center(
-            child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 40.h, horizontal: 10.w),
-          child: Container(
-              decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.golden),
-                  borderRadius: BorderRadius.circular(50.r)),
-              width: double.infinity,
-              child: Obx(() => controller.textIndex.value == 0
-                  ? const Text1Widget()
-                  : const Text2Widget())),
-        )),
-      ),
+          child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 39.w, vertical: 45.h),
+        child: Container(
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(68.r),
+              border: Border.all(color: const Color(0xffBFBFBF))),
+          child: Obx(() => controller.textIndex.value == 1
+              ? SvgPicture.asset('assets/svgs/splash_text.svg',
+                  width: 343.w, height: 310.w)
+              : Opacity(
+                  opacity: 0.80,
+                  child: Text(
+                    'Bienvenue!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 72.sp,
+                        fontFamily: 'times',
+                        fontWeight: FontWeight.w400),
+                  ),
+                )),
+        ),
+      )),
     );
-  }
-}
-
-class Text1Widget extends StatelessWidget {
-  const Text1Widget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-       
-        Text("Bienvenue!", style: AppTextStyle.slogenTextStyleGeneral.copyWith(fontSize: 60.sp))
-      ],
-    );
-  }
-}
-
-class Text2Widget extends StatelessWidget {
-  const Text2Widget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text("Bip’S", style: AppTextStyle.logeTextStyle),
-          Text("Oser autrement!", style: AppTextStyle.slogenTextStyle),
-        ]);
   }
 }

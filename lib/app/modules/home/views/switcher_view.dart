@@ -1,12 +1,12 @@
 import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
-import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
-import 'package:bips_app/app/modules/dashboard/views/search_view.dart';
+import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
+import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class SwitcherView extends GetView<DashboardController> {
+class SwitcherView extends GetView<HomeController> {
   const SwitcherView({super.key});
 
   @override
@@ -21,8 +21,7 @@ class SwitcherView extends GetView<DashboardController> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset("assets/images/search.png",
-                  height: 20.h),
+              Image.asset("assets/images/search.png", height: 20.h),
               Icon(Icons.location_on, size: 20.h),
               Image.asset("assets/images/cart.png", height: 20.h),
             ],

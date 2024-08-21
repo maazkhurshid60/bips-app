@@ -1,18 +1,20 @@
 import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
-import 'package:bips_app/app/modules/dashboard/views/search_view.dart';
+import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
+import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class CashPriceView extends GetView<DashboardController> {
+class CashPriceView extends GetView<HomeController> {
   const CashPriceView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 10.w,right:10.h, top: 10.h, bottom:20.h),
+      padding:
+          EdgeInsets.only(left: 10.w, right: 10.h, top: 10.h, bottom: 20.h),
       child: Column(
         children: [
           SizedBox(height: 50.h),
@@ -27,13 +29,14 @@ class CashPriceView extends GetView<DashboardController> {
               controller.cashpriceCurrentIndex.value == 0
                   ? "Marie, K"
                   : "Sectoriel",
-              style: AppTextStyle.otherTextStyle.copyWith(fontWeight: FontWeight.w500))),
+              style: AppTextStyle.otherTextStyle
+                  .copyWith(fontWeight: FontWeight.w500))),
           SizedBox(height: 20.h),
 
           //------------main content------------
           const ChartWidget(),
           SizedBox(
-            height:  10.h,
+            height: 10.h,
           ),
 
           //--------------dots--------------------
@@ -49,6 +52,7 @@ class CashPriceView extends GetView<DashboardController> {
 }
 
 List<Widget> items = [const Item1(), const Item2()];
+
 class ChartWidget extends GetView<DashboardController> {
   const ChartWidget({
     super.key,
@@ -63,10 +67,9 @@ class ChartWidget extends GetView<DashboardController> {
           controller.cashpriceCurrentIndex.value = value;
         },
         itemCount: 2,
-        itemBuilder:(context, index) {
+        itemBuilder: (context, index) {
           return items[index];
         },
-       
       ),
     );
   }
@@ -76,7 +79,6 @@ class Item1 extends StatelessWidget {
   const Item1({
     super.key,
   });
-  
 
   @override
   Widget build(BuildContext context) {
@@ -113,53 +115,15 @@ class Item1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.proposé", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
+              Text("P.proposé",
+                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
               SizedBox(width: 3.w),
               Container(
                 height: 15.h,
                 width: 100.w,
                 decoration: const ShapeDecoration(
-                   color: AppColors.golden,
-                  
-                  shape: OvalBorder(
-                  
-                )),
-               
+                    color: AppColors.golden, shape: OvalBorder()),
               ),
-               Padding(
-                padding: EdgeInsets.only(bottom: 40.0.h),
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      "assets/images/mbox.png",
-                      height: 40.h,
-                      width: 60.w,
-                    ),
-                    Positioned(
-                      top: 10.h,
-                      right: 15.w,
-                      child:  Text("800/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
-                  ],
-                ),
-              )
-            ],
-          ),
-        
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("P.minimum", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
-              SizedBox(width: 3.w),
-              Container(
-                height: 15.h,
-                width: 80.w,
-               decoration: const ShapeDecoration(
-                   color: AppColors.golden,
-                  
-                  shape: OvalBorder(
-                  
-                )),              ),
               Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
                 child: Stack(
@@ -170,30 +134,30 @@ class Item1 extends StatelessWidget {
                       width: 60.w,
                     ),
                     Positioned(
-                      top: 10.h,
-                      right: 15.w,
-                      child:  Text("700/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
+                        top: 10.h,
+                        right: 15.w,
+                        child: Text("800/J",
+                            style: AppTextStyle.smallbold
+                                .copyWith(fontSize: 12.sp)))
                   ],
                 ),
               )
             ],
           ),
-         
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.élevé", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
+              Text("P.minimum",
+                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
               SizedBox(width: 3.w),
               Container(
-                height: 20.h,
-                width: 170.w,
+                height: 15.h,
+                width: 80.w,
                 decoration: const ShapeDecoration(
-                   color: AppColors.golden,
-                  shape: OvalBorder(
-                  
-                )),              ),
-               Padding(
+                    color: AppColors.golden, shape: OvalBorder()),
+              ),
+              Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
                 child: Stack(
                   children: [
@@ -203,9 +167,44 @@ class Item1 extends StatelessWidget {
                       width: 60.w,
                     ),
                     Positioned(
-                      top: 10.h,
-                      right: 15.w,
-                      child:  Text("900/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
+                        top: 10.h,
+                        right: 15.w,
+                        child: Text("700/J",
+                            style: AppTextStyle.smallbold
+                                .copyWith(fontSize: 12.sp)))
+                  ],
+                ),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("P.élevé",
+                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
+              SizedBox(width: 3.w),
+              Container(
+                height: 20.h,
+                width: 170.w,
+                decoration: const ShapeDecoration(
+                    color: AppColors.golden, shape: OvalBorder()),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 40.0.h),
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      "assets/images/mbox.png",
+                      height: 40.h,
+                      width: 60.w,
+                    ),
+                    Positioned(
+                        top: 10.h,
+                        right: 15.w,
+                        child: Text("900/J",
+                            style: AppTextStyle.smallbold
+                                .copyWith(fontSize: 12.sp)))
                   ],
                 ),
               )
@@ -213,19 +212,18 @@ class Item1 extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15).w,
-            child:
-                const Text("400   500   600   700   800   900   100   1100"),
+            child: const Text("400   500   600   700   800   900   100   1100"),
           )
         ],
       ),
     );
   }
 }
+
 class Item2 extends StatelessWidget {
   const Item2({
     super.key,
   });
-  
 
   @override
   Widget build(BuildContext context) {
@@ -262,46 +260,14 @@ class Item2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.minimum", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
+              Text("P.minimum",
+                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
               SizedBox(width: 3.w),
               Container(
                 height: 15.h,
                 width: 100.w,
                 decoration: const ShapeDecoration(
-                    color: AppColors.golden,
-                    shape: OvalBorder()),
-              ),
-               Padding(
-                padding: EdgeInsets.only(bottom: 40.0.h),
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      "assets/images/mbox.png",
-                      height: 40.h,
-                      width: 60.w,
-                    ),
-                    Positioned(
-                      top: 10.h,
-                      right: 15.w,
-                      child:  Text("800/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
-                  ],
-                ),
-              )
-            ],
-          ),
-         
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("P.moyen", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
-              SizedBox(width: 3.w),
-              Container(
-                height: 15.h,
-                width: 150.w,
-               decoration: const ShapeDecoration(
-                    color: AppColors.golden,
-                    shape: OvalBorder()),
+                    color: AppColors.golden, shape: OvalBorder()),
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
@@ -313,29 +279,30 @@ class Item2 extends StatelessWidget {
                       width: 60.w,
                     ),
                     Positioned(
-                      top: 10.h,
-                      right: 15.w,
-                      child:  Text("900/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
+                        top: 10.h,
+                        right: 15.w,
+                        child: Text("800/J",
+                            style: AppTextStyle.smallbold
+                                .copyWith(fontSize: 12.sp)))
                   ],
                 ),
               )
             ],
           ),
-       
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.élevé", style: AppTextStyle.smallbold.copyWith(fontSize:12.sp)),
+              Text("P.moyen",
+                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
               SizedBox(width: 3.w),
               Container(
-                height: 20.h,
-                width: 200.w,
+                height: 15.h,
+                width: 150.w,
                 decoration: const ShapeDecoration(
-                    color: AppColors.golden,
-                    shape: OvalBorder()),
+                    color: AppColors.golden, shape: OvalBorder()),
               ),
-               Padding(
+              Padding(
                 padding: EdgeInsets.only(bottom: 40.0.h),
                 child: Stack(
                   children: [
@@ -345,9 +312,44 @@ class Item2 extends StatelessWidget {
                       width: 60.w,
                     ),
                     Positioned(
-                      top: 10.h,
-                      right: 15.w,
-                      child:  Text("1000/J",style:AppTextStyle.smallbold.copyWith(fontSize:12.sp)))
+                        top: 10.h,
+                        right: 15.w,
+                        child: Text("900/J",
+                            style: AppTextStyle.smallbold
+                                .copyWith(fontSize: 12.sp)))
+                  ],
+                ),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("P.élevé",
+                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
+              SizedBox(width: 3.w),
+              Container(
+                height: 20.h,
+                width: 200.w,
+                decoration: const ShapeDecoration(
+                    color: AppColors.golden, shape: OvalBorder()),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 40.0.h),
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      "assets/images/mbox.png",
+                      height: 40.h,
+                      width: 60.w,
+                    ),
+                    Positioned(
+                        top: 10.h,
+                        right: 15.w,
+                        child: Text("1000/J",
+                            style: AppTextStyle.smallbold
+                                .copyWith(fontSize: 12.sp)))
                   ],
                 ),
               )
@@ -370,7 +372,7 @@ class DotsWidget extends StatelessWidget {
     required this.controller,
   });
 
-  final DashboardController controller;
+  final HomeController controller;
 
   @override
   Widget build(BuildContext context) {

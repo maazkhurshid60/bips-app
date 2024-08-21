@@ -1,18 +1,19 @@
 import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
-import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
-import 'package:bips_app/app/modules/dashboard/views/search_view.dart';
+import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
+import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class NotifcationView extends GetView<DashboardController> {
+class NotifcationView extends GetView<HomeController> {
   const NotifcationView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 10.w,right:10.w, top: 15.h, bottom:20.h),
+      padding:
+          EdgeInsets.only(left: 10.w, right: 10.w, top: 15.h, bottom: 20.h),
       child: Column(
         children: [
           SizedBox(height: 30.h),
@@ -20,21 +21,24 @@ class NotifcationView extends GetView<DashboardController> {
           SizedBox(height: 60.h),
           Align(
               alignment: Alignment.centerLeft,
-              child: Text("5 Juin, 2024", style: AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
+              child: Text("5 Juin, 2024",
+                  style: AppTextStyle.otherTextStyle
+                      .copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
           SizedBox(height: 10.h),
-         
-         for(int i=0;i<notificationItem.length;i++)...{
-           NotifcationRow( t1: notificationItem[i].t1,
-              t2: notificationItem[i].t2,
-             t3: notificationItem[i].t3,
-            t4: notificationItem[i].t4),
+          for (int i = 0; i < notificationItem.length; i++) ...{
+            NotifcationRow(
+                t1: notificationItem[i].t1,
+                t2: notificationItem[i].t2,
+                t3: notificationItem[i].t3,
+                t4: notificationItem[i].t4),
             SizedBox(height: 3.h),
-         },
-         
+          },
           SizedBox(height: 10.h),
           Align(
               alignment: Alignment.centerLeft,
-              child: Text("4 Juin, 2024", style: AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
+              child: Text("4 Juin, 2024",
+                  style: AppTextStyle.otherTextStyle
+                      .copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
           const Spacer(),
           BackScreen(controller: controller),
         ],
@@ -84,7 +88,8 @@ class NotifcationRow extends StatelessWidget {
               FittedBox(
                   fit: BoxFit.contain,
                   child: Text(t2 ?? 'Marc.k / ebeniste',
-                      style: AppTextStyle.otherTextStyle.copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
+                      style: AppTextStyle.otherTextStyle.copyWith(
+                          fontSize: 16.sp, fontWeight: FontWeight.bold))),
               FittedBox(
                 fit: BoxFit.contain,
                 child: Text(t3 ?? 'Propose ses services a 700/H',
@@ -108,20 +113,27 @@ class NotifcationRow extends StatelessWidget {
 }
 
 List<NotifcaitionDetails> notificationItem = [
-  NotifcaitionDetails(t2: "Marc.K / ebeniste", t3: "Propose ses services a 700/H", t4: "12:11", t1: "B"),
+  NotifcaitionDetails(
+      t2: "Marc.K / ebeniste",
+      t3: "Propose ses services a 700/H",
+      t4: "12:11",
+      t1: "B"),
   NotifcaitionDetails(
       t1: "1",
       t2: "Jean. P / peintres",
       t3: "a été ajouté à votre panier",
       t4: "11:17"),
-  NotifcaitionDetails( t1: "2",
-            t2: "Olivier. N / peintre",
-            t3: "a été ajouté à votre panier",
-            t4: "11:14",),
-  NotifcaitionDetails( t1: "B",
-            t2: "Julie. O / vaiselle",
-            t3: "offre 10% de réductiEoxnerscuicrese",
-            t4: "09:25"),
+  NotifcaitionDetails(
+    t1: "2",
+    t2: "Olivier. N / peintre",
+    t3: "a été ajouté à votre panier",
+    t4: "11:14",
+  ),
+  NotifcaitionDetails(
+      t1: "B",
+      t2: "Julie. O / vaiselle",
+      t3: "offre 10% de réductiEoxnerscuicrese",
+      t4: "09:25"),
 ];
 
 class NotifcaitionDetails {

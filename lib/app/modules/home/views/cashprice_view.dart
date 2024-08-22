@@ -3,6 +3,7 @@ import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -12,40 +13,104 @@ class CashPriceView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding:
-          EdgeInsets.only(left: 10.w, right: 10.h, top: 10.h, bottom: 20.h),
-      child: Column(
-        children: [
-          SizedBox(height: 50.h),
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.only(left: 10.w, right: 10.h, bottom: 20.h),
+          child: Column(
+            children: [
+              // ---------header------------------
 
-          // ---------header------------------
-          Image.asset(
-            "assets/images/cash.png",
-            height: 50.h,
-            width: 50.h,
-          ),
-          Obx(() => Text(
-              controller.cashpriceCurrentIndex.value == 0
-                  ? "Marie, K"
-                  : "Sectoriel",
-              style: AppTextStyle.otherTextStyle
-                  .copyWith(fontWeight: FontWeight.w500))),
-          SizedBox(height: 20.h),
+              Icon(Icons.location_on_sharp, size: 31.h),
+              Text(
+                '4 km',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14.sp,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              Container(
+                width: 396.21.w,
+                height: 45.53.h,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side:
+                        const BorderSide(width: 2.32, color: Color(0xFFBFBFBF)),
+                    borderRadius: BorderRadius.circular(30.21),
+                  ),
+                ),
+                child: CupertinoSearchTextField(
+                  placeholder: "De qui avez-vous besoin?",
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.only(left: 15.0.w),
+                    child: Icon(Icons.search, size: 22.h, color: Colors.black),
+                  ),
+                  style: TextStyle(fontSize: 14.sp, color: Color(0xffBFBFBF)),
+                  backgroundColor: Colors.transparent,
+                  padding: EdgeInsets.only(left: 20),
+                ),
+              ),
+              SizedBox(height: 15.h),
+              Padding(
+                padding: const EdgeInsets.only(right: 50.0).w,
+                child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Icon(Icons.location_on_sharp, size: 31.h)),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 50.0).w,
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Obx(() => Text(
+                        controller.cashpriceCurrentIndex.value == 0
+                            ? 'Marie K'
+                            : "Sectoriel",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14.sp,
+                          fontFamily: 'Inter',
+                          fontWeight:
+                              controller.cashpriceCurrentIndex.value == 0
+                                  ? FontWeight.w200
+                                  : FontWeight.w500,
+                        ),
+                      )),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  alignment: Alignment.center,
+                  width: 80.w,
+                  height: 30.h,
+                  child: Text(
+                    "Gardienne",
+                    style: AppTextStyle.otherTextStyle
+                        .copyWith(fontSize: 14.sp, fontWeight: FontWeight.bold),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Color(0xffBFBFBF),
+                      borderRadius: BorderRadius.circular(5).r),
+                ),
+              ),
+              SizedBox(height: 10.h),
+              //------------main content------------
+              const ChartWidget(),
+              SizedBox(
+                height: 10.h,
+              ),
 
-          //------------main content------------
-          const ChartWidget(),
-          SizedBox(
-            height: 10.h,
-          ),
+              //--------------dots--------------------
 
-          //--------------dots--------------------
-          DotsWidget(controller: controller),
-          SizedBox(
-            height: 50.h,
+              SizedBox(
+                height: 50.h,
+              ),
+              BackScreen(controller: controller)
+            ],
           ),
-          BackScreen(controller: controller)
-        ],
+        ),
       ),
     );
   }
@@ -83,137 +148,147 @@ class Item1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       width: double.infinity,
       decoration: BoxDecoration(
-          border: Border.all(color: AppColors.golden, width: 2),
-          borderRadius: BorderRadius.circular(40).r),
+          color: Color(0x47BFBFBF), borderRadius: BorderRadius.circular(10).r),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("Gardienne", style: AppTextStyle.extraMediumbold),
-              Padding(
-                padding: const EdgeInsets.only(right: 42.0),
-                child: Icon(Icons.location_on, size: 25.h),
-              ),
-            ],
+          Text(
+            '5 juin, 2024',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 14.sp,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w100,
+              height: 0,
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("05 juin,2024", style: AppTextStyle.smallbold),
-              Text("Abobo / Selmer", style: AppTextStyle.smallbold),
-            ],
-          ),
+          SizedBox(height: 60.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.proposé",
-                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
-              SizedBox(width: 3.w),
+              Text(
+                'Prix Minimum = = = = = = = = ',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12.86,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w100,
+                  height: 0,
+                ),
+              ),
+              SizedBox(width: 2.w),
               Container(
-                height: 15.h,
-                width: 100.w,
+                height: 25.h,
+                alignment: Alignment.center,
+                width: 40.w,
+                child: Text(
+                  '800',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10.37.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w800,
+                    height: 0,
+                  ),
+                ),
                 decoration: const ShapeDecoration(
                     color: AppColors.golden, shape: OvalBorder()),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 40.0.h),
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      "assets/images/mbox.png",
-                      height: 40.h,
-                      width: 60.w,
-                    ),
-                    Positioned(
-                        top: 10.h,
-                        right: 15.w,
-                        child: Text("800/J",
-                            style: AppTextStyle.smallbold
-                                .copyWith(fontSize: 12.sp)))
-                  ],
-                ),
-              )
             ],
           ),
+          SizedBox(height: 100.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.minimum",
-                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
-              SizedBox(width: 3.w),
+              Text(
+                'Prix Moyen = = = = = = = = = = = = = = =',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12.86,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w100,
+                  height: 0,
+                ),
+              ),
+              SizedBox(width: 2.w),
               Container(
-                height: 15.h,
-                width: 80.w,
+                height: 25.h,
+                alignment: Alignment.center,
+                width: 40.w,
+                child: Text(
+                  '1000',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10.37.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w800,
+                    height: 0,
+                  ),
+                ),
                 decoration: const ShapeDecoration(
                     color: AppColors.golden, shape: OvalBorder()),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 40.0.h),
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      "assets/images/mbox.png",
-                      height: 40.h,
-                      width: 60.w,
-                    ),
-                    Positioned(
-                        top: 10.h,
-                        right: 15.w,
-                        child: Text("700/J",
-                            style: AppTextStyle.smallbold
-                                .copyWith(fontSize: 12.sp)))
-                  ],
-                ),
-              )
             ],
           ),
+          SizedBox(height: 100.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.élevé",
-                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
-              SizedBox(width: 3.w),
+              Text(
+                'Prix Élevé = = = = = = = = = = = = = = = = = = = = ',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12.86,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w100,
+                  height: 0,
+                ),
+              ),
+              SizedBox(width: 2.w),
               Container(
-                height: 20.h,
-                width: 170.w,
+                height: 25.h,
+                alignment: Alignment.center,
+                width: 40.w,
+                child: Text(
+                  '1100',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10.37.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w800,
+                    height: 0,
+                  ),
+                ),
                 decoration: const ShapeDecoration(
                     color: AppColors.golden, shape: OvalBorder()),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 40.0.h),
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      "assets/images/mbox.png",
-                      height: 40.h,
-                      width: 60.w,
-                    ),
-                    Positioned(
-                        top: 10.h,
-                        right: 15.w,
-                        child: Text("900/J",
-                            style: AppTextStyle.smallbold
-                                .copyWith(fontSize: 12.sp)))
-                  ],
-                ),
-              )
             ],
           ),
+          SizedBox(height: 40.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15).w,
-            child: const Text("400   500   600   700   800   900   100   1100"),
-          )
+            padding: const EdgeInsets.symmetric(horizontal: 30).w,
+            child: const Text(
+              "400   500   600   700   800   900   1000   1100",
+              style: TextStyle(fontWeight: FontWeight.w100),
+            ),
+          ),
+          Spacer(),
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            CircleAvatar(backgroundColor: Colors.black, radius: 7.r),
+            SizedBox(width: 5.w),
+            CircleAvatar(backgroundColor: Colors.black, radius: 4.r),
+          ]),
+          SizedBox(height: 5.h),
         ],
       ),
     );
@@ -228,138 +303,147 @@ class Item2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       width: double.infinity,
       decoration: BoxDecoration(
-          border: Border.all(color: AppColors.golden, width: 2),
-          borderRadius: BorderRadius.circular(40).r),
+          color: Color(0x47BFBFBF), borderRadius: BorderRadius.circular(10).r),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("Gardienne", style: AppTextStyle.extraMediumbold),
-              Padding(
-                padding: const EdgeInsets.only(right: 42.0),
-                child: Icon(Icons.location_on, size: 25.h),
-              ),
-            ],
+          Text(
+            '5 juin, 2024',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 14.sp,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w100,
+              height: 0,
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("05 juin,2024", style: AppTextStyle.smallbold),
-              Text("Abobo / Selmer", style: AppTextStyle.smallbold),
-            ],
-          ),
+          SizedBox(height: 60.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.minimum",
-                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
-              SizedBox(width: 3.w),
+              Text(
+                'Prix Minimum = = = = = = = = ',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12.86,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w100,
+                  height: 0,
+                ),
+              ),
+              SizedBox(width: 2.w),
               Container(
-                height: 15.h,
-                width: 100.w,
+                height: 25.h,
+                alignment: Alignment.center,
+                width: 40.w,
+                child: Text(
+                  '800',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10.37.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w800,
+                    height: 0,
+                  ),
+                ),
                 decoration: const ShapeDecoration(
                     color: AppColors.golden, shape: OvalBorder()),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 40.0.h),
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      "assets/images/mbox.png",
-                      height: 40.h,
-                      width: 60.w,
-                    ),
-                    Positioned(
-                        top: 10.h,
-                        right: 15.w,
-                        child: Text("800/J",
-                            style: AppTextStyle.smallbold
-                                .copyWith(fontSize: 12.sp)))
-                  ],
-                ),
-              )
             ],
           ),
+          SizedBox(height: 100.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.moyen",
-                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
-              SizedBox(width: 3.w),
+              Text(
+                'Prix Moyen = = = = = = = = = = = = = = =',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12.86,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w100,
+                  height: 0,
+                ),
+              ),
+              SizedBox(width: 2.w),
               Container(
-                height: 15.h,
-                width: 150.w,
+                height: 25.h,
+                alignment: Alignment.center,
+                width: 40.w,
+                child: Text(
+                  '1000',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10.37.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w800,
+                    height: 0,
+                  ),
+                ),
                 decoration: const ShapeDecoration(
                     color: AppColors.golden, shape: OvalBorder()),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 40.0.h),
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      "assets/images/mbox.png",
-                      height: 40.h,
-                      width: 60.w,
-                    ),
-                    Positioned(
-                        top: 10.h,
-                        right: 15.w,
-                        child: Text("900/J",
-                            style: AppTextStyle.smallbold
-                                .copyWith(fontSize: 12.sp)))
-                  ],
-                ),
-              )
             ],
           ),
+          SizedBox(height: 100.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("P.élevé",
-                  style: AppTextStyle.smallbold.copyWith(fontSize: 12.sp)),
-              SizedBox(width: 3.w),
+              Text(
+                'Prix Élevé = = = = = = = = = = = = = = = = = = = = ',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12.86,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w100,
+                  height: 0,
+                ),
+              ),
+              SizedBox(width: 2.w),
               Container(
-                height: 20.h,
-                width: 200.w,
+                height: 25.h,
+                alignment: Alignment.center,
+                width: 40.w,
+                child: Text(
+                  '1100',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10.37.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w800,
+                    height: 0,
+                  ),
+                ),
                 decoration: const ShapeDecoration(
                     color: AppColors.golden, shape: OvalBorder()),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 40.0.h),
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      "assets/images/mbox.png",
-                      height: 40.h,
-                      width: 60.w,
-                    ),
-                    Positioned(
-                        top: 10.h,
-                        right: 15.w,
-                        child: Text("1000/J",
-                            style: AppTextStyle.smallbold
-                                .copyWith(fontSize: 12.sp)))
-                  ],
-                ),
-              )
             ],
           ),
+          SizedBox(height: 40.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15).w,
-            child:
-                const Text("400   500   600   700   800   900   1000   1100"),
-          )
+            padding: const EdgeInsets.symmetric(horizontal: 0).w,
+            child: const Text(
+              "400   500   600   700   800   900   1000   1100   1200   1300",
+              style: TextStyle(fontWeight: FontWeight.w100),
+            ),
+          ),
+          Spacer(),
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            CircleAvatar(backgroundColor: Colors.black, radius: 4.r),
+            SizedBox(width: 5.w),
+            CircleAvatar(backgroundColor: Colors.black, radius: 7.r),
+          ]),
+          SizedBox(height: 5.h),
         ],
       ),
     );

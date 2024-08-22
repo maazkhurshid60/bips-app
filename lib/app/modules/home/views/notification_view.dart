@@ -2,8 +2,10 @@ import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class NotifcationView extends GetView<HomeController> {
@@ -11,44 +13,93 @@ class NotifcationView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding:
-          EdgeInsets.only(left: 10.w, right: 10.w, top: 15.h, bottom: 20.h),
-      child: Column(
-        children: [
-          SizedBox(height: 30.h),
-          Image.asset("assets/images/cart.png", height: 50.h),
-          SizedBox(height: 60.h),
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Text("5 Juin, 2024",
-                  style: AppTextStyle.otherTextStyle
-                      .copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
-          SizedBox(height: 10.h),
-          for (int i = 0; i < notificationItem.length; i++) ...{
-            NotifcationRow(
-                t1: notificationItem[i].t1,
-                t2: notificationItem[i].t2,
-                t3: notificationItem[i].t3,
-                t4: notificationItem[i].t4),
-            SizedBox(height: 3.h),
-          },
-          SizedBox(height: 10.h),
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Text("4 Juin, 2024",
-                  style: AppTextStyle.otherTextStyle
-                      .copyWith(fontSize: 16.sp, fontWeight: FontWeight.bold))),
-          const Spacer(),
-          BackScreen(controller: controller),
-        ],
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 20.h),
+          child: Column(
+            children: [
+              Icon(Icons.location_on_sharp, size: 31.h),
+              Text(
+                '4 km',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14.sp,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              Container(
+                width: 396.21.w,
+                height: 45.53.h,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side:
+                        const BorderSide(width: 2.32, color: Color(0xFFBFBFBF)),
+                    borderRadius: BorderRadius.circular(30.21),
+                  ),
+                ),
+                child: CupertinoSearchTextField(
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.only(left: 15.0.w),
+                    child: Icon(Icons.search, size: 22.h, color: Colors.black),
+                  ),
+                  placeholder: "De qui avez-vous besoin?",
+                  style: TextStyle(fontSize: 14.sp, color: Color(0xffBFBFBF)),
+                  backgroundColor: Colors.transparent,
+                  padding: EdgeInsets.only(left: 20),
+                ),
+              ),
+              SizedBox(height: 24.h),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  '5 juin, 2024',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.h),
+              for (int i = 0; i < notificationItem.length; i++) ...{
+                CustomNotificationRow(
+                  t1: "${i + 1}",
+                  t2: notificationItem[i].t2,
+                  t3: notificationItem[i].t3,
+                  t4: notificationItem[i].t4,
+                ),
+                if (i != notificationItem.length - 1) SizedBox(height: 33.h),
+              },
+              SizedBox(height: 20.h),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  '4 juin, 2024',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Spacer(),
+              BackScreen(controller: controller),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
 
-class NotifcationRow extends StatelessWidget {
-  const NotifcationRow({
+class CustomNotificationRow extends StatelessWidget {
+  const CustomNotificationRow({
     super.key,
     this.t1,
     this.t2,
@@ -59,53 +110,80 @@ class NotifcationRow extends StatelessWidget {
   final String? t2;
   final String? t3;
   final String? t4;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60.h,
-      padding: EdgeInsets.only(left: 5.w),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.r),
-          border: Border.all(color: AppColors.golden)),
+      width: double.infinity,
+      height: 47.h,
+      padding: EdgeInsets.only(
+        left: 20.w,
+        right: 15.w,
+      ),
+      decoration: ShapeDecoration(
+        shape: RoundedRectangleBorder(
+          side: BorderSide(width: 1.56, color: Color(0xFFBFBFBF)),
+          borderRadius: BorderRadius.circular(6.98).r,
+        ),
+      ),
       child: Row(
         children: [
-          Stack(
-            children: [
-              Image.asset("assets/images/mbox.png", height: 50.h, width: 50.w),
-              Positioned(
-                top: 12.h,
-                left: 15.h,
-                child: Text(t1 ?? 'B',
-                    style:
-                        AppTextStyle.mediumbold.copyWith(color: Colors.white)),
+          Container(
+            height: 20.h,
+            width: 25.w,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/noti.png"),
+                    fit: BoxFit.fill)),
+            child: Text(
+              '$t1',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 11.sp,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w900,
+                height: 0,
               ),
-            ],
+            ),
           ),
           SizedBox(width: 10.w),
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FittedBox(
-                  fit: BoxFit.contain,
-                  child: Text(t2 ?? 'Marc.k / ebeniste',
-                      style: AppTextStyle.otherTextStyle.copyWith(
-                          fontSize: 16.sp, fontWeight: FontWeight.bold))),
-              FittedBox(
-                fit: BoxFit.contain,
-                child: Text(t3 ?? 'Propose ses services a 700/H',
-                    style: AppTextStyle.smallLight),
-              ),
-              FittedBox(
-                  fit: BoxFit.contain,
-                  child: Text(t4 ?? '11:21', style: AppTextStyle.smallLight))
-            ],
-          ),
-          const Spacer(),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 40.0),
-            child: Icon(Icons.more_horiz),
-          ),
-          SizedBox(width: 10.w)
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '$t2',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 10.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                Text(
+                  '$t3',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 10.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w100,
+                  ),
+                ),
+                Text(
+                  '$t4',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 10.sp,
+                    fontFamily: 'Inter',
+                    height: 0,
+                    fontWeight: FontWeight.w100,
+                  ),
+                )
+              ]),
+          Spacer(),
+          Text("---")
         ],
       ),
     );

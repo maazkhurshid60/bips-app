@@ -4,7 +4,9 @@ import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -60,163 +62,83 @@ class SwitcherView extends GetView<HomeController> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SingleItem(
-                          onTap: () {
-                            controller.activePage.value = 8;
-                          },
+                        Column(
+                          children: [
+                            SingleItem(
+                              onTap: () {
+                                controller.activePage.value = 6;
+                              },
+                            ),
+                            SizedBox(height: 5.h),
+                            Text(
+                              'Crédibilité',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 11,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            ),
+                          ],
                         ),
-                        SingleItem(
-                          img: "ref",
-                          onTap: () {
-                            controller.activePage.value = 7;
-                          },
+                        Column(
+                          children: [
+                            SingleItem(
+                              img: "ref",
+                              onTap: () {
+                                controller.activePage.value = 7;
+                              },
+                            ),
+                            SizedBox(height: 5.h),
+                            Text(
+                              'Swichter',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 11.sp,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            ),
+                          ],
                         ),
-                        SingleItem(img: "help")
+                        Column(
+                          children: [
+                            SingleItem(
+                              img: "help",
+                              onTap: () {
+                                controller.activePage.value = 8;
+                              },
+                            ),
+                            SizedBox(height: 5.h),
+                            Text(
+                              'Aide',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 11,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   )),
-              SizedBox(height: 100.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0).h,
-                    child: SvgPicture.asset("assets/svgs/tel.svg"),
-                  ),
-                  SizedBox(width: 20.w),
-                  Text(
-                    'Casier ',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14.sp,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
-                    ),
-                  ),
-                  Text(
-                    '= = = = = = = = = = = = = =',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12.86,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w200,
-                      height: 0,
-                    ),
-                  ),
-                  SizedBox(width: 2.w),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0).h,
-                    child: Container(
-                      height: 25.h,
-                      alignment: Alignment.center,
-                      width: 40.w,
-                      child: Icon(
-                        Icons.done,
-                        color: Colors.white,
-                      ),
-                      decoration: const ShapeDecoration(
-                          color: AppColors.golden, shape: OvalBorder()),
-                    ),
-                  ),
-                ],
+              SizedBox(height: 60.h),
+              CustomRowWidget(),
+              SizedBox(height: 60.h),
+              CustomRowWidget(
+                img: "p2",
+                text: "Coworker’s",
               ),
-              SizedBox(height: 100.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0).h,
-                    child: SvgPicture.asset("assets/svgs/home.svg"),
-                  ),
-                  SizedBox(width: 20.w),
-                  Text(
-                    'Résidence ',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14.sp,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
-                    ),
-                  ),
-                  Text(
-                    '= = = = = = = = = = = ==',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12.86,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w200,
-                      height: 0,
-                    ),
-                  ),
-                  SizedBox(width: 2.w),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0).h,
-                    child: Container(
-                      height: 25.h,
-                      alignment: Alignment.center,
-                      width: 40.w,
-                      child: Icon(
-                        Icons.done,
-                        color: Colors.white,
-                      ),
-                      decoration: const ShapeDecoration(
-                          color: AppColors.golden, shape: OvalBorder()),
-                    ),
-                  ),
-                ],
+              SizedBox(height: 60.h),
+              CustomRowWidget(
+                img: "p3",
+                text: "Biper’S",
               ),
-              SizedBox(height: 100.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0).h,
-                    child: SvgPicture.asset("assets/svgs/tel.svg"),
-                  ),
-                  SizedBox(width: 20.w),
-                  Text(
-                    'Responsabilité familiale ',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14.sp,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
-                    ),
-                  ),
-                  Text(
-                    '= = = = =',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12.86,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w200,
-                      height: 0,
-                    ),
-                  ),
-                  SizedBox(width: 2.w),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0).h,
-                    child: Container(
-                      height: 25.h,
-                      alignment: Alignment.center,
-                      width: 40.w,
-                      child: Icon(
-                        Icons.done,
-                        color: Colors.white,
-                      ),
-                      decoration: const ShapeDecoration(
-                          color: AppColors.golden, shape: OvalBorder()),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 100.h),
               Spacer(),
               BackScreen(controller: controller)
             ],
@@ -266,22 +188,30 @@ class CustomRowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      Image.asset("assets/images/${img ?? "chief"}.png",
-          height: 90.h, width: 90.w),
-      SizedBox(width: 10.w),
+      Image.asset("assets/images/${img ?? "p1"}.png",
+          height: 60.h, width: 90.w),
+      SizedBox(width: 56.w),
       Padding(
-        padding: const EdgeInsets.only(top: 80.0),
+        padding: const EdgeInsets.only(top: 30.0),
         child: FittedBox(
-            fit: BoxFit.contain,
-            child: Text(text ?? "Entrepreneur du tertiaire",
-                style: AppTextStyle.mediumbold
-                    .copyWith(fontWeight: FontWeight.w900, fontSize: 12.sp))),
+          fit: BoxFit.contain,
+          child: Text(
+            "${text ?? "Entrepreneur du Tertiaire (ET)"}",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 10.sp,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w400,
+              height: 0,
+            ),
+          ),
+        ),
       ),
       const Spacer(),
       Padding(
-        padding: EdgeInsets.only(top: 60.0, right: 10.w),
-        child:
-            Image.asset("assets/images/switch.png", height: 30.h, width: 30.w),
+        padding: EdgeInsets.only(top: 30.0, right: 10.w),
+        child: SvgPicture.asset("assets/svgs/common.svg",
+            height: 30.h, width: 30.w),
       )
     ]);
   }

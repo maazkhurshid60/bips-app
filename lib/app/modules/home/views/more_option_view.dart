@@ -60,18 +60,68 @@ class MoreOptionView extends GetView<HomeController> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SingleItem(
-                          onTap: () {
-                            controller.activePage.value = 8;
-                          },
+                        Column(
+                          children: [
+                            SingleItem(
+                              onTap: () {
+                                controller.activePage.value = 6;
+                              },
+                            ),
+                            SizedBox(height: 5.h),
+                            Text(
+                              'Crédibilité',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 11,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            ),
+                          ],
                         ),
-                        SingleItem(
-                          img: "ref",
-                          onTap: () {
-                            controller.activePage.value = 7;
-                          },
+                        Column(
+                          children: [
+                            SingleItem(
+                              img: "ref",
+                              onTap: () {
+                                controller.activePage.value = 7;
+                              },
+                            ),
+                            SizedBox(height: 5.h),
+                            Text(
+                              'Swichter',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 11.sp,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            ),
+                          ],
                         ),
-                        SingleItem(img: "help")
+                        Column(
+                          children: [
+                            SingleItem(
+                              img: "help",
+                              onTap: () {
+                                controller.activePage.value = 8;
+                              },
+                            ),
+                            SizedBox(height: 5.h),
+                            Text(
+                              'Aide',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 11,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   )),

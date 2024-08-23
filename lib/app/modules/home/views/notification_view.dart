@@ -183,7 +183,7 @@ class CustomNotificationRow extends StatelessWidget {
                 )
               ]),
           Spacer(),
-          Text("---")
+          Text("...")
         ],
       ),
     );

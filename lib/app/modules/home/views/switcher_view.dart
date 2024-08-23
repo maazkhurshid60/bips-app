@@ -210,8 +210,17 @@ class CustomRowWidget extends StatelessWidget {
       const Spacer(),
       Padding(
         padding: EdgeInsets.only(top: 30.0, right: 10.w),
-        child: SvgPicture.asset("assets/svgs/common.svg",
-            height: 30.h, width: 30.w),
+        child: Container(
+          width: 66.w,
+          height: 48.h,
+          alignment: Alignment.center,
+          decoration: ShapeDecoration(
+            color: Color(0x35D9D9D9),
+            shape: OvalBorder(),
+          ),
+          child: SvgPicture.asset("assets/svgs/common.svg",
+              height: 30.h, width: 30.w),
+        ),
       )
     ]);
   }

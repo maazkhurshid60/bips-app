@@ -156,7 +156,9 @@ class CredibilityView extends GetView<HomeController> {
                   ],
                 ),
               ),
-              SizedBox(height: 60.h),
+              SizedBox(height: 10.h),
+              DividerBoxRow(),
+              SizedBox(height: 10.h),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20).w,
                 child: Row(
@@ -183,7 +185,9 @@ class CredibilityView extends GetView<HomeController> {
                   ],
                 ),
               ),
-              SizedBox(height: 60.h),
+              SizedBox(height: 10.h),
+              DividerBoxRow(),
+              SizedBox(height: 10.h),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20).w,
                 child: Row(
@@ -210,7 +214,9 @@ class CredibilityView extends GetView<HomeController> {
                   ],
                 ),
               ),
-              SizedBox(height: 60.h),
+              SizedBox(height: 10.h),
+              DividerBoxRow(),
+              SizedBox(height: 10.h),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20).w,
                 child: Row(
@@ -241,6 +247,42 @@ class CredibilityView extends GetView<HomeController> {
               BackScreen(controller: controller)
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class DividerBoxRow extends StatelessWidget {
+  const DividerBoxRow({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+      DividerBox(),
+      DividerBox(),
+      DividerBox(),
+    ]);
+  }
+}
+
+class DividerBox extends StatelessWidget {
+  const DividerBox({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 95,
+      height: 49,
+      decoration: ShapeDecoration(
+        color: Color(0x49D9D9D9),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(width: 1, color: Colors.white),
+          borderRadius: BorderRadius.circular(12),
         ),
       ),
     );

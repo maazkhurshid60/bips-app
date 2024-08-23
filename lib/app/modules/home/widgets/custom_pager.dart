@@ -88,7 +88,7 @@ class CustomPager extends GetView<HomeController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 21.w, top: 140.h),
+                  padding: EdgeInsets.only(left: 21.w, top: 160.h),
                   child: Container(
                     width: 66.w,
                     height: 41.h,
@@ -99,7 +99,7 @@ class CustomPager extends GetView<HomeController> {
                 ),
                 SizedBox(width: 4.w),
                 Padding(
-                  padding: EdgeInsets.only(top: 140.h),
+                  padding: EdgeInsets.only(top: 160.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -132,7 +132,7 @@ class CustomPager extends GetView<HomeController> {
                 ),
                 const Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 34.h, right: 44.w),
+                  padding: EdgeInsets.only(bottom: 10.h, right: 44.w),
                   child: Column(children: [
                     GestureDetector(
                         onTap: () {

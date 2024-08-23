@@ -60,7 +60,7 @@ class CashPriceView extends GetView<HomeController> {
                     child: Icon(Icons.location_on_sharp, size: 31.h)),
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 50.0).w,
+                padding: const EdgeInsets.only(right: 38.0).w,
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Obx(() => Text(
@@ -71,10 +71,7 @@ class CashPriceView extends GetView<HomeController> {
                           color: Colors.black,
                           fontSize: 14.sp,
                           fontFamily: 'Inter',
-                          fontWeight:
-                              controller.cashpriceCurrentIndex.value == 0
-                                  ? FontWeight.w200
-                                  : FontWeight.w500,
+                          fontWeight: FontWeight.w200,
                         ),
                       )),
                 ),
@@ -118,7 +115,7 @@ class CashPriceView extends GetView<HomeController> {
 
 List<Widget> items = [const Item1(), const Item2()];
 
-class ChartWidget extends GetView<DashboardController> {
+class ChartWidget extends GetView<HomeController> {
   const ChartWidget({
     super.key,
   });
@@ -202,7 +199,7 @@ class Item1 extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 100.h),
+          SizedBox(height: 80.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -238,7 +235,7 @@ class Item1 extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 100.h),
+          SizedBox(height: 80.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -327,7 +324,7 @@ class Item2 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Prix Minimum = = = = = = = = ',
+                'Prix Minimum = == = = = ',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 12.86,
@@ -346,24 +343,24 @@ class Item2 extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 10.37.sp,
+                    fontSize: 8.37.sp,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w800,
                     height: 0,
                   ),
                 ),
                 decoration: const ShapeDecoration(
-                    color: AppColors.golden, shape: OvalBorder()),
+                    color: AppColors.golden, shape: CircleBorder()),
               ),
             ],
           ),
-          SizedBox(height: 100.h),
+          SizedBox(height: 80.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Prix Moyen = = = = = = = = = = = = = = =',
+                'Prix Moyen = = = = = = = = = = =',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 12.86,
@@ -374,7 +371,7 @@ class Item2 extends StatelessWidget {
               ),
               SizedBox(width: 2.w),
               Container(
-                height: 25.h,
+                height: 30.h,
                 alignment: Alignment.center,
                 width: 40.w,
                 child: Text(
@@ -382,24 +379,24 @@ class Item2 extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 10.37.sp,
+                    fontSize: 8.37.sp,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w800,
                     height: 0,
                   ),
                 ),
                 decoration: const ShapeDecoration(
-                    color: AppColors.golden, shape: OvalBorder()),
+                    color: AppColors.golden, shape: CircleBorder()),
               ),
             ],
           ),
-          SizedBox(height: 100.h),
+          SizedBox(height: 80.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Prix Élevé = = = = = = = = = = = = = = = = = = = = ',
+                'Prix Élevé = = = = = = = = = = = = = = = ',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 12.86,
@@ -410,7 +407,7 @@ class Item2 extends StatelessWidget {
               ),
               SizedBox(width: 2.w),
               Container(
-                height: 25.h,
+                height: 30.h,
                 alignment: Alignment.center,
                 width: 40.w,
                 child: Text(
@@ -418,22 +415,22 @@ class Item2 extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 10.37.sp,
+                    fontSize: 8.37.sp,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w800,
                     height: 0,
                   ),
                 ),
                 decoration: const ShapeDecoration(
-                    color: AppColors.golden, shape: OvalBorder()),
+                    color: AppColors.golden, shape: CircleBorder()),
               ),
             ],
           ),
-          SizedBox(height: 40.h),
+          Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 0).w,
             child: const Text(
-              "400   500   600   700   800   900   1000   1100   1200   1300",
+              "400  500  600  700  800  900  1000  1100  1200  1300",
               style: TextStyle(fontWeight: FontWeight.w100),
             ),
           ),

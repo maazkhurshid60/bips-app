@@ -2,8 +2,10 @@ import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class SwitcherView extends GetView<HomeController> {
@@ -11,53 +13,246 @@ class SwitcherView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding:
-          EdgeInsets.only(left: 10.w, right: 10.h, top: 10.h, bottom: 20.h),
-      child: Column(
-        children: [
-          SizedBox(height: 50.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(right: 20.w, left: 20.w, bottom: 20.h),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset("assets/images/search.png", height: 20.h),
-              Icon(Icons.location_on, size: 20.h),
-              Image.asset("assets/images/cart.png", height: 20.h),
+              Icon(Icons.location_on_sharp, size: 31.h),
+              Text(
+                '4 km',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14.sp,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              Container(
+                width: 396.21.w,
+                height: 45.53.h,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side:
+                        const BorderSide(width: 2.32, color: Color(0xFFBFBFBF)),
+                    borderRadius: BorderRadius.circular(30.21),
+                  ),
+                ),
+                child: CupertinoSearchTextField(
+                  placeholder: "De qui avez-vous besoin?",
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.only(left: 15.0.w),
+                    child: Icon(Icons.search, size: 22.h, color: Colors.black),
+                  ),
+                  style: TextStyle(fontSize: 14.sp, color: Color(0xffBFBFBF)),
+                  backgroundColor: Colors.transparent,
+                  padding: EdgeInsets.only(left: 20),
+                ),
+              ),
+              SizedBox(height: 27.h),
+              SizedBox(
+                  height: 80.h,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0).w,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SingleItem(
+                          onTap: () {
+                            controller.activePage.value = 8;
+                          },
+                        ),
+                        SingleItem(
+                          img: "ref",
+                          onTap: () {
+                            controller.activePage.value = 7;
+                          },
+                        ),
+                        SingleItem(img: "help")
+                      ],
+                    ),
+                  )),
+              SizedBox(height: 100.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0).h,
+                    child: SvgPicture.asset("assets/svgs/tel.svg"),
+                  ),
+                  SizedBox(width: 20.w),
+                  Text(
+                    'Casier ',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.sp,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
+                  ),
+                  Text(
+                    '= = = = = = = = = = = = = =',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12.86,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w200,
+                      height: 0,
+                    ),
+                  ),
+                  SizedBox(width: 2.w),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0).h,
+                    child: Container(
+                      height: 25.h,
+                      alignment: Alignment.center,
+                      width: 40.w,
+                      child: Icon(
+                        Icons.done,
+                        color: Colors.white,
+                      ),
+                      decoration: const ShapeDecoration(
+                          color: AppColors.golden, shape: OvalBorder()),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 100.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0).h,
+                    child: SvgPicture.asset("assets/svgs/home.svg"),
+                  ),
+                  SizedBox(width: 20.w),
+                  Text(
+                    'Résidence ',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.sp,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
+                  ),
+                  Text(
+                    '= = = = = = = = = = = ==',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12.86,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w200,
+                      height: 0,
+                    ),
+                  ),
+                  SizedBox(width: 2.w),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0).h,
+                    child: Container(
+                      height: 25.h,
+                      alignment: Alignment.center,
+                      width: 40.w,
+                      child: Icon(
+                        Icons.done,
+                        color: Colors.white,
+                      ),
+                      decoration: const ShapeDecoration(
+                          color: AppColors.golden, shape: OvalBorder()),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 100.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0).h,
+                    child: SvgPicture.asset("assets/svgs/tel.svg"),
+                  ),
+                  SizedBox(width: 20.w),
+                  Text(
+                    'Responsabilité familiale ',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.sp,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
+                  ),
+                  Text(
+                    '= = = = =',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12.86,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w200,
+                      height: 0,
+                    ),
+                  ),
+                  SizedBox(width: 2.w),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0).h,
+                    child: Container(
+                      height: 25.h,
+                      alignment: Alignment.center,
+                      width: 40.w,
+                      child: Icon(
+                        Icons.done,
+                        color: Colors.white,
+                      ),
+                      decoration: const ShapeDecoration(
+                          color: AppColors.golden, shape: OvalBorder()),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 100.h),
+              Spacer(),
+              BackScreen(controller: controller)
             ],
           ),
-          SizedBox(height: 30.h),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 5.h),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50.r),
-              border: Border.all(color: AppColors.golden),
-            ),
-            height: 50.h,
-            width: 250.w,
-            child: Row(
-              children: [
-                Image.asset("assets/images/switcher.png",
-                    height: 50.h, width: 40.w),
-                SizedBox(width: 10.w),
-                Text("Switcher",
-                    style: AppTextStyle.largebold
-                        .copyWith(fontWeight: FontWeight.w500))
-              ],
-            ),
+        ),
+      ),
+    );
+  }
+}
+
+class SingleItem extends StatelessWidget {
+  const SingleItem({super.key, this.img, this.onTap});
+  final String? img;
+  final Function()? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 94.w,
+        height: 49.h,
+        alignment: Alignment.center,
+        decoration: ShapeDecoration(
+          color: Color(0x49D9D9D9),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+                width: 1,
+                color: img == "ref" ? AppColors.golden : Colors.white),
+            borderRadius: BorderRadius.circular(12),
           ),
-          SizedBox(height: 30.h),
-          const CustomRowWidget(),
-          SizedBox(height: 30.h),
-          const CustomRowWidget(
-            img: "gym",
-            text: "Coworker'S",
-          ),
-          SizedBox(height: 30.h),
-          const CustomRowWidget(text: "Offreur"),
-          const Spacer(),
-          BackScreen(controller: controller),
-        ],
+        ),
+        child: SvgPicture.asset(
+          "assets/svgs/${img ?? "smile"}.svg",
+          height: 24.h,
+          width: 24.w,
+        ),
       ),
     );
   }

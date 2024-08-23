@@ -100,30 +100,3 @@ class customField extends StatelessWidget {
     );
   }
 }
-
-class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, this.controller, this.text});
-  final String? text;
-  final TextEditingController? controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 40.h,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 1),
-        borderRadius: BorderRadius.circular(10.r),
-      ),
-      child: TextFormField(
-        decoration: InputDecoration(
-            contentPadding: EdgeInsets.all(5.h),
-            border: const OutlineInputBorder(borderSide: BorderSide.none),
-            hintText: text ??
-                "Pays .............................................................................",
-            hintStyle: AppTextStyle.otherTextStyle
-                .copyWith(fontSize: 14.h, fontWeight: FontWeight.bold)),
-      ),
-    );
-  }
-}

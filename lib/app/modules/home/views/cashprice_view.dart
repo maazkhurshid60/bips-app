@@ -350,7 +350,7 @@ class Item2 extends StatelessWidget {
                   ),
                 ),
                 decoration: const ShapeDecoration(
-                    color: AppColors.golden, shape: CircleBorder()),
+                    color: AppColors.golden, shape: OvalBorder()),
               ),
             ],
           ),
@@ -371,7 +371,7 @@ class Item2 extends StatelessWidget {
               ),
               SizedBox(width: 2.w),
               Container(
-                height: 30.h,
+                height: 25.h,
                 alignment: Alignment.center,
                 width: 40.w,
                 child: Text(
@@ -386,7 +386,7 @@ class Item2 extends StatelessWidget {
                   ),
                 ),
                 decoration: const ShapeDecoration(
-                    color: AppColors.golden, shape: CircleBorder()),
+                    color: AppColors.golden, shape: OvalBorder()),
               ),
             ],
           ),
@@ -407,7 +407,7 @@ class Item2 extends StatelessWidget {
               ),
               SizedBox(width: 2.w),
               Container(
-                height: 30.h,
+                height: 25.h,
                 alignment: Alignment.center,
                 width: 40.w,
                 child: Text(
@@ -422,7 +422,7 @@ class Item2 extends StatelessWidget {
                   ),
                 ),
                 decoration: const ShapeDecoration(
-                    color: AppColors.golden, shape: CircleBorder()),
+                    color: AppColors.golden, shape: OvalBorder()),
               ),
             ],
           ),

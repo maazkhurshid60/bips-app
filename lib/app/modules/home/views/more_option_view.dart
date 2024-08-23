@@ -167,7 +167,7 @@ class MoreOptionView extends GetView<HomeController> {
                         color: Colors.white,
                       ),
                       decoration: const ShapeDecoration(
-                          color: AppColors.golden, shape: OvalBorder()),
+                          color: AppColors.golden, shape: CircleBorder()),
                     ),
                   ),
                 ],
@@ -214,7 +214,7 @@ class MoreOptionView extends GetView<HomeController> {
                         color: Colors.white,
                       ),
                       decoration: const ShapeDecoration(
-                          color: AppColors.golden, shape: OvalBorder()),
+                          color: AppColors.golden, shape: CircleBorder()),
                     ),
                   ),
                 ],
@@ -261,7 +261,7 @@ class MoreOptionView extends GetView<HomeController> {
                         color: Colors.white,
                       ),
                       decoration: const ShapeDecoration(
-                          color: AppColors.golden, shape: OvalBorder()),
+                          color: AppColors.golden, shape: CircleBorder()),
                     ),
                   ),
                 ],

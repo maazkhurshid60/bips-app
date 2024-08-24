@@ -94,6 +94,7 @@ class CustomPager extends GetView<HomeController> {
                     height: 41.h,
                     decoration: BoxDecoration(
                         color: const Color(0xFF444444),
+                        border: Border.all(color: AppColors.golden),
                         borderRadius: BorderRadiusDirectional.circular(8.r)),
                   ),
                 ),

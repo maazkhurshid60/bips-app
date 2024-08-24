@@ -139,7 +139,7 @@ class CustomPager extends GetView<HomeController> {
                         onTap: () {
                           controller.activePage.value = 3;
                         },
-                        child: Image.asset("assets/images/box.png",
+                        child: Image.asset("assets/images/bono.png",
                             color: Colors.white, height: 33.h)),
                     SizedBox(height: 5.h),
                     const Text(
@@ -174,7 +174,7 @@ class CustomPager extends GetView<HomeController> {
                         onTap: () {
                           controller.activePage.value = 6;
                         },
-                        child: Image.asset("assets/images/pop.png",
+                        child: Image.asset("assets/images/popdot.png",
                             color: Colors.white, height: 40.h)),
                   ]),
                 )

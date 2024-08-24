@@ -1,0 +1,20 @@
+<svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_67_783)">
+<path d="M8 4.58317C8 5.19096 7.73661 5.77385 7.26777 6.20362C6.79893 6.63339 6.16304 6.87484 5.5 6.87484C4.83696 6.87484 4.20107 6.63339 3.73223 6.20362C3.26339 5.77385 3 5.19096 3 4.58317C3 3.97538 3.26339 3.39249 3.73223 2.96272C4.20107 2.53295 4.83696 2.2915 5.5 2.2915C6.16304 2.2915 6.79893 2.53295 7.26777 2.96272C7.73661 3.39249 8 3.97538 8 4.58317ZM8 4.58317H13.5M13.5 4.58317L11.5 2.74984M13.5 4.58317L11.5 6.4165" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 17.4167C16 18.0245 16.2634 18.6073 16.7322 19.0371C17.2011 19.4669 17.837 19.7083 18.5 19.7083C19.163 19.7083 19.7989 19.4669 20.2678 19.0371C20.7366 18.6073 21 18.0245 21 17.4167C21 16.8089 20.7366 16.226 20.2678 15.7962C19.7989 15.3664 19.163 15.125 18.5 15.125C17.837 15.125 17.2011 15.3664 16.7322 15.7962C16.2634 16.226 16 16.8089 16 17.4167ZM16 17.4167H10.5M10.5 17.4167L12.5 15.5833M10.5 17.4167L12.5 19.25" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19 7.33333C18.337 7.33333 17.7011 7.09189 17.2322 6.66212C16.7634 6.23235 16.5 5.64945 16.5 5.04167C16.5 4.43388 16.7634 3.85098 17.2322 3.42121C17.7011 2.99144 18.337 2.75 19 2.75C19.663 2.75 20.2989 2.99144 20.7678 3.42121C21.2366 3.85098 21.5 4.43388 21.5 5.04167C21.5 5.64945 21.2366 6.23235 20.7678 6.66212C20.2989 7.09189 19.663 7.33333 19 7.33333ZM19 7.33333V12.375M19 12.375L21 10.5417M19 12.375L17 10.5417" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 14.6667C4.33696 14.6667 3.70107 14.9081 3.23223 15.3379C2.76339 15.7677 2.5 16.3505 2.5 16.9583C2.5 17.5661 2.76339 18.149 3.23223 18.5788C3.70107 19.0086 4.33696 19.25 5 19.25C5.66304 19.25 6.29893 19.0086 6.76777 18.5788C7.23661 18.149 7.5 17.5661 7.5 16.9583C7.5 16.3505 7.23661 15.7677 6.76777 15.3379C6.29893 14.9081 5.66304 14.6667 5 14.6667ZM5 14.6667V9.625M5 9.625L7 11.4583M5 9.625L3 11.4583" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_d_67_783" x="-3.5" y="0.291504" width="31" height="29.417" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_67_783"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_67_783" result="shape"/>
+</filter>
+</defs>
+</svg>

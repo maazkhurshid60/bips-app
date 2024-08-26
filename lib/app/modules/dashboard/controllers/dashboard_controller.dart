@@ -1,5 +1,8 @@
-import 'package:bips_app/app/modules/home/views/home_view.dart';
-import 'package:bips_app/app/modules/home/views/search_view.dart';
+import 'package:bips_app/app/modules/home/views/charts_view.dart';
+import 'package:bips_app/app/modules/home/views/home_sub_view.dart';
+import 'package:bips_app/app/modules/home/views/message_search_view.dart';
+import 'package:bips_app/app/modules/home/views/message_view.dart';
+import 'package:bips_app/app/modules/home/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +21,17 @@ class DashboardController extends GetxController {
   // -----------cashprice main section start---------
   RxInt cashpriceCurrentIndex = 0.obs;
   // -----------cashprice main section end-----------
-}
 
-List<Widget> screen = [const HomeView(), const SearchView()];
+  void changeCurrentScreen(int value) {
+    activeBottomIndex.value = value;
+    update();
+  }
+
+  List<Widget> screen = [
+    const ChartsView(),
+    const MessageSearchView(),
+    const HomeSubViewss(),
+    const MessageView(),
+    const ProfileView(),
+  ].obs;
+}

@@ -1,7 +1,4 @@
-import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
-import 'package:bips_app/app/modules/home/views/home_sub_view.dart';
 import 'package:bips_app/app/widgets/custom_bottom_nav_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -50,10 +47,10 @@ class DashboardView extends GetView<DashboardController> {
                   height: 18.h),
             ],
             onTap: (index) {
-              controller.activeBottomIndex.value = index;
+              controller.changeCurrentScreen(index);
             },
           ),
         ),
-        body: const HomeSubViewss());
+        body: Obx(() => controller.screen[controller.activeBottomIndex.value]));
   }
 }

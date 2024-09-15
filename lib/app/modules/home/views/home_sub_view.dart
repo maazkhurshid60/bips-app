@@ -1,3 +1,5 @@
+import 'package:bips_app/app/modules/Accounts/views/account_main_view.dart';
+import 'package:bips_app/app/modules/chart/views/chart_main_view.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/bonos_view.dart';
 import 'package:bips_app/app/modules/home/views/cashprice_view.dart';
@@ -8,6 +10,7 @@ import 'package:bips_app/app/modules/home/views/more_option_view.dart';
 import 'package:bips_app/app/modules/home/views/notification_view.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:bips_app/app/modules/home/views/switcher_view.dart';
+import 'package:bips_app/app/modules/messages/views/images_and_keyboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,6 +38,14 @@ class HomeSubViewss extends GetView<HomeController> {
             return const SwitcherView();
           } else if (controller.activePage.value == 8) {
             return const CredibilityView();
+          } else if (controller.activePage.value == 9) {
+            return ChartMainView(
+                isFromHomePage: true, homeController: controller);
+          } else if (controller.activePage.value == 10) {
+            return const ImagesAndKeynoardView();
+          } else if (controller.activePage.value == 11) {
+            return AccountsMainView(
+                isFromHomePage: true, homeController: controller);
           } else {
             return const HomeView();
           }

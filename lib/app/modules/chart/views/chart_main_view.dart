@@ -1,6 +1,7 @@
 import 'package:bips_app/app/modules/chart/controller/chart_controller.dart';
 import 'package:bips_app/app/modules/chart/widgets/chart_header.dart';
 import 'package:bips_app/app/modules/chart/widgets/chart_single_item_header.dart';
+import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class ChartMainView extends GetView<ChartController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
             padding:
@@ -62,6 +64,9 @@ class ChartMainView extends GetView<ChartController> {
                 if (isFromHomePage == true) ...{
                   BackScreen(controller: homeController!),
                   SizedBox(height: 10.h)
+                } else ...{
+                  BackScreen1(controller: Get.find<DashboardController>()),
+                  SizedBox(height: 20.h)
                 }
               ],
             )),

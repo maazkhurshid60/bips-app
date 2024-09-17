@@ -1,7 +1,7 @@
 import 'package:bips_app/app/modules/Accounts/contrtoller/account_controller.dart';
 import 'package:bips_app/app/modules/Accounts/widgets/account_single_item.dart';
-import 'package:bips_app/app/modules/Accounts/widgets/feature.dart';
 import 'package:bips_app/app/modules/chart/widgets/chart_header.dart';
+import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +15,7 @@ class AccountsMainView extends GetView<AccountController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -69,44 +70,37 @@ class AccountsMainView extends GetView<AccountController> {
               ),
             ),
             SizedBox(height: 38.h),
-            Container(
-              width: 50.w,
-              alignment: Alignment.center,
-              height: 20.h,
-              decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(5.r)),
-              child: Text(
-                "Tâche",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 9.sp),
-              ),
-            ),
-            SizedBox(height: 10.h),
             Expanded(
-                child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15.0.w),
-                    child: ListView.separated(
-                        itemBuilder: (context, index) {
-                          if (index % 2 == 0) {
-                            return const account_competence_feature();
-                          } else {
-                            return const account_competence_feature(
-                                isRight: true);
-                          }
-                        },
-                        separatorBuilder: (context, index) {
-                          return SizedBox(height: 3.h);
-                        },
-                        itemCount: 15))),
+                child:
+                    Obx(() => controller.tabsItem[controller.pageIndex.value])),
             SizedBox(height: 10.h),
             if (isFromHomePage == true) ...{
               Center(child: BackScreen(controller: homeController!)),
-              SizedBox(height: 10.h)
-            }
+            } else ...{
+              Center(
+                  child:
+                      BackScreen1(controller: Get.find<DashboardController>()))
+            },
+            SizedBox(height: 10.h)
           ],
         ),
       )),
     );
+  }
+}
+
+class PageTwo extends GetView<AccountController> {
+  const PageTwo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        child: PageView.builder(
+          itemCount: 3,
+          itemBuilder: (context, index) {
+            return controller.screenItem[index];
+          },
+        ));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:bips_app/app/modules/Accounts/contrtoller/account_controller.dart';
+import 'package:bips_app/app/modules/Cashprice/controller/cash_price_controller.dart';
 import 'package:bips_app/app/modules/chart/controller/chart_controller.dart';
 import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
@@ -16,6 +17,7 @@ class Allbinding implements Bindings {
     Get.lazyPut<HomeController>(() => HomeController(), fenix: true);
     Get.lazyPut<MessagesController>(() => MessagesController(), fenix: true);
     Get.lazyPut<AccountController>(() => AccountController(), fenix: true);
+    Get.lazyPut<CashPriceController>(() => CashPriceController(), fenix: true);
     Get.lazyPut<ChartController>(() => ChartController(), fenix: true);
   }
 }

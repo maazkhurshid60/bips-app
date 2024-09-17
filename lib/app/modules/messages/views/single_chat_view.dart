@@ -11,6 +11,7 @@ class SingleChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: Padding(
         padding: EdgeInsets.only(left: 30.w, right: 30.w, bottom: 30.h),

@@ -1,4 +1,3 @@
-import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/notification_view.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
@@ -13,6 +12,7 @@ class BonosView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 20.h),
@@ -44,9 +44,10 @@ class BonosView extends GetView<HomeController> {
                     padding: EdgeInsets.only(left: 15.0.w),
                     child: Icon(Icons.search, size: 22.h, color: Colors.black),
                   ),
-                  style: TextStyle(fontSize: 14.sp, color: Color(0xffBFBFBF)),
+                  style: TextStyle(
+                      fontSize: 14.sp, color: const Color(0xffBFBFBF)),
                   backgroundColor: Colors.transparent,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.only(left: 20),
                 ),
               ),
               SizedBox(height: 24.h),

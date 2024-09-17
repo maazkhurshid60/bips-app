@@ -10,8 +10,8 @@ class SplashView extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
       body: SafeArea(
           child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 39.w, vertical: 45.h),

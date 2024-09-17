@@ -30,7 +30,7 @@ class ContratWidget extends StatelessWidget {
           padding: EdgeInsets.only(left: 23.w, right: 10.w),
           alignment: Alignment.center,
           height: 68.18,
-          decoration: BoxDecoration(color: Color(0x14444444)),
+          decoration: const BoxDecoration(color: Color(0x14444444)),
           child: Text(
             'Lessiveuse -  0225 ......................................... 1500 fcfa',
             style: TextStyle(
@@ -43,7 +43,7 @@ class ContratWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: 40.h),
-        SizedBox(
+        const SizedBox(
           width: 329.73,
           height: 21.37,
           child: Text(
@@ -58,7 +58,7 @@ class ContratWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: 40.h),
-        SizedBox(
+        const SizedBox(
           width: 329.73,
           height: 21.37,
           child: Text(
@@ -91,7 +91,7 @@ class ContratWidget extends StatelessWidget {
           padding: EdgeInsets.only(left: 23.w, right: 10.w),
           alignment: Alignment.center,
           height: 68.18,
-          decoration: BoxDecoration(color: Color(0x14444444)),
+          decoration: const BoxDecoration(color: Color(0x14444444)),
           child: Text(
             'Lessiveuse -  0225 ......................................... 1500 fcfa',
             style: TextStyle(
@@ -104,7 +104,7 @@ class ContratWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: 40.h),
-        SizedBox(
+        const SizedBox(
           width: 329.73,
           height: 21.37,
           child: Text(
@@ -119,7 +119,7 @@ class ContratWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: 40.h),
-        SizedBox(
+        const SizedBox(
           width: 329.73,
           height: 21.37,
           child: Text(

@@ -15,8 +15,8 @@ class DashboardView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.white,
         bottomNavigationBar: Obx(
           () => CustomCurvedNavigationBar(
             buttonBackgroundColor: Colors.white,

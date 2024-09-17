@@ -1,5 +1,5 @@
 import 'package:bips_app/app/modules/chart/widgets/chart_header.dart';
-import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
+import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:bips_app/app/modules/messages/controller/messages_controller.dart';
 import 'package:bips_app/app/modules/messages/model/message_model.dart';
@@ -100,6 +100,7 @@ class MessagesMainView extends GetView<MessagesController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.h),
@@ -135,7 +136,7 @@ class MessagesMainView extends GetView<MessagesController> {
                           },
                           itemCount: 7)),
                   SizedBox(height: 50.h),
-                  BackScreen(controller: Get.find<HomeController>()),
+                  BackScreen1(controller: Get.find<DashboardController>()),
                   SizedBox(height: 10.h),
                 ],
               ))),

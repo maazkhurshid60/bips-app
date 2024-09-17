@@ -1,14 +1,89 @@
 import 'package:bips_app/app/constants/app_colors.dart';
-import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+
+class CustomRowWidget extends StatelessWidget {
+  final String? img;
+  final String? text;
+  const CustomRowWidget({super.key, this.img, this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      Image.asset("assets/images/${img ?? "p1"}.png",
+          height: 60.h, width: 90.w),
+      SizedBox(width: 56.w),
+      Padding(
+        padding: const EdgeInsets.only(top: 30.0),
+        child: FittedBox(
+          fit: BoxFit.contain,
+          child: Text(
+            text ?? "Entrepreneur du Tertiaire (ET)",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 10.sp,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w400,
+              height: 0,
+            ),
+          ),
+        ),
+      ),
+      const Spacer(),
+      Padding(
+        padding: EdgeInsets.only(top: 30.0, right: 10.w),
+        child: Container(
+          width: 66.w,
+          height: 48.h,
+          alignment: Alignment.center,
+          decoration: const ShapeDecoration(
+            color: Color(0x35D9D9D9),
+            shape: OvalBorder(),
+          ),
+          child: SvgPicture.asset("assets/svgs/common.svg",
+              height: 30.h, width: 30.w),
+        ),
+      )
+    ]);
+  }
+}
+
+class SingleItem extends StatelessWidget {
+  final String? img;
+  final Function()? onTap;
+  const SingleItem({super.key, this.img, this.onTap});
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 94.w,
+        height: 49.h,
+        alignment: Alignment.center,
+        decoration: ShapeDecoration(
+          color: const Color(0x49D9D9D9),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+                width: 1,
+                color: img == "ref" ? AppColors.golden : Colors.white),
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        child: SvgPicture.asset(
+          "assets/svgs/${img ?? "smile"}.svg",
+          height: 24.h,
+          width: 24.w,
+        ),
+      ),
+    );
+  }
+}
 
 class SwitcherView extends GetView<HomeController> {
   const SwitcherView({super.key});
@@ -16,6 +91,7 @@ class SwitcherView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(right: 20.w, left: 20.w, bottom: 20.h),
@@ -49,9 +125,10 @@ class SwitcherView extends GetView<HomeController> {
                     padding: EdgeInsets.only(left: 15.0.w),
                     child: Icon(Icons.search, size: 22.h, color: Colors.black),
                   ),
-                  style: TextStyle(fontSize: 14.sp, color: Color(0xffBFBFBF)),
+                  style: TextStyle(
+                      fontSize: 14.sp, color: const Color(0xffBFBFBF)),
                   backgroundColor: Colors.transparent,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.only(left: 20),
                 ),
               ),
               SizedBox(height: 27.h),
@@ -70,7 +147,7 @@ class SwitcherView extends GetView<HomeController> {
                               },
                             ),
                             SizedBox(height: 5.h),
-                            Text(
+                            const Text(
                               'Crédibilité',
                               style: TextStyle(
                                 color: Colors.black,
@@ -112,7 +189,7 @@ class SwitcherView extends GetView<HomeController> {
                               },
                             ),
                             SizedBox(height: 5.h),
-                            Text(
+                            const Text(
                               'Aide',
                               style: TextStyle(
                                 color: Colors.black,
@@ -128,100 +205,23 @@ class SwitcherView extends GetView<HomeController> {
                     ),
                   )),
               SizedBox(height: 60.h),
-              CustomRowWidget(),
+              const CustomRowWidget(),
               SizedBox(height: 60.h),
-              CustomRowWidget(
+              const CustomRowWidget(
                 img: "p2",
                 text: "Coworker’s",
               ),
               SizedBox(height: 60.h),
-              CustomRowWidget(
+              const CustomRowWidget(
                 img: "p3",
                 text: "Biper’S",
               ),
-              Spacer(),
+              const Spacer(),
               BackScreen(controller: controller)
             ],
           ),
         ),
       ),
     );
-  }
-}
-
-class SingleItem extends StatelessWidget {
-  const SingleItem({super.key, this.img, this.onTap});
-  final String? img;
-  final Function()? onTap;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 94.w,
-        height: 49.h,
-        alignment: Alignment.center,
-        decoration: ShapeDecoration(
-          color: Color(0x49D9D9D9),
-          shape: RoundedRectangleBorder(
-            side: BorderSide(
-                width: 1,
-                color: img == "ref" ? AppColors.golden : Colors.white),
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        child: SvgPicture.asset(
-          "assets/svgs/${img ?? "smile"}.svg",
-          height: 24.h,
-          width: 24.w,
-        ),
-      ),
-    );
-  }
-}
-
-class CustomRowWidget extends StatelessWidget {
-  const CustomRowWidget({super.key, this.img, this.text});
-  final String? img;
-  final String? text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(children: [
-      Image.asset("assets/images/${img ?? "p1"}.png",
-          height: 60.h, width: 90.w),
-      SizedBox(width: 56.w),
-      Padding(
-        padding: const EdgeInsets.only(top: 30.0),
-        child: FittedBox(
-          fit: BoxFit.contain,
-          child: Text(
-            "${text ?? "Entrepreneur du Tertiaire (ET)"}",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 10.sp,
-              fontFamily: 'Inter',
-              fontWeight: FontWeight.w400,
-              height: 0,
-            ),
-          ),
-        ),
-      ),
-      const Spacer(),
-      Padding(
-        padding: EdgeInsets.only(top: 30.0, right: 10.w),
-        child: Container(
-          width: 66.w,
-          height: 48.h,
-          alignment: Alignment.center,
-          decoration: ShapeDecoration(
-            color: Color(0x35D9D9D9),
-            shape: OvalBorder(),
-          ),
-          child: SvgPicture.asset("assets/svgs/common.svg",
-              height: 30.h, width: 30.w),
-        ),
-      )
-    ]);
   }
 }

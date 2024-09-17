@@ -165,8 +165,13 @@ class CustomPager extends GetView<HomeController> {
                       ),
                     ),
                     SizedBox(height: 10.h),
-                    Image.asset("assets/images/hand.png",
-                        color: Colors.white, height: 36.h),
+                    GestureDetector(
+                      onTap: () {
+                        controller.activePage.value = 12;
+                      },
+                      child: Image.asset("assets/images/hand.png",
+                          color: Colors.white, height: 36.h),
+                    ),
                     SizedBox(height: 10.h),
                     GestureDetector(
                         onTap: () {

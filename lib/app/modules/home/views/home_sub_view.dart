@@ -1,4 +1,6 @@
 import 'package:bips_app/app/modules/Accounts/views/account_main_view.dart';
+import 'package:bips_app/app/modules/Cashprice/views/cash_price_main_view.dart';
+import 'package:bips_app/app/modules/Cashprice/views/totoal_bil.dart';
 import 'package:bips_app/app/modules/chart/views/chart_main_view.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/bonos_view.dart';
@@ -20,6 +22,7 @@ class HomeSubViewss extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Obx(() {
           if (controller.activePage.value == 1) {
@@ -46,6 +49,10 @@ class HomeSubViewss extends GetView<HomeController> {
           } else if (controller.activePage.value == 11) {
             return AccountsMainView(
                 isFromHomePage: true, homeController: controller);
+          } else if (controller.activePage.value == 12) {
+            return const CashMainPriceView();
+          } else if (controller.activePage.value == 13) {
+            return const TotalBillCashprice();
           } else {
             return const HomeView();
           }

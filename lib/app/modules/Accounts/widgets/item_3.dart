@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class Item3 extends StatelessWidget {
+  final int index;
+  const Item3({super.key, required this.index});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 110.w,
+          alignment: Alignment.center,
+          height: 20.h,
+          decoration: BoxDecoration(
+              color: Colors.black, borderRadius: BorderRadius.circular(5.r)),
+          child: Text(
+            "Structure de la maison",
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white, fontSize: 11.sp),
+          ),
+        ),
+        Container(
+          width: 352.12,
+          height: 420.63,
+          decoration: const BoxDecoration(color: Color(0x0F444444)),
+        ),
+        Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const CircleAvatar(backgroundColor: Colors.black, radius: 2.5),
+              SizedBox(
+                width: 4.w,
+              ),
+              const CircleAvatar(backgroundColor: Colors.black, radius: 2.5),
+              SizedBox(
+                width: 4.w,
+              ),
+              CircleAvatar(
+                  backgroundColor: Colors.black, radius: index == 2 ? 5 : 2.5),
+            ])
+      ],
+    );
+  }
+}

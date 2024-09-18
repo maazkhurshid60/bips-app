@@ -13,8 +13,8 @@ class ProfileView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding:

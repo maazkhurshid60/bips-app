@@ -1,4 +1,5 @@
 import 'package:bips_app/app/constants/app_colors.dart';
+import 'package:bips_app/app/modules/Accounts/contrtoller/account_controller.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,8 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class CustomPager extends GetView<HomeController> {
-  const CustomPager({super.key, this.imge});
   final String? imge;
+  const CustomPager({super.key, this.imge});
 
   @override
   Widget build(BuildContext context) {
@@ -105,29 +106,40 @@ class CustomPager extends GetView<HomeController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Marie. K \nGardienne",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14.sp,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w700,
-                              height: 0,
+                      GestureDetector(
+                        onTap: () {
+                          Get.find<AccountController>().pageIndex.value = 2;
+                          controller.activePage.value = 11;
+                        },
+                        child: Row(
+                          children: [
+                            Text(
+                              "Marie. K \nGardienne",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14.sp,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w700,
+                                height: 0,
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 15.h),
-                            child: const Icon(
-                              Icons.star,
-                              color: AppColors.golden,
-                            ),
-                          )
-                        ],
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 15.h),
+                              child: const Icon(
+                                Icons.star,
+                                color: AppColors.golden,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                      Image.asset("assets/images/star.png",
-                          height: 20.h, width: 40.w)
+                      GestureDetector(
+                        onTap: () {
+                          controller.activePage.value = 9;
+                        },
+                        child: Image.asset("assets/images/star.png",
+                            height: 20.h, width: 40.w),
+                      )
                     ],
                   ),
                 ),
@@ -153,8 +165,13 @@ class CustomPager extends GetView<HomeController> {
                       ),
                     ),
                     SizedBox(height: 10.h),
-                    Image.asset("assets/images/hand.png",
-                        color: Colors.white, height: 36.h),
+                    GestureDetector(
+                      onTap: () {
+                        controller.activePage.value = 12;
+                      },
+                      child: Image.asset("assets/images/hand.png",
+                          color: Colors.white, height: 36.h),
+                    ),
                     SizedBox(height: 10.h),
                     GestureDetector(
                         onTap: () {
@@ -165,7 +182,7 @@ class CustomPager extends GetView<HomeController> {
                     SizedBox(height: 10.h),
                     GestureDetector(
                         onTap: () {
-                          controller.activePage.value = 4;
+                          controller.activePage.value = 10;
                         },
                         child: Image.asset("assets/images/messages.png",
                             color: Colors.white, height: 36.h)),

@@ -1,3 +1,7 @@
+import 'package:bips_app/app/modules/Accounts/views/account_main_view.dart';
+import 'package:bips_app/app/modules/chart/views/chart_main_view.dart';
+import 'package:bips_app/app/modules/home/views/home_sub_view.dart';
+import 'package:bips_app/app/modules/messages/views/messages_main_view.dart';
 import 'package:bips_app/app/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,8 +15,8 @@ class DashboardView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.white,
         bottomNavigationBar: Obx(
           () => CustomCurvedNavigationBar(
             buttonBackgroundColor: Colors.white,
@@ -51,6 +55,18 @@ class DashboardView extends GetView<DashboardController> {
             },
           ),
         ),
-        body: Obx(() => controller.screen[controller.activeBottomIndex.value]));
+        body: Obx(() {
+          if (controller.activeBottomIndex.value == 0) {
+            return const AccountsMainView();
+          } else if (controller.activeBottomIndex.value == 1) {
+            return const ChartMainView();
+          } else if (controller.activeBottomIndex.value == 2) {
+            return const HomeSubViewss();
+          } else if (controller.activeBottomIndex.value == 3) {
+            return const MessagesMainView();
+          } else {
+            return const HomeSubViewss();
+          }
+        }));
   }
 }

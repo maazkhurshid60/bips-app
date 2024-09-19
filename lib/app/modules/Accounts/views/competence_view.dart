@@ -30,18 +30,26 @@ class CompetenceView extends StatelessWidget {
             ),
             SizedBox(height: 10.h),
             Expanded(
-              child: ListView.separated(
-                  itemBuilder: (context, index) {
-                    if (index % 2 == 0) {
-                      return const account_competence_feature();
-                    } else {
-                      return const account_competence_feature(isRight: true);
-                    }
-                  },
-                  separatorBuilder: (context, index) {
-                    return SizedBox(height: 3.h);
-                  },
-                  itemCount: 15),
+              child: Container(
+                width: 347.03.w,
+                height: 533.27.h,
+                padding: EdgeInsets.all(10.h),
+                decoration: BoxDecoration(
+                    color: const Color(0x11444444),
+                    borderRadius: BorderRadius.circular(20.r)),
+                child: ListView.separated(
+                    itemBuilder: (context, index) {
+                      if (index % 2 == 0) {
+                        return const account_competence_feature();
+                      } else {
+                        return const account_competence_feature(isRight: true);
+                      }
+                    },
+                    separatorBuilder: (context, index) {
+                      return SizedBox(height: 3.h);
+                    },
+                    itemCount: 15),
+              ),
             ),
           ],
         ));

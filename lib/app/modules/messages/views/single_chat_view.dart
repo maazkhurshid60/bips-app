@@ -54,39 +54,48 @@ class SingleChatView extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 100.h),
-                const Center(
-                  child: Text(
-                    'jkjkjklk',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 11.19,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    height: 42.h,
+                    width: 229.w,
+                    padding: EdgeInsets.all(10.h),
+                    decoration: BoxDecoration(
+                        color: const Color(0x2BBFBFBF),
+                        borderRadius: BorderRadius.circular(25.r)),
+                    child: Text(
+                      'jkjkjklk',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 11.19.sp,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
+                      ),
                     ),
                   ),
                 ),
-                SizedBox(height: 60.h),
+                const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(right: 40.h),
                   child: const TextWidget(),
                 ),
-                SizedBox(height: 60.h),
+                const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(left: 40.h),
                   child: const TextWidget(isRight: false),
                 ),
-                SizedBox(height: 60.h),
+                const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(right: 40.h),
                   child: const TextWidget(),
                 ),
-                SizedBox(height: 60.h),
+                const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(left: 40.h),
                   child: const TextWidget(isRight: false),
                 ),
-                SizedBox(height: 60.h),
+                const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(right: 40.h),
                   child: const TextWidget(),
@@ -124,17 +133,47 @@ class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: isRight == null ? Alignment.centerRight : Alignment.centerLeft,
-      child: Text(
-        text ?? 'Solange Kouamé',
-        style: const TextStyle(
-          color: Colors.black,
-          fontSize: 12,
-          fontFamily: 'Inter',
-          fontWeight: FontWeight.w700,
-          height: 0,
-        ),
-      ),
-    );
+        alignment:
+            isRight == null ? Alignment.centerRight : Alignment.centerLeft,
+        child: SizedBox(
+          width: 182.w,
+          height: 42.h,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                top: 0,
+                child: Container(
+                  width: 182.w,
+                  height: 42.h,
+                  decoration: ShapeDecoration(
+                    color: const Color(0x2BBFBFBF),
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(width: 1.02, color: Colors.white),
+                      borderRadius: BorderRadius.circular(12.21),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 13.w,
+                top: 14.h,
+                child: SizedBox(
+                  width: 116.w,
+                  child: Text(
+                    text ?? 'Solange Kouamé',
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 12,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w700,
+                      height: 0,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }

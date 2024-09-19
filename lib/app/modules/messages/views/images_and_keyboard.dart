@@ -35,43 +35,52 @@ class ImagesAndKeynoardView extends GetView<HomeController> {
                   child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Image.asset("assets/images/girl_img.png", height: 400.h),
+                    Image.asset("assets/images/girl_img.png", height: 350.h),
                     SizedBox(height: 20.h),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 25.0.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: 68.w,
-                            height: 37.h,
-                            decoration: ShapeDecoration(
-                              color: const Color(0x2BBFBFBF),
-                              shape: RoundedRectangleBorder(
-                                side: const BorderSide(
-                                    width: 1.02, color: Color(0xFFCBA95C)),
-                                borderRadius: BorderRadius.circular(12.21),
+                      child: Container(
+                        padding: EdgeInsets.all(10.h),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16.r),
+                          color: const Color(0x2BBFBFBF),
+                        ),
+                        height: 71.h,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 68.w,
+                              height: 37.h,
+                              decoration: ShapeDecoration(
+                                color: const Color(0x2BBFBFBF),
+                                shape: RoundedRectangleBorder(
+                                  side: const BorderSide(
+                                      width: 1.02, color: Color(0xFFCBA95C)),
+                                  borderRadius: BorderRadius.circular(12.21),
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(width: 13.w),
-                          const SizedBox(
-                            width: 116,
-                            child: Text(
-                              'Aa.........................',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w300,
-                                height: 0,
+                            SizedBox(width: 13.w),
+                            const SizedBox(
+                              width: 116,
+                              child: Text(
+                                'Aa.........................',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 12,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w300,
+                                  height: 0,
+                                ),
                               ),
                             ),
-                          ),
-                          const Spacer(),
-                          Image.asset("assets/images/smilee.png", height: 30.h)
-                        ],
+                            const Spacer(),
+                            Image.asset("assets/images/smilee.png",
+                                height: 30.h)
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: 5.h),

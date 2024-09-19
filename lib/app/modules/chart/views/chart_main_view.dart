@@ -24,7 +24,7 @@ class ChartMainView extends GetView<ChartController> {
             child: Column(
               children: [
                 const chartHeader(),
-                SizedBox(height: 38.h),
+                SizedBox(height: 30.h),
                 SizedBox(
                   width: double.infinity,
                   height: 80.40.h,
@@ -55,7 +55,7 @@ class ChartMainView extends GetView<ChartController> {
                     ],
                   ),
                 ),
-                SizedBox(height: 38.h),
+                SizedBox(height: 30.h),
                 Obx(() => Expanded(
                       child: controller
                           .chartMainWidgetList[controller.pageIndex.value],

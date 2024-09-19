@@ -27,9 +27,7 @@ class ChartSingleItem extends GetView<ChartController> {
               height: 53.94.h,
               alignment: Alignment.center,
               decoration: ShapeDecoration(
-                color: controller.pageIndex.value == index
-                    ? const Color(0x49D9D9D9)
-                    : Colors.transparent,
+                color: const Color(0x2BBFBFBF),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(
                       width: 1.02,

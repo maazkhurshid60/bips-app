@@ -26,11 +26,13 @@ class ContratWidget extends StatelessWidget {
         ),
         SizedBox(height: 5.h),
         Container(
-          width: 362.30,
           padding: EdgeInsets.only(left: 23.w, right: 10.w),
+          width: 352.30.w,
+          height: 60.h,
           alignment: Alignment.center,
-          height: 68.18,
-          decoration: const BoxDecoration(color: Color(0x14444444)),
+          decoration: BoxDecoration(
+              color: const Color(0x2BBFBFBF),
+              borderRadius: BorderRadius.circular(25.r)),
           child: Text(
             'Lessiveuse -  0225 ......................................... 1500 fcfa',
             style: TextStyle(
@@ -42,37 +44,45 @@ class ContratWidget extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 40.h),
-        const SizedBox(
-          width: 329.73,
-          height: 21.37,
+        SizedBox(height: 10.h),
+        Container(
+          width: 352.30.w,
+          height: 60.h,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: const Color(0x2BBFBFBF),
+              borderRadius: BorderRadius.circular(25.r)),
           child: Text(
-            'Lessiveuse -  0225 ......................................... 1500 fcfa',
+            'Lessiveuse -  0225 ..................................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 13.23,
+              fontSize: 12.sp,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w300,
               height: 0,
             ),
           ),
         ),
-        SizedBox(height: 40.h),
-        const SizedBox(
-          width: 329.73,
-          height: 21.37,
-          child: Text(
+        SizedBox(height: 10.h),
+        Container(
+          width: 352.30.w,
+          height: 60.h,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: const Color(0x2BBFBFBF),
+              borderRadius: BorderRadius.circular(25.r)),
+          child: const Text(
             'Lessiveuse -  0225 ......................................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 13.23,
+              fontSize: 12,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w300,
               height: 0,
             ),
           ),
         ),
-        SizedBox(height: 40.h),
+        SizedBox(height: 18.h),
         Container(
           width: 60.w,
           alignment: Alignment.center,
@@ -87,46 +97,56 @@ class ContratWidget extends StatelessWidget {
         ),
         SizedBox(height: 5.h),
         Container(
-          width: 362.30,
           padding: EdgeInsets.only(left: 23.w, right: 10.w),
+          width: 352.30.w,
+          height: 60.h,
           alignment: Alignment.center,
-          height: 68.18,
-          decoration: const BoxDecoration(color: Color(0x14444444)),
+          decoration: BoxDecoration(
+              color: const Color(0x2BBFBFBF),
+              borderRadius: BorderRadius.circular(25.r)),
           child: Text(
             'Lessiveuse -  0225 ......................................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 12.sp,
+              fontSize: 11.sp,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w300,
               height: 0,
             ),
           ),
         ),
-        SizedBox(height: 40.h),
-        const SizedBox(
-          width: 329.73,
-          height: 21.37,
-          child: Text(
+        SizedBox(height: 10.h),
+        Container(
+          width: 352.30.w,
+          height: 60.h,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: const Color(0x2BBFBFBF),
+              borderRadius: BorderRadius.circular(25.r)),
+          child: const Text(
             'Lessiveuse -  0225 ......................................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 13.23,
+              fontSize: 12,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w300,
               height: 0,
             ),
           ),
         ),
-        SizedBox(height: 40.h),
-        const SizedBox(
-          width: 329.73,
-          height: 21.37,
-          child: Text(
+        SizedBox(height: 10.h),
+        Container(
+          width: 352.30.w,
+          height: 60.h,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: const Color(0x2BBFBFBF),
+              borderRadius: BorderRadius.circular(25.r)),
+          child: const Text(
             'Lessiveuse -  0225 ......................................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 13.23,
+              fontSize: 12,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w300,
               height: 0,

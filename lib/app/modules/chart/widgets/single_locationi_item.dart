@@ -8,8 +8,13 @@ class SingleLocationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
         height: 63.h,
+        padding: EdgeInsets.only(left: 10.sp),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25.r),
+          color: const Color(0x2BBFBFBF),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,13 +24,13 @@ class SingleLocationItem extends StatelessWidget {
               child: const Icon(Icons.location_on_sharp),
             ),
             SizedBox(
-              width: 329.73.w,
+              width: double.infinity,
               height: 21.37.h,
-              child: const Text(
+              child: Text(
                 'Cocody -  Angré ....................................... 1500 / heure',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 13.23,
+                  fontSize: 12.sp,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w300,
                   height: 0,

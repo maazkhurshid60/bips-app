@@ -44,40 +44,51 @@ class PrixView extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 37.h),
-        Text(
-          'Prix élevé   ..................................................................',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 11.19.sp,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w400,
-            height: 0,
+        SizedBox(height: 10.h),
+        Container(
+          width: 342.96.w,
+          height: 186.24.w,
+          padding: EdgeInsets.all(30.r),
+          decoration: BoxDecoration(
+              color: const Color(0x2BBFBFBF),
+              borderRadius: BorderRadius.circular(25.r)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Prix élevé   ..................................................................',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 10.sp,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
+              Text(
+                'Prix Moyen  ..................................................................',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 10.sp,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
+              Text(
+                'Prix Minimum   .............................................................',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 10.sp,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
+            ],
           ),
         ),
-        SizedBox(height: 31.h),
-        Text(
-          'Prix Moyen  ..................................................................',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 11.19.sp,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w400,
-            height: 0,
-          ),
-        ),
-        SizedBox(height: 31.h),
-        Text(
-          'Prix Minimum   .............................................................',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 11.19.sp,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w400,
-            height: 0,
-          ),
-        ),
-        SizedBox(height: 60.h),
+        const Spacer(),
         Align(
           alignment: Alignment.centerLeft,
           child: Container(
@@ -93,40 +104,51 @@ class PrixView extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 37.h),
-        Text(
-          'Prix élevé   ..................................................................',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 11.19.sp,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w400,
-            height: 0,
+        SizedBox(height: 10.h),
+        Container(
+          width: 342.96.w,
+          height: 186.24.h,
+          padding: EdgeInsets.all(30.r),
+          decoration: BoxDecoration(
+              color: const Color(0x2BBFBFBF),
+              borderRadius: BorderRadius.circular(25.r)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Prix élevé   ..................................................................',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 10.sp,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
+              Text(
+                'Prix Moyen  ..................................................................',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 10.sp,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
+              Text(
+                'Prix Minimum   .............................................................',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 10.sp,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
+            ],
           ),
         ),
-        SizedBox(height: 31.h),
-        Text(
-          'Prix Moyen  ..................................................................',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 11.19.sp,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w400,
-            height: 0,
-          ),
-        ),
-        SizedBox(height: 31.h),
-        Text(
-          'Prix Minimum   .............................................................',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 11.19.sp,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w400,
-            height: 0,
-          ),
-        ),
-        SizedBox(height: 40.h),
+        SizedBox(height: 15.h),
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -102,60 +102,73 @@ class TotalBillCashprice extends GetView<CashPriceController> {
               ),
             ),
             SizedBox(height: 50.h),
-            const item1text(),
-            SizedBox(height: 40.h),
-            const item1text(
-              text1: "Iri’S Ass - 075",
-              text2:
-                  "                                                        100",
-            ),
-            SizedBox(height: 40.h),
-            const item1text(
-                text1: "Bôno - 065",
-                text2:
-                    "                                                              100"),
-            SizedBox(height: 40.h),
-            const item1text(
-                text1: "Frais d’exploitation - 055",
-                text2: "                                      100"),
-            SizedBox(height: 40.h),
             Container(
-              width: 299.20,
-              decoration: const ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    width: 1.02,
-                    strokeAlign: BorderSide.strokeAlignCenter,
+              width: double.infinity,
+              height: 433.53,
+              padding: EdgeInsets.all(10.h),
+              decoration: BoxDecoration(
+                  color: const Color(0x4CD9D9D9),
+                  borderRadius: BorderRadius.circular(20.r)),
+              child: Column(
+                children: [
+                  SizedBox(height: 10.h),
+                  const item1text(),
+                  SizedBox(height: 40.h),
+                  const item1text(
+                    text1: "Iri’S Ass - 075",
+                    text2:
+                        "                                                        100",
                   ),
-                ),
-              ),
-            ),
-            SizedBox(height: 40.h),
-            const item1text(
-              text1: " ",
-              text2:
-                  "Montant Total                                                    2300",
-            ),
-            SizedBox(height: 20.h),
-            Container(
-              width: 194.38.w,
-              height: 30.53.h,
-              alignment: Alignment.center,
-              decoration: ShapeDecoration(
-                color: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25.44),
-                ),
-              ),
-              child: const Text(
-                'Commande',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14.25,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w300,
-                  height: 0,
-                ),
+                  SizedBox(height: 40.h),
+                  const item1text(
+                      text1: "Bôno - 065",
+                      text2:
+                          "                                                              100"),
+                  SizedBox(height: 40.h),
+                  const item1text(
+                      text1: "Frais d’exploitation - 055",
+                      text2: "                                      100"),
+                  SizedBox(height: 40.h),
+                  Container(
+                    width: 299.20,
+                    decoration: const ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          width: 1.02,
+                          strokeAlign: BorderSide.strokeAlignCenter,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 40.h),
+                  const item1text(
+                    text1: " ",
+                    text2:
+                        "Montant Total                                                    2300",
+                  ),
+                  SizedBox(height: 20.h),
+                  Container(
+                    width: 194.38.w,
+                    height: 30.53.h,
+                    alignment: Alignment.center,
+                    decoration: ShapeDecoration(
+                      color: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.44),
+                      ),
+                    ),
+                    child: const Text(
+                      'Commande',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14.25,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w300,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             const Spacer(),

@@ -127,6 +127,7 @@ class TabBox extends GetView<CashPriceController> {
           alignment: Alignment.center,
           width: 100.w,
           decoration: BoxDecoration(
+              color: const Color(0x14444444),
               borderRadius: BorderRadius.circular(15.r),
               border: Border.all(
                   color: index == controller.tabIndex.value
@@ -157,7 +158,11 @@ class TxtField extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 5.h),
       height: 40.h,
-      width: double.infinity,
+      width: 350.w,
+      decoration: BoxDecoration(
+          color: const Color(0x14444444),
+          borderRadius: BorderRadius.circular(16.r)),
+      // width: double.infinity,
       child: Row(
         children: [
           Text(

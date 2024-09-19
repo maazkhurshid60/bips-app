@@ -106,16 +106,24 @@ class AgendaView extends StatelessWidget {
                       child: const StackItem(),
                     ),
                     SizedBox(height: 20.h),
-                    SizedBox(
+                    Container(
+                      decoration: BoxDecoration(
+                          color: const Color(0x2BBFBFBF),
+                          borderRadius: BorderRadius.circular(16.r)),
                       width: 272.74.w,
                       height: 130.26.h,
                       child: const StackItem(isLower: true),
                     ),
                     SizedBox(height: 20.h),
-                    SizedBox(
+                    Container(
                       width: 272.74.w,
+                      height: 130.h,
+                      decoration: BoxDecoration(
+                          color: const Color(0x2BBFBFBF),
+                          borderRadius: BorderRadius.circular(16.r)),
                       child: Padding(
-                        padding: EdgeInsets.only(right: 30.0.w, left: 10.w),
+                        padding: EdgeInsets.only(
+                            right: 30.0.w, left: 10.w, top: 10.h),
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,

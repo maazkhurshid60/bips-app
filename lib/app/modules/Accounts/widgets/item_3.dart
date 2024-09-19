@@ -23,11 +23,13 @@ class Item3 extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontSize: 11.sp),
           ),
         ),
+        SizedBox(height: 10.h),
         Container(
-          width: 352.12,
-          height: 420.63,
+          width: 352.12.w,
+          height: 420.63.h,
           decoration: const BoxDecoration(color: Color(0x0F444444)),
         ),
+        const Spacer(),
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

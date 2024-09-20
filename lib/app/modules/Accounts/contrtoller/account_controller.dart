@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 
 class AccountController extends GetxController {
   RxInt pageIndex = 0.obs;
+  RxBool isCashPriceView = false.obs;
   List<Widget> screenItem = [
     const PrixView(c: Color(0xffBFBFBF), index: 0),
     const PrixView(index: 1),
@@ -16,6 +17,6 @@ class AccountController extends GetxController {
   List<Widget> tabsItem = [
     const AgendaView(),
     const PageTwo(),
-    const CompetenceView(),
+    const CompetenceView()
   ];
 }

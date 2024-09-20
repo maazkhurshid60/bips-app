@@ -90,13 +90,19 @@ class CustomPager extends GetView<HomeController> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 21.w, top: 160.h),
-                  child: Container(
-                    width: 66.w,
-                    height: 41.h,
-                    decoration: BoxDecoration(
-                        color: const Color(0xFF444444),
-                        border: Border.all(color: AppColors.golden),
-                        borderRadius: BorderRadiusDirectional.circular(8.r)),
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.find<AccountController>().pageIndex.value = 2;
+                      controller.activePage.value = 11;
+                    },
+                    child: Container(
+                      width: 66.w,
+                      height: 41.h,
+                      decoration: BoxDecoration(
+                          color: const Color(0xFF444444),
+                          border: Border.all(color: AppColors.golden),
+                          borderRadius: BorderRadiusDirectional.circular(8.r)),
+                    ),
                   ),
                 ),
                 SizedBox(width: 4.w),
@@ -167,7 +173,7 @@ class CustomPager extends GetView<HomeController> {
                     SizedBox(height: 10.h),
                     GestureDetector(
                       onTap: () {
-                        controller.activePage.value = 12;
+                        // controller.activePage.value = 12;
                       },
                       child: Image.asset("assets/images/hand.png",
                           color: Colors.white, height: 36.h),

@@ -1,7 +1,9 @@
+import 'package:bips_app/app/modules/Accounts/contrtoller/account_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class AgendaView extends StatelessWidget {
+class AgendaView extends GetView<AccountController> {
   const AgendaView({super.key});
 
   @override
@@ -103,23 +105,94 @@ class AgendaView extends StatelessWidget {
                           image: DecorationImage(
                               image: AssetImage("assets/images/ag_img1.png"),
                               fit: BoxFit.cover)),
-                      child: const StackItem(),
+                      child: StackItem(ontap: () {
+                        controller.isCashPriceView.value = true;
+                      }),
                     ),
                     SizedBox(height: 20.h),
                     Container(
                       decoration: BoxDecoration(
-                          color: const Color(0x2BBFBFBF),
+                          color: const Color(0x49D9D9D9),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0x19000000),
+                              blurRadius: 6,
+                              offset: Offset(0, 3),
+                              spreadRadius: 0,
+                            ),
+                            BoxShadow(
+                              color: Color(0x16000000),
+                              blurRadius: 11,
+                              offset: Offset(0, 11),
+                              spreadRadius: 0,
+                            ),
+                            BoxShadow(
+                              color: Color(0x0C000000),
+                              blurRadius: 14,
+                              offset: Offset(0, 24),
+                              spreadRadius: 0,
+                            ),
+                            BoxShadow(
+                              color: Color(0x02000000),
+                              blurRadius: 17,
+                              offset: Offset(0, 43),
+                              spreadRadius: 0,
+                            ),
+                            BoxShadow(
+                              color: Color(0x00000000),
+                              blurRadius: 19,
+                              offset: Offset(0, 66),
+                              spreadRadius: 0,
+                            )
+                          ],
                           borderRadius: BorderRadius.circular(16.r)),
                       width: 272.74.w,
                       height: 130.26.h,
-                      child: const StackItem(isLower: true),
+                      child: StackItem(
+                        isLower: true,
+                        ontap: () {
+                          controller.isCashPriceView.value = true;
+                        },
+                      ),
                     ),
                     SizedBox(height: 20.h),
                     Container(
                       width: 272.74.w,
                       height: 130.h,
                       decoration: BoxDecoration(
-                          color: const Color(0x2BBFBFBF),
+                          color: const Color(0x49D9D9D9),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0x19000000),
+                              blurRadius: 6,
+                              offset: Offset(0, 3),
+                              spreadRadius: 0,
+                            ),
+                            BoxShadow(
+                              color: Color(0x16000000),
+                              blurRadius: 11,
+                              offset: Offset(0, 11),
+                              spreadRadius: 0,
+                            ),
+                            BoxShadow(
+                              color: Color(0x0C000000),
+                              blurRadius: 14,
+                              offset: Offset(0, 24),
+                              spreadRadius: 0,
+                            ),
+                            BoxShadow(
+                              color: Color(0x02000000),
+                              blurRadius: 17,
+                              offset: Offset(0, 43),
+                              spreadRadius: 0,
+                            ),
+                            BoxShadow(
+                              color: Color(0x00000000),
+                              blurRadius: 19,
+                              offset: Offset(0, 66),
+                              spreadRadius: 0,
+                            )
+                          ],
                           borderRadius: BorderRadius.circular(16.r)),
                       child: Padding(
                         padding: EdgeInsets.only(
@@ -160,7 +233,8 @@ class AgendaView extends StatelessWidget {
 
 class StackItem extends StatelessWidget {
   final bool? isLower;
-  const StackItem({super.key, this.isLower});
+  final Function()? ontap;
+  const StackItem({super.key, this.isLower, this.ontap});
 
   @override
   Widget build(BuildContext context) {
@@ -236,11 +310,15 @@ class StackItem extends StatelessWidget {
         Positioned(
           left: 216.77.w,
           top: 90.38.h,
-          child: SizedBox(
-            width: 33.58,
-            height: 28.50,
-            child: Image.asset("assets/images/hand.png",
-                color: isLower != null ? null : Colors.white),
+          child: GestureDetector(
+            onTap: ontap,
+            child: SizedBox(
+              width: 33.58,
+              height: 28.50,
+              child: Image.asset(
+                  "assets/images/${isLower != null ? "black_hand" : "hand"}.png",
+                  color: isLower != null ? null : Colors.white),
+            ),
           ),
         ),
         Positioned(

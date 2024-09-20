@@ -1,7 +1,6 @@
+import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:bips_app/app/modules/Cashprice/controller/cash_price_controller.dart';
 import 'package:bips_app/app/modules/chart/widgets/chart_header.dart';
-import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
-import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -172,7 +171,20 @@ class TotalBillCashprice extends GetView<CashPriceController> {
               ),
             ),
             const Spacer(),
-            BackScreen(controller: Get.find<HomeController>()),
+            GestureDetector(
+              onTap: () {
+                controller.tabIndex.value = 0;
+              },
+              child: Container(
+                height: 32.h,
+                width: 33.w,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.golden,
+                ),
+                child: Icon(Icons.clear, color: Colors.white, size: 20.h),
+              ),
+            ),
             SizedBox(height: 20.h)
           ],
         ),

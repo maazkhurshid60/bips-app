@@ -25,7 +25,6 @@ class ChartSingleItem extends GetView<ChartController> {
             child: Container(
               width: 104.82.w,
               height: 53.94.h,
-              alignment: Alignment.center,
               decoration: ShapeDecoration(
                 color: const Color(0x2BBFBFBF),
                 shape: RoundedRectangleBorder(
@@ -33,10 +32,43 @@ class ChartSingleItem extends GetView<ChartController> {
                       width: 1.02,
                       color: controller.pageIndex.value == index
                           ? const Color(0xFFCBA95C)
-                          : Colors.transparent),
-                  borderRadius: BorderRadius.circular(15.27),
+                          : Colors.white),
+                  borderRadius: BorderRadius.circular(12.21),
                 ),
+                shadows: const [
+                  BoxShadow(
+                    color: Color(0x19000000),
+                    blurRadius: 6,
+                    offset: Offset(0, 3),
+                    spreadRadius: 0,
+                  ),
+                  BoxShadow(
+                    color: Color(0x16000000),
+                    blurRadius: 10,
+                    offset: Offset(0, 10),
+                    spreadRadius: 0,
+                  ),
+                  BoxShadow(
+                    color: Color(0x0C000000),
+                    blurRadius: 14,
+                    offset: Offset(0, 23),
+                    spreadRadius: 0,
+                  ),
+                  BoxShadow(
+                    color: Color(0x02000000),
+                    blurRadius: 17,
+                    offset: Offset(0, 42),
+                    spreadRadius: 0,
+                  ),
+                  BoxShadow(
+                    color: Color(0x00000000),
+                    blurRadius: 18,
+                    offset: Offset(0, 65),
+                    spreadRadius: 0,
+                  )
+                ],
               ),
+              alignment: Alignment.center,
               child: Image.asset("assets/images/${img ?? "c_img2"}.png"),
             ),
           ),

@@ -94,7 +94,7 @@ class AgendaView extends GetView<AccountController> {
                     ]),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 30.0).h,
+                padding: const EdgeInsets.symmetric(vertical: 20.0).h,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

@@ -12,7 +12,7 @@ class Item3 extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: 110.w,
+          width: 140.w,
           alignment: Alignment.center,
           height: 20.h,
           decoration: BoxDecoration(

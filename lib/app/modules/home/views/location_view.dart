@@ -1,5 +1,4 @@
 import 'package:bips_app/app/constants/app_colors.dart';
-import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,12 +6,50 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+List<String> fieldcontent = [
+  'Pays',
+  "Région",
+  'Ville',
+  "Commune",
+  'Quartier',
+  "Rue"
+];
+
+class customField extends StatelessWidget {
+  final String? content;
+  const customField({super.key, this.content});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 53.h,
+      width: 397.w,
+      padding: EdgeInsets.symmetric(horizontal: 15.w),
+      alignment: Alignment.centerLeft,
+      decoration: BoxDecoration(
+          border: Border.all(color: AppColors.golden),
+          color: const Color(0xffBFBFBF).withOpacity(0.41),
+          borderRadius: BorderRadius.circular(12).r),
+      child: Text(
+        '$content',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 14.sp,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w400,
+          height: 0,
+        ),
+      ),
+    );
+  }
+}
+
 class LocationView extends GetView<HomeController> {
   const LocationView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(left: 20.w, right: 20.h, bottom: 20.h),
@@ -44,9 +81,10 @@ class LocationView extends GetView<HomeController> {
                     padding: EdgeInsets.only(left: 15.0.w),
                     child: Icon(Icons.search, size: 22.h, color: Colors.black),
                   ),
-                  style: TextStyle(fontSize: 14.sp, color: Color(0xffBFBFBF)),
+                  style: TextStyle(
+                      fontSize: 14.sp, color: const Color(0xffBFBFBF)),
                   backgroundColor: Colors.transparent,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.only(left: 20),
                 ),
               ),
               SizedBox(height: 100.h),
@@ -58,43 +96,6 @@ class LocationView extends GetView<HomeController> {
               BackScreen(controller: controller)
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-List<String> fieldcontent = [
-  'Pays',
-  "Région",
-  'Ville',
-  "Commune",
-  'Quartier',
-  "Rue"
-];
-
-class customField extends StatelessWidget {
-  const customField({super.key, this.content});
-  final String? content;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 53.h,
-      width: 397.w,
-      padding: EdgeInsets.symmetric(horizontal: 15.w),
-      alignment: Alignment.centerLeft,
-      decoration: BoxDecoration(
-          border: Border.all(color: AppColors.golden),
-          color: Color(0xffBFBFBF).withOpacity(0.41),
-          borderRadius: BorderRadius.circular(12).r),
-      child: Text(
-        '$content',
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 14.sp,
-          fontFamily: 'Inter',
-          fontWeight: FontWeight.w400,
-          height: 0,
         ),
       ),
     );

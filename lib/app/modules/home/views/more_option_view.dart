@@ -1,5 +1,4 @@
 import 'package:bips_app/app/constants/app_colors.dart';
-import 'package:bips_app/app/constants/app_text_style.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,6 +13,7 @@ class MoreOptionView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(right: 20.w, left: 20.w, bottom: 20.h),
@@ -47,9 +47,10 @@ class MoreOptionView extends GetView<HomeController> {
                     padding: EdgeInsets.only(left: 15.0.w),
                     child: Icon(Icons.search, size: 22.h, color: Colors.black),
                   ),
-                  style: TextStyle(fontSize: 14.sp, color: Color(0xffBFBFBF)),
+                  style: TextStyle(
+                      fontSize: 14.sp, color: const Color(0xffBFBFBF)),
                   backgroundColor: Colors.transparent,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.only(left: 20),
                 ),
               ),
               SizedBox(height: 27.h),
@@ -68,7 +69,7 @@ class MoreOptionView extends GetView<HomeController> {
                               },
                             ),
                             SizedBox(height: 5.h),
-                            Text(
+                            const Text(
                               'Crédibilité',
                               style: TextStyle(
                                 color: Colors.black,
@@ -110,7 +111,7 @@ class MoreOptionView extends GetView<HomeController> {
                               },
                             ),
                             SizedBox(height: 5.h),
-                            Text(
+                            const Text(
                               'Aide',
                               style: TextStyle(
                                 color: Colors.black,
@@ -145,7 +146,7 @@ class MoreOptionView extends GetView<HomeController> {
                       height: 0,
                     ),
                   ),
-                  Text(
+                  const Text(
                     '= = = = = = = = = = = = = =',
                     style: TextStyle(
                       color: Colors.black,
@@ -162,12 +163,12 @@ class MoreOptionView extends GetView<HomeController> {
                       height: 25.h,
                       alignment: Alignment.center,
                       width: 40.w,
-                      child: Icon(
+                      decoration: const ShapeDecoration(
+                          color: AppColors.golden, shape: CircleBorder()),
+                      child: const Icon(
                         Icons.done,
                         color: Colors.white,
                       ),
-                      decoration: const ShapeDecoration(
-                          color: AppColors.golden, shape: CircleBorder()),
                     ),
                   ),
                 ],
@@ -192,7 +193,7 @@ class MoreOptionView extends GetView<HomeController> {
                       height: 0,
                     ),
                   ),
-                  Text(
+                  const Text(
                     '= = = = = = = = = = = ==',
                     style: TextStyle(
                       color: Colors.black,
@@ -209,12 +210,12 @@ class MoreOptionView extends GetView<HomeController> {
                       height: 25.h,
                       alignment: Alignment.center,
                       width: 40.w,
-                      child: Icon(
+                      decoration: const ShapeDecoration(
+                          color: AppColors.golden, shape: CircleBorder()),
+                      child: const Icon(
                         Icons.done,
                         color: Colors.white,
                       ),
-                      decoration: const ShapeDecoration(
-                          color: AppColors.golden, shape: CircleBorder()),
                     ),
                   ),
                 ],
@@ -239,7 +240,7 @@ class MoreOptionView extends GetView<HomeController> {
                       height: 0,
                     ),
                   ),
-                  Text(
+                  const Text(
                     '= = = = =',
                     style: TextStyle(
                       color: Colors.black,
@@ -256,18 +257,18 @@ class MoreOptionView extends GetView<HomeController> {
                       height: 25.h,
                       alignment: Alignment.center,
                       width: 40.w,
-                      child: Icon(
+                      decoration: const ShapeDecoration(
+                          color: AppColors.golden, shape: CircleBorder()),
+                      child: const Icon(
                         Icons.done,
                         color: Colors.white,
                       ),
-                      decoration: const ShapeDecoration(
-                          color: AppColors.golden, shape: CircleBorder()),
                     ),
                   ),
                 ],
               ),
               SizedBox(height: 100.h),
-              Spacer(),
+              const Spacer(),
               BackScreen(controller: controller)
             ],
           ),
@@ -278,9 +279,9 @@ class MoreOptionView extends GetView<HomeController> {
 }
 
 class SingleItem extends StatelessWidget {
-  const SingleItem({super.key, this.img, this.onTap});
   final String? img;
   final Function()? onTap;
+  const SingleItem({super.key, this.img, this.onTap});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -290,7 +291,7 @@ class SingleItem extends StatelessWidget {
         height: 49.h,
         alignment: Alignment.center,
         decoration: ShapeDecoration(
-          color: Color(0x49D9D9D9),
+          color: const Color(0x49D9D9D9),
           shape: RoundedRectangleBorder(
             side: BorderSide(
                 width: 1, color: img == null ? AppColors.golden : Colors.white),

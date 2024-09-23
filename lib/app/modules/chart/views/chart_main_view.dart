@@ -20,41 +20,53 @@ class ChartMainView extends GetView<ChartController> {
       body: SafeArea(
         child: Padding(
             padding:
-                EdgeInsets.only(top: 45.h, bottom: 0, right: 30.w, left: 30.w),
+                EdgeInsets.only(top: 0.h, bottom: 0, right: 30.w, left: 30.w),
             child: Column(
               children: [
-                const chartHeader(),
-                SizedBox(height: 30.h),
-                SizedBox(
-                  width: double.infinity,
-                  height: 80.40.h,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ChartSingleItem(
-                          index: 0,
-                          onTap: () {
-                            controller.pageIndex.value = 0;
-                          }),
-                      ChartSingleItem(
-                          index: 1,
-                          text: "Contrat",
-                          img: "c_img3",
-                          onTap: () {
-                            controller.pageIndex.value = 1;
-                          }),
-                      ChartSingleItem(
-                        index: 2,
-                        onTap: () {
-                          controller.pageIndex.value = 2;
-                        },
-                        text: "Vogue",
-                        img: "c_img4",
-                      )
-                    ],
+                Center(child: Icon(Icons.location_on, size: 35.h)),
+                Text(
+                  '4 km',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14.25.sp,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                    height: 0.5,
                   ),
                 ),
+                const chartHeader(),
+                SizedBox(height: 20.h),
+                if (isFromHomePage != true)
+                  SizedBox(
+                    width: double.infinity,
+                    height: 80.40.h,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ChartSingleItem(
+                            index: 0,
+                            onTap: () {
+                              controller.pageIndex.value = 0;
+                            }),
+                        ChartSingleItem(
+                            index: 1,
+                            text: "Contrat",
+                            img: "c_img3",
+                            onTap: () {
+                              controller.pageIndex.value = 1;
+                            }),
+                        ChartSingleItem(
+                          index: 2,
+                          onTap: () {
+                            controller.pageIndex.value = 2;
+                          },
+                          text: "Vogue",
+                          img: "c_img4",
+                        )
+                      ],
+                    ),
+                  ),
                 SizedBox(height: 30.h),
                 Obx(() => Expanded(
                       child: controller

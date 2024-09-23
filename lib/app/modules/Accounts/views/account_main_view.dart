@@ -40,39 +40,40 @@ class AccountsMainView extends GetView<AccountController> {
                     ),
                     const chartHeader(),
                     SizedBox(height: 20.h),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 80.40.h,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            AccountSingleItem(
-                                index: 0,
+                    if (isFromHomePage != true)
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: 80.40.h,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              AccountSingleItem(
+                                  index: 0,
+                                  onTap: () {
+                                    controller.pageIndex.value = 0;
+                                  }),
+                              AccountSingleItem(
+                                  index: 1,
+                                  text: "Prix",
+                                  img: "ac_img2",
+                                  onTap: () {
+                                    controller.pageIndex.value = 1;
+                                  }),
+                              AccountSingleItem(
+                                index: 2,
                                 onTap: () {
-                                  controller.pageIndex.value = 0;
-                                }),
-                            AccountSingleItem(
-                                index: 1,
-                                text: "Prix",
-                                img: "ac_img2",
-                                onTap: () {
-                                  controller.pageIndex.value = 1;
-                                }),
-                            AccountSingleItem(
-                              index: 2,
-                              onTap: () {
-                                controller.pageIndex.value = 2;
-                              },
-                              text: "Compétence",
-                              img: "ac_img3",
-                            )
-                          ],
+                                  controller.pageIndex.value = 2;
+                                },
+                                text: "Compétence",
+                                img: "ac_img3",
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
                     SizedBox(height: 38.h),
                     Expanded(
                         child: Obx(() =>

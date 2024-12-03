@@ -66,8 +66,7 @@ class DashboardView extends GetView<DashboardController> {
           } else if (controller.activeBottomIndex.value == 1) {
             return const ChartMainView();
           } else if (controller.activeBottomIndex.value == 2) {
-            return const MapMainView();
-            // return const HomeSubViewss();
+            return const HomeSubViewss();
           } else if (controller.activeBottomIndex.value == 3) {
             return const MessagesMainView();
           } else if (controller.activeBottomIndex.value == 4) {

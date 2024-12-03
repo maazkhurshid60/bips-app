@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class item1text extends StatelessWidget {
+class Item1text extends StatelessWidget {
   final String? text1;
   final String? text2;
-  const item1text({
+  const Item1text({
     super.key,
     this.text1,
     this.text2,
@@ -21,22 +21,17 @@ class item1text extends StatelessWidget {
           children: [
             TextSpan(
               text: text1 ?? 'Service commandé - 032',
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 14.25,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w300,
-                height: 0,
-              ),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w300),
             ),
             TextSpan(
               text: text2 ?? '                                 2000',
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.black,
-                fontSize: 14.25,
-                fontFamily: 'Inter',
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w700,
-                height: 0,
               ),
             ),
           ],
@@ -68,18 +63,16 @@ class TotalBillCashprice extends GetView<CashPriceController> {
                 height: 0.5,
               ),
             ),
-            const chartHeader(),
+            const ChartHeader(),
             SizedBox(height: 40.h),
-            const Align(
+            Align(
               alignment: Alignment.topRight,
               child: Text(
                 '05 juin, 2024',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 14.25,
-                  fontFamily: 'Inter',
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w100,
-                  height: 0,
                 ),
               ),
             ),
@@ -111,20 +104,20 @@ class TotalBillCashprice extends GetView<CashPriceController> {
               child: Column(
                 children: [
                   SizedBox(height: 10.h),
-                  const item1text(),
+                  const Item1text(),
                   SizedBox(height: 40.h),
-                  const item1text(
+                  const Item1text(
                     text1: "Iri’S Ass - 075",
                     text2:
                         "                                                        100",
                   ),
                   SizedBox(height: 40.h),
-                  const item1text(
+                  const Item1text(
                       text1: "Bôno - 065",
                       text2:
                           "                                                              100"),
                   SizedBox(height: 40.h),
-                  const item1text(
+                  const Item1text(
                       text1: "Frais d’exploitation - 055",
                       text2: "                                      100"),
                   SizedBox(height: 40.h),
@@ -140,7 +133,7 @@ class TotalBillCashprice extends GetView<CashPriceController> {
                     ),
                   ),
                   SizedBox(height: 40.h),
-                  const item1text(
+                  const Item1text(
                     text1: " ",
                     text2:
                         "Montant Total                                                    2300",
@@ -156,14 +149,12 @@ class TotalBillCashprice extends GetView<CashPriceController> {
                         borderRadius: BorderRadius.circular(25.44),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Commande',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 14.25,
-                        fontFamily: 'Inter',
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w300,
-                        height: 0,
                       ),
                     ),
                   ),

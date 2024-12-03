@@ -15,9 +15,9 @@ List<String> fieldcontent = [
   "Rue"
 ];
 
-class customField extends StatelessWidget {
+class CustomField extends StatelessWidget {
   final String? content;
-  const customField({super.key, this.content});
+  const CustomField({super.key, this.content});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,9 +34,7 @@ class customField extends StatelessWidget {
         style: TextStyle(
           color: Colors.black,
           fontSize: 14.sp,
-          fontFamily: 'Inter',
           fontWeight: FontWeight.w400,
-          height: 0,
         ),
       ),
     );
@@ -89,7 +87,7 @@ class LocationView extends GetView<HomeController> {
               ),
               SizedBox(height: 100.h),
               for (int i = 0; i < 6; i++) ...{
-                customField(content: fieldcontent[i]),
+                CustomField(content: fieldcontent[i]),
                 if (i != 5) SizedBox(height: 30.h),
               },
               const Spacer(),

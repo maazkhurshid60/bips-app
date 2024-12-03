@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class chartHeader extends StatelessWidget {
-  const chartHeader({
+class ChartHeader extends StatelessWidget {
+  const ChartHeader({
     super.key,
   });
 
@@ -16,11 +16,11 @@ class chartHeader extends StatelessWidget {
             child: TextFormField(
               cursorHeight: 15.h,
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(borderSide: BorderSide.none),
+                prefixIcon: const Icon(Icons.search),
+                border: const OutlineInputBorder(borderSide: BorderSide.none),
                 hintText: "Nbre d’étoile / Métier / Date / prix",
                 hintStyle: TextStyle(
-                  color: Color(0xFFD9D9D9),
+                  color: const Color(0xFFD9D9D9),
                   fontSize: 14.25.sp,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w700,
@@ -28,11 +28,8 @@ class chartHeader extends StatelessWidget {
                 ),
               ),
             )),
-        Spacer(),
-        Padding(
-          padding: EdgeInsets.only(bottom: 25.0.h),
-          child: Image.asset("assets/images/c_img1.png"),
-        )
+        const Spacer(),
+        Image.asset("assets/images/c_img1.png")
       ],
     );
   }

@@ -29,7 +29,7 @@ class SingleChatView extends StatelessWidget {
                 height: 0.5,
               ),
             ),
-            const chartHeader(),
+            const ChartHeader(),
             SizedBox(height: 50.h),
             Expanded(
                 child: Column(
@@ -39,14 +39,12 @@ class SingleChatView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    const Text(
+                    Text(
                       '4 juin, 2024',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 11.19,
-                        fontFamily: 'Inter',
+                        fontSize: 11.19.sp,
                         fontWeight: FontWeight.w400,
-                        height: 0,
                       ),
                     ),
                     SizedBox(width: 30.w),
@@ -162,13 +160,10 @@ class TextWidget extends StatelessWidget {
                   width: 116.w,
                   child: Text(
                     text ?? 'Solange Kouamé',
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w700,
-                      height: 0,
-                    ),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w700),
                   ),
                 ),
               ),

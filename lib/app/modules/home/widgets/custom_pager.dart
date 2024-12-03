@@ -57,16 +57,14 @@ class CustomPager extends GetView<HomeController> {
                     child: Row(
                       children: [
                         Icon(Icons.search, size: 24.h),
-                        const FittedBox(
+                        FittedBox(
                             fit: BoxFit.contain,
                             child: Text(
                               "De qui avez-vous besoin?",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 13,
-                                fontFamily: 'Inter',
+                                fontSize: 13.sp,
                                 fontWeight: FontWeight.w500,
-                                height: 0,
                               ),
                             ))
                       ],
@@ -160,14 +158,12 @@ class CustomPager extends GetView<HomeController> {
                         child: Image.asset("assets/images/bono.png",
                             color: Colors.white, height: 33.h)),
                     SizedBox(height: 5.h),
-                    const Text(
+                    Text(
                       "Bonô",
                       style: TextStyle(
-                        color: Color(0xFFBFBFBF),
-                        fontSize: 14,
-                        fontFamily: 'Inter',
+                        color: const Color(0xFFBFBFBF),
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
-                        height: 0,
                       ),
                     ),
                     SizedBox(height: 10.h),

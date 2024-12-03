@@ -29,7 +29,7 @@ class ImagesAndKeynoardView extends GetView<HomeController> {
                   height: 0.5,
                 ),
               ),
-              const chartHeader(),
+              const ChartHeader(),
               SizedBox(height: 20.h),
               Expanded(
                   child: SingleChildScrollView(
@@ -63,16 +63,14 @@ class ImagesAndKeynoardView extends GetView<HomeController> {
                               ),
                             ),
                             SizedBox(width: 13.w),
-                            const SizedBox(
-                              width: 116,
+                            SizedBox(
+                              width: 116.w,
                               child: Text(
                                 'Aa.........................',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 12,
-                                  fontFamily: 'Inter',
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w300,
-                                  height: 0,
                                 ),
                               ),
                             ),

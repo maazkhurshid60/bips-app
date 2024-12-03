@@ -1,4 +1,3 @@
-import 'package:bips_app/app/modules/chart/views/chart_main_view.dart';
 import 'package:bips_app/app/modules/chart/views/commertire_widget.dart';
 import 'package:bips_app/app/modules/chart/views/contrat_view.dart';
 import 'package:bips_app/app/modules/chart/views/vogue_view.dart';
@@ -11,13 +10,13 @@ class ChartController extends GetxController {
   RxInt pageIndex = 0.obs;
 
   List<Widget> chartPageViewItem = [
-    ChartPageViewItemOne(),
-    CharPageViewItemTwo()
+    const ChartPageViewItemOne(),
+    const CharPageViewItemTwo()
   ];
 
   List<Widget> chartMainWidgetList = [
-    CommertireWidget(),
-    ContratWidget(),
-    VegueView()
+    const CommertireWidget(),
+    const ContratWidget(),
+    const VegueView()
   ];
 }

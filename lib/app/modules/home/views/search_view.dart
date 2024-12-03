@@ -59,6 +59,30 @@ class BackScreen1 extends StatelessWidget {
   }
 }
 
+class CustomBackGesture extends StatelessWidget {
+  final Function()? ontap;
+
+  const CustomBackGesture({
+    super.key,
+    required this.ontap,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: ontap,
+      child: Container(
+        height: 32.h,
+        width: 33.w,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          color: AppColors.golden,
+        ),
+        child: Icon(Icons.clear, color: Colors.white, size: 20.h),
+      ),
+    );
+  }
+}
+
 class RowWidget extends StatelessWidget {
   final String? image1;
 

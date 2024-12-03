@@ -19,30 +19,29 @@ class StarWidget extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            left: 243.23,
-            top: 0,
+            right: 15.w,
+            top: 0.h,
             child: SizedBox(
-              width: 63.10,
-              height: 36.64,
-              child: Image.asset("assets/images/${img ?? "star1"}.png"),
+              width: 63.10.w,
+              height: 36.64.h,
+              child: Image.asset("assets/images/${img ?? "star1"}.png",
+                  fit: BoxFit.cover),
             ),
           ),
           Positioned(
-            left: 0,
-            top: 31.55,
+            left: 0.w,
+            top: 31.55.h,
             child: SizedBox(
-              width: 232.03,
-              height: 21.37,
+              width: 232.03.w,
+              height: 21.37.h,
               child: Opacity(
                 opacity: 0.30,
                 child: Text(
                   txt ?? 'Bon service, professionnel et bon prix',
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.black,
-                    fontSize: 12.21,
-                    fontFamily: 'Inter',
+                    fontSize: 12.21.sp,
                     fontWeight: FontWeight.w400,
-                    height: 0,
                   ),
                 ),
               ),

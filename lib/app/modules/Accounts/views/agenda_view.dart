@@ -19,14 +19,12 @@ class AgendaView extends GetView<AccountController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(Icons.arrow_back_ios_sharp, size: 15.h),
-              const Text(
+              Text(
                 'Janvier 2024',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 10.18,
-                  fontFamily: 'Inter',
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.w400,
-                  height: 0,
                 ),
               ),
               Icon(Icons.arrow_forward_ios_sharp, size: 15.h),
@@ -50,14 +48,12 @@ class AgendaView extends GetView<AccountController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(
+                      Text(
                         'Lundi',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 10.18,
-                          fontFamily: 'Inter',
+                          fontSize: 10.18.sp,
                           fontWeight: FontWeight.w900,
-                          height: 0,
                         ),
                       ),
                       Text(
@@ -197,7 +193,7 @@ class AgendaView extends GetView<AccountController> {
                       child: Padding(
                         padding: EdgeInsets.only(
                             right: 30.0.w, left: 10.w, top: 10.h),
-                        child: const Row(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -208,14 +204,12 @@ class AgendaView extends GetView<AccountController> {
                                 '00h00',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 10.18,
-                                  fontFamily: 'Inter',
+                                  fontSize: 10.18.sp,
                                   fontWeight: FontWeight.w800,
-                                  height: 0,
                                 ),
                               ),
                             ),
-                            Icon(Icons.more_horiz)
+                            const Icon(Icons.more_horiz)
                           ],
                         ),
                       ),
@@ -277,14 +271,12 @@ class StackItem extends StatelessWidget {
             height: 24.42.h,
             child: isLower != null
                 ? const Icon(Icons.more_horiz)
-                : const Text(
+                : Text(
                     '500 / H\n700 / T',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10.18,
-                      fontFamily: 'Inter',
+                      fontSize: 10.sp,
                       fontWeight: FontWeight.w800,
-                      height: 0,
                     ),
                   ),
           ),
@@ -299,10 +291,8 @@ class StackItem extends StatelessWidget {
               isLower != null ? "00h00" : 'Menuisier / 12h30 - (3)',
               style: TextStyle(
                 color: isLower != null ? Colors.black : Colors.white,
-                fontSize: 10.18,
-                fontFamily: 'Inter',
+                fontSize: 10.sp,
                 fontWeight: FontWeight.w800,
-                height: 0,
               ),
             ),
           ),
@@ -328,17 +318,15 @@ class StackItem extends StatelessWidget {
                 color: isLower != null ? Colors.black : Colors.white)),
         Positioned(
           left: 30.35.w,
-          top: 110.75.h,
+          bottom: 10.h,
           child: SizedBox(
-            width: 91.59.w,
+            width: 110.w,
             child: Text(
               'Sicogi - Abobo',
               style: TextStyle(
                 color: isLower != null ? Colors.black : Colors.white,
-                fontSize: 11.19,
-                fontFamily: 'Inter',
+                fontSize: 11.sp,
                 fontWeight: FontWeight.w800,
-                height: 0,
               ),
             ),
           ),

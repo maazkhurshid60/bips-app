@@ -147,14 +147,12 @@ class SwitcherView extends GetView<HomeController> {
                               },
                             ),
                             SizedBox(height: 5.h),
-                            const Text(
+                            Text(
                               'Crédibilité',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 11,
-                                fontFamily: 'Inter',
+                                fontSize: 11.sp,
                                 fontWeight: FontWeight.w400,
-                                height: 0,
                               ),
                             ),
                           ],
@@ -189,14 +187,12 @@ class SwitcherView extends GetView<HomeController> {
                               },
                             ),
                             SizedBox(height: 5.h),
-                            const Text(
+                            Text(
                               'Aide',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 11,
-                                fontFamily: 'Inter',
+                                fontSize: 11.sp,
                                 fontWeight: FontWeight.w400,
-                                height: 0,
                               ),
                             ),
                           ],

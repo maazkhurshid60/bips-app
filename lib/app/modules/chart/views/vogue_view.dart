@@ -30,14 +30,12 @@ class VegueView extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 9.sp),
               ),
             ),
-            const Text(
+            Text(
               '5 juin, 2024',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 11.19,
-                fontFamily: 'Inter',
+                fontSize: 11.19.sp,
                 fontWeight: FontWeight.w400,
-                height: 0,
               ),
             ),
           ],

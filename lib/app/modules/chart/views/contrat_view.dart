@@ -38,9 +38,7 @@ class ContratWidget extends StatelessWidget {
             style: TextStyle(
               color: Colors.black,
               fontSize: 12.sp,
-              fontFamily: 'Inter',
               fontWeight: FontWeight.w300,
-              height: 0,
             ),
           ),
         ),
@@ -53,13 +51,11 @@ class ContratWidget extends StatelessWidget {
               color: const Color(0x2BBFBFBF),
               borderRadius: BorderRadius.circular(25.r)),
           child: Text(
-            'Lessiveuse -  0225 ..................................... 1500 fcfa',
+            'Lessiveuse -  0225 ............................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
               fontSize: 12.sp,
-              fontFamily: 'Inter',
               fontWeight: FontWeight.w300,
-              height: 0,
             ),
           ),
         ),
@@ -71,14 +67,12 @@ class ContratWidget extends StatelessWidget {
           decoration: BoxDecoration(
               color: const Color(0x2BBFBFBF),
               borderRadius: BorderRadius.circular(25.r)),
-          child: const Text(
-            'Lessiveuse -  0225 ......................................... 1500 fcfa',
+          child: Text(
+            'Lessiveuse -  0225 ............................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 12,
-              fontFamily: 'Inter',
+              fontSize: 12.sp,
               fontWeight: FontWeight.w300,
-              height: 0,
             ),
           ),
         ),
@@ -105,7 +99,7 @@ class ContratWidget extends StatelessWidget {
               color: const Color(0x2BBFBFBF),
               borderRadius: BorderRadius.circular(25.r)),
           child: Text(
-            'Lessiveuse -  0225 ......................................... 1500 fcfa',
+            'Lessiveuse -  0225 ............................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
               fontSize: 11.sp,
@@ -123,14 +117,12 @@ class ContratWidget extends StatelessWidget {
           decoration: BoxDecoration(
               color: const Color(0x2BBFBFBF),
               borderRadius: BorderRadius.circular(25.r)),
-          child: const Text(
-            'Lessiveuse -  0225 ......................................... 1500 fcfa',
+          child: Text(
+            'Lessiveuse -  0225 ............................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 12,
-              fontFamily: 'Inter',
+              fontSize: 12.sp,
               fontWeight: FontWeight.w300,
-              height: 0,
             ),
           ),
         ),
@@ -142,14 +134,13 @@ class ContratWidget extends StatelessWidget {
           decoration: BoxDecoration(
               color: const Color(0x2BBFBFBF),
               borderRadius: BorderRadius.circular(25.r)),
-          child: const Text(
-            'Lessiveuse -  0225 ......................................... 1500 fcfa',
+          child: Text(
+            'Lessiveuse -  0225 ............................... 1500 fcfa',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 12,
+              fontSize: 12.sp,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w300,
-              height: 0,
             ),
           ),
         )

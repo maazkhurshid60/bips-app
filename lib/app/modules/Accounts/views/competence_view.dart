@@ -40,9 +40,9 @@ class CompetenceView extends StatelessWidget {
                 child: ListView.separated(
                     itemBuilder: (context, index) {
                       if (index % 2 == 0) {
-                        return const account_competence_feature();
+                        return const Accountcompetencefeature();
                       } else {
-                        return const account_competence_feature(isRight: true);
+                        return const Accountcompetencefeature(isRight: true);
                       }
                     },
                     separatorBuilder: (context, index) {

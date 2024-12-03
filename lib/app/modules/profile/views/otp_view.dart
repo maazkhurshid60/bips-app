@@ -42,14 +42,13 @@ class OtpVerificationView extends GetView<ProfileController> {
                 child: DropDownWidget(controller: controller),
               ),
               SizedBox(height: 111.h),
-              const Text(
+              Text(
                 'Mot de passe oublié',
                 style: TextStyle(
-                  color: Color(0xFFBFBFBF),
-                  fontSize: 16,
+                  color: const Color(0xFFBFBFBF),
+                  fontSize: 16.sp,
                   fontFamily: 'Avenir',
                   fontWeight: FontWeight.w300,
-                  height: 0,
                 ),
               ),
               const Spacer(),

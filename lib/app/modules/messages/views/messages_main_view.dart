@@ -16,7 +16,7 @@ class MessageChatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40.h,
+      height: 45.h,
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -36,40 +36,36 @@ class MessageChatItem extends StatelessWidget {
           SizedBox(width: 13.w),
           SizedBox(
             width: 157.w,
-            height: 35.h,
+            height: 50.h,
             child: Stack(
               children: [
                 Positioned(
-                  left: 0,
-                  top: 20,
+                  left: 0.w,
+                  top: 20.h,
                   child: SizedBox(
-                    width: 116,
+                    width: 116.w,
                     child: Text(
                       messageModel.name,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.black,
-                        fontSize: 12,
-                        fontFamily: 'Inter',
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w700,
-                        height: 0,
                       ),
                     ),
                   ),
                 ),
                 Positioned(
-                  left: 53,
-                  top: 0,
+                  left: 53.w,
+                  top: 0.h,
                   child: SizedBox(
-                    width: 104,
-                    height: 21,
+                    width: 104.w,
+                    height: 21.h,
                     child: Text(
                       messageModel.message,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.black,
-                        fontSize: 11.19,
-                        fontFamily: 'Inter',
+                        fontSize: 11.19.sp,
                         fontWeight: FontWeight.w100,
-                        height: 0,
                       ),
                     ),
                   ),
@@ -80,12 +76,10 @@ class MessageChatItem extends StatelessWidget {
           const Spacer(),
           Text(
             messageModel.date,
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.black,
-              fontSize: 11.19,
-              fontFamily: 'Inter',
+              fontSize: 11.19.sp,
               fontWeight: FontWeight.w400,
-              height: 0,
             ),
           ),
         ],
@@ -118,7 +112,7 @@ class MessagesMainView extends GetView<MessagesController> {
                       height: 0.5,
                     ),
                   ),
-                  const chartHeader(),
+                  const ChartHeader(),
                   SizedBox(height: 50.h),
                   Expanded(
                       child: ListView.separated(

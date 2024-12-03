@@ -3,7 +3,6 @@ import 'package:bips_app/app/modules/Cashprice/views/totoal_bil.dart';
 import 'package:bips_app/app/modules/chart/views/chart_main_view.dart';
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/home/views/bonos_view.dart';
-import 'package:bips_app/app/modules/home/views/cashprice_view.dart';
 import 'package:bips_app/app/modules/home/views/credibility_view.dart';
 import 'package:bips_app/app/modules/home/views/home_view.dart';
 import 'package:bips_app/app/modules/home/views/location_view.dart';
@@ -12,6 +11,8 @@ import 'package:bips_app/app/modules/home/views/notification_view.dart';
 import 'package:bips_app/app/modules/home/views/search_view.dart';
 import 'package:bips_app/app/modules/home/views/switcher_view.dart';
 import 'package:bips_app/app/modules/messages/views/images_and_keyboard.dart';
+import 'package:bips_app/app/modules/statistic/controller/statistics_controller.dart';
+import 'package:bips_app/app/modules/statistic/views/statistic_main_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +32,8 @@ class HomeSubViewss extends GetView<HomeController> {
           } else if (controller.activePage.value == 3) {
             return const BonosView();
           } else if (controller.activePage.value == 4) {
-            return const CashPriceView();
+            Get.find<StatisticsController>().isfromaccount = null;
+            return const StatisticMainView();
           } else if (controller.activePage.value == 5) {
             return const LocationView();
           } else if (controller.activePage.value == 6) {

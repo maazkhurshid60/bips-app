@@ -23,7 +23,7 @@ class CharPageViewItemTwo extends StatelessWidget {
           ),
         ),
         SizedBox(height: 5.h),
-        const chart_card(),
+        const ChartCard(),
         SizedBox(height: 70.h),
         Container(
           width: 80.w,
@@ -38,7 +38,7 @@ class CharPageViewItemTwo extends StatelessWidget {
           ),
         ),
         SizedBox(height: 5.h),
-        const chart_card(),
+        const ChartCard(),
         SizedBox(height: 30.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -53,8 +53,8 @@ class CharPageViewItemTwo extends StatelessWidget {
   }
 }
 
-class chart_card extends StatelessWidget {
-  const chart_card({
+class ChartCard extends StatelessWidget {
+  const ChartCard({
     super.key,
   });
 
@@ -71,14 +71,12 @@ class chart_card extends StatelessWidget {
           Positioned(
             top: 6.h,
             left: 19.w,
-            child: const Text(
+            child: Text(
               '5 juin, 2024',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 11.19,
-                fontFamily: 'Inter',
+                fontSize: 11.19.sp,
                 fontWeight: FontWeight.w300,
-                height: 0,
               ),
             ),
           ),
@@ -95,11 +93,8 @@ class chart_card extends StatelessWidget {
             top: 0,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20.r),
-              child: Image.asset(
-                "assets/images/c_img5.png",
-                height: 110.h,
-                width: 130.w,
-              ),
+              child: Image.asset("assets/images/c_img5.png",
+                  height: 110.h, width: 130.w),
             ),
           ),
           Positioned(
@@ -107,14 +102,15 @@ class chart_card extends StatelessWidget {
             left: 29.w,
             child: SizedBox(
               width: 159.78.w,
-              child: const Text(
-                'Aimée. B / Selmer (abobo) /\nfdgfhjkjklklkkml,m;l,;l,;,ll;,l,l;l\nfdcgfhjbnnkml;,l,;l,l,l\nfhgghjhjkh,jnkjlkjlkjlmmlkl\nghvhjhbjknjnkjknjnkmk\nhgvhbhnjnbjjknkjlk;klk;klk;\nhjbnkmknmklmkmlkmlk',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 11.19,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w300,
-                  height: 0,
+              child: FittedBox(
+                fit: BoxFit.contain,
+                child: Text(
+                  'Aimée. B / Selmer (abobo) /\nfdgfhjkjklklkkml,m;l,;l,;,ll;,l,l;l\nfdcgfhjbnnkml;,l,;l,l,l\nfhgghjhjkh,jnkjlkjlkjlmmlkl\nghvhjhbjknjnkjknjnkmk\nhgvhbhnjnbjjknkjlk;klk;klk;\nhjbnkmknmklmkmlkmlk',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 11.19.sp,
+                    fontWeight: FontWeight.w300,
+                  ),
                 ),
               ),
             ),

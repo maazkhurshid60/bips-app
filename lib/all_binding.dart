@@ -5,7 +5,9 @@ import 'package:bips_app/app/modules/dashboard/controllers/dashboard_controller.
 import 'package:bips_app/app/modules/home/controllers/home_controller.dart';
 import 'package:bips_app/app/modules/messages/controller/messages_controller.dart';
 import 'package:bips_app/app/modules/profile/controllers/profile_controller.dart';
+import 'package:bips_app/app/modules/profilesetting/controller/profile_setting_controller.dart';
 import 'package:bips_app/app/modules/splash/controllers/splash_controller.dart';
+import 'package:bips_app/app/modules/statistic/controller/statistics_controller.dart';
 import 'package:get/get.dart';
 
 class Allbinding implements Bindings {
@@ -19,5 +21,9 @@ class Allbinding implements Bindings {
     Get.lazyPut<AccountController>(() => AccountController(), fenix: true);
     Get.lazyPut<CashPriceController>(() => CashPriceController(), fenix: true);
     Get.lazyPut<ChartController>(() => ChartController(), fenix: true);
+    Get.lazyPut<ProfileSettingController>(() => ProfileSettingController(),
+        fenix: true);
+    Get.lazyPut<StatisticsController>(() => StatisticsController(),
+        fenix: true);
   }
 }

@@ -19,8 +19,7 @@ class ChartMainView extends GetView<ChartController> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
-            padding:
-                EdgeInsets.only(top: 0.h, bottom: 0, right: 30.w, left: 30.w),
+            padding: EdgeInsets.only(right: 30.w, left: 30.w),
             child: Column(
               children: [
                 Center(child: Icon(Icons.location_on, size: 35.h)),
@@ -34,7 +33,7 @@ class ChartMainView extends GetView<ChartController> {
                     height: 0.5,
                   ),
                 ),
-                const chartHeader(),
+                const ChartHeader(),
                 SizedBox(height: 20.h),
                 if (isFromHomePage != true)
                   SizedBox(

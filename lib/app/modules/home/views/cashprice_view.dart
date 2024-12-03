@@ -167,9 +167,7 @@ class DotsWidget extends StatelessWidget {
 }
 
 class Item1 extends StatelessWidget {
-  const Item1({
-    super.key,
-  });
+  const Item1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -198,14 +196,12 @@ class Item1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Prix Minimum = = = = = = = = ',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 12.86,
-                  fontFamily: 'Inter',
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w100,
-                  height: 0,
                 ),
               ),
               SizedBox(width: 2.w),
@@ -221,9 +217,7 @@ class Item1 extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 10.37.sp,
-                    fontFamily: 'Inter',
                     fontWeight: FontWeight.w800,
-                    height: 0,
                   ),
                 ),
               ),
@@ -234,14 +228,12 @@ class Item1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Prix Moyen = = = = = = = = = = = = = = =',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 12.86,
-                  fontFamily: 'Inter',
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w100,
-                  height: 0,
                 ),
               ),
               SizedBox(width: 2.w),
@@ -270,14 +262,12 @@ class Item1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Prix Élevé = = = = = = = = = = = = = = = = = = = = ',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 12.86,
-                  fontFamily: 'Inter',
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w100,
-                  height: 0,
                 ),
               ),
               SizedBox(width: 2.w),
@@ -354,14 +344,12 @@ class Item2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Prix Minimum = == = = = ',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 12.86,
-                  fontFamily: 'Inter',
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w100,
-                  height: 0,
                 ),
               ),
               SizedBox(width: 2.w),
@@ -390,14 +378,12 @@ class Item2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Prix Moyen = = = = = = = = = = =',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 12.86,
-                  fontFamily: 'Inter',
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w100,
-                  height: 0,
                 ),
               ),
               SizedBox(width: 2.w),
@@ -426,14 +412,12 @@ class Item2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Prix Élevé = = = = = = = = = = = = = = = ',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 12.86,
-                  fontFamily: 'Inter',
+                  fontSize: 12.86.sp,
                   fontWeight: FontWeight.w100,
-                  height: 0,
                 ),
               ),
               SizedBox(width: 2.w),

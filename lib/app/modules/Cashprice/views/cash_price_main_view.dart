@@ -23,18 +23,8 @@ class CashMainPriceView extends GetView<CashPriceController> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Center(child: Icon(Icons.location_on, size: 35.h)),
-                    Text(
-                      '4 km',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14.25.sp,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
-                        height: 0.5,
-                      ),
-                    ),
-                    const chartHeader(),
+                    const Locationwidget(),
+                    const ChartHeader(),
                     SizedBox(height: 40.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +40,7 @@ class CashMainPriceView extends GetView<CashPriceController> {
                           ontap: () {
                             controller.tabIndex.value = 1;
                           },
-                          text: "Visa Carte",
+                          text: "Vissssa Carte",
                         )
                       ],
                     ),
@@ -89,15 +79,13 @@ class CashMainPriceView extends GetView<CashPriceController> {
                                   borderRadius: BorderRadius.circular(25.44),
                                 ),
                               ),
-                              child: const Text(
+                              child: Text(
                                 'Valider',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 14.25,
-                                  fontFamily: 'Inter',
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w300,
-                                  height: 0,
                                 ),
                               ),
                             ),
@@ -126,6 +114,31 @@ class CashMainPriceView extends GetView<CashPriceController> {
                 ),
               ),
       )),
+    );
+  }
+}
+
+class Locationwidget extends StatelessWidget {
+  const Locationwidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Center(child: Icon(Icons.location_on, size: 35.h)),
+        Text(
+          '4 km',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 14.25.sp,
+            fontFamily: 'Inter',
+            fontWeight: FontWeight.w700,
+            height: 0.5,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -222,24 +235,20 @@ class TxtField extends StatelessWidget {
         children: [
           Text(
             text ?? 'Nom et Prénom',
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.black,
-              fontSize: 10.18,
-              fontFamily: 'Inter',
+              fontSize: 10.sp,
               fontWeight: FontWeight.w100,
-              height: 0,
             ),
           ),
-          const Expanded(
+          Expanded(
               child: TextField(
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 10.18,
-                    fontFamily: 'Inter',
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.w100,
-                    height: 0,
                   ),
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(borderSide: BorderSide.none))))
         ],
       ),

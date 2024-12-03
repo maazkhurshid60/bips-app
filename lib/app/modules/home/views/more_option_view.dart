@@ -69,14 +69,13 @@ class MoreOptionView extends GetView<HomeController> {
                               },
                             ),
                             SizedBox(height: 5.h),
-                            const Text(
+                            Text(
                               'Crédibilité',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 11,
+                                fontSize: 11.sp,
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.w400,
-                                height: 0,
                               ),
                             ),
                           ],
@@ -111,14 +110,12 @@ class MoreOptionView extends GetView<HomeController> {
                               },
                             ),
                             SizedBox(height: 5.h),
-                            const Text(
+                            Text(
                               'Aide',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 11,
-                                fontFamily: 'Inter',
+                                fontSize: 11.sp,
                                 fontWeight: FontWeight.w400,
-                                height: 0,
                               ),
                             ),
                           ],
@@ -146,14 +143,12 @@ class MoreOptionView extends GetView<HomeController> {
                       height: 0,
                     ),
                   ),
-                  const Text(
+                  Text(
                     '= = = = = = = = = = = = = =',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 12.86,
-                      fontFamily: 'Inter',
+                      fontSize: 12.86.sp,
                       fontWeight: FontWeight.w200,
-                      height: 0,
                     ),
                   ),
                   SizedBox(width: 2.w),
@@ -193,14 +188,12 @@ class MoreOptionView extends GetView<HomeController> {
                       height: 0,
                     ),
                   ),
-                  const Text(
+                  Text(
                     '= = = = = = = = = = = ==',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 12.86,
-                      fontFamily: 'Inter',
+                      fontSize: 12.86.sp,
                       fontWeight: FontWeight.w200,
-                      height: 0,
                     ),
                   ),
                   SizedBox(width: 2.w),
@@ -240,14 +233,12 @@ class MoreOptionView extends GetView<HomeController> {
                       height: 0,
                     ),
                   ),
-                  const Text(
+                  Text(
                     '= = = = =',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 12.86,
-                      fontFamily: 'Inter',
+                      fontSize: 12.86.sp,
                       fontWeight: FontWeight.w200,
-                      height: 0,
                     ),
                   ),
                   SizedBox(width: 2.w),

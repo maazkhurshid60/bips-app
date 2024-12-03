@@ -2,10 +2,10 @@ import 'package:bips_app/app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class account_competence_feature extends StatelessWidget {
+class Accountcompetencefeature extends StatelessWidget {
   final bool? isRight;
 
-  const account_competence_feature({super.key, this.isRight});
+  const Accountcompetencefeature({super.key, this.isRight});
   @override
   Widget build(BuildContext context) {
     return Align(

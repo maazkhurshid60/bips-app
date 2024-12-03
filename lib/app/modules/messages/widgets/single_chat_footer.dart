@@ -35,16 +35,13 @@ class SingleChatFooter extends StatelessWidget {
               ),
             ),
             child: TextFormField(
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(borderSide: BorderSide.none),
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(borderSide: BorderSide.none),
                 hintText: "Aa...........................",
                 hintStyle: TextStyle(
-                  color: Colors.black,
-                  fontSize: 12,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
+                    color: Colors.black,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w700),
               ),
             ),
           )),

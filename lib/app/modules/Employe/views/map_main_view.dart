@@ -9,6 +9,38 @@ import 'package:get/get.dart';
 
 PersistentBottomSheetController? bottomsheetcontroller;
 
+class CicleWidget extends StatelessWidget {
+  final HomeController controller;
+
+  const CicleWidget({
+    super.key,
+    required this.controller,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => controller.isPolyLineEnable.value = true,
+      child: Container(
+        width: 38.07,
+        height: 38.07,
+        decoration: const ShapeDecoration(
+          color: Colors.white,
+          shape: OvalBorder(),
+          shadows: [
+            BoxShadow(
+              color: Color(0x3F000000),
+              blurRadius: 4,
+              offset: Offset(0, 4),
+              spreadRadius: 0,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class DetailsMarkersCustom extends StatelessWidget {
   final String? t;
   final Function()? ontap;
@@ -134,67 +166,110 @@ class MapMainView extends GetView<HomeController> {
                       ),
                     ),
                   ),
-                  Positioned(
-                      top: 140.h,
-                      right: 5.w,
-                      child: DetailsMarkersCustom(
+
+                  if (controller.isPolyLineEnable.value) ...{
+                    Positioned(
+                      left: 40.w,
+                      top: 225.h,
+                      child: CicleWidget(controller: controller),
+                    ),
+                    Positioned(
+                        top: 190.h,
+                        left: controller.isPolyLineEnable.value ? 72.w : 5.w,
+                        child: DetailsMarkersCustom(
                           ontap: () async {
                             showBottomDetails(context);
                           },
-                          t: "Aide aux études ; 15 000 / Mois ;  15 km")),
-
-                  Positioned(
-                      top: 200.h,
-                      left: 5.w,
-                      child: DetailsMarkersCustom(
-                        ontap: () async {
-                          showBottomDetails(context);
-                        },
-                      )),
-                  Positioned(
-                      top: 250.h,
-                      left: 100.w,
-                      child: CircleAvatar(
-                          backgroundColor: Colors.white, radius: 25.r)),
-
-                  Positioned(
-                      top: 290.h,
-                      right: 120.w,
-                      child: CircleAvatar(
-                          backgroundColor: Colors.white, radius: 25.r)),
-
-                  Positioned(
-                      top: 384.h,
-                      right: 30.w,
-                      child: DetailsMarkersCustom(
-                          ontap: () => showBottomDetails(context),
-                          t: "Lessiveur ; 700 / T ;  8 km")),
-                  Positioned(
-                      top: 490.h,
-                      left: 30.w,
-                      child: DetailsMarkersCustom(
-                          ontap: () => showBottomDetails(context),
-                          t: "Cuisinier; 500 / H ;  6 km")),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 75).w,
-                    child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CircleAvatar(
-                                backgroundColor: Colors.black, radius: 25.r),
-                            SizedBox(width: 10.w),
-                            Text(
-                              'Moi',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14.sp,
-                                  fontFamily: 'Inter'),
-                            ),
-                          ],
                         )),
-                  ),
+                    Positioned(
+                      bottom: 80.h,
+                      left: 10.w,
+                      child: SizedBox(
+                          height: 517.h,
+                          width: 345.w,
+                          child: Image.asset("assets/images/polylimg.png",
+                              fit: BoxFit.contain)),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 30).h,
+                        child: CustomBackGesture(ontap: () {
+                          controller.isPolyLineEnable.value = false;
+                        }),
+                      ),
+                    ),
+                  } else ...{
+                    Positioned(
+                        top: 200.h,
+                        left: controller.isPolyLineEnable.value ? 60.w : 5.w,
+                        child: DetailsMarkersCustom(
+                          ontap: () async {
+                            showBottomDetails(context);
+                          },
+                        )),
+                    Positioned(
+                        top: 170.h,
+                        right: 140.w,
+                        child: CicleWidget(controller: controller)),
+                    Positioned(
+                        top: 140.h,
+                        right: 5.w,
+                        child: DetailsMarkersCustom(
+                            ontap: () async {
+                              showBottomDetails(context);
+                            },
+                            t: "Aide aux études ; 15 000 / Mois ;  15 km")),
+                    Positioned(
+                        top: 250.h,
+                        left: 90.w,
+                        child: CicleWidget(controller: controller)),
+                    Positioned(
+                        top: 384.h,
+                        right: 30.w,
+                        child: DetailsMarkersCustom(
+                            ontap: () => showBottomDetails(context),
+                            t: "Lessiveur ; 700 / T ;  8 km")),
+                    Positioned(
+                        top: 436.h,
+                        right: 25.w,
+                        child: CicleWidget(controller: controller)),
+                    Positioned(
+                        top: 436.h,
+                        left: 25.w,
+                        child: CicleWidget(controller: controller)),
+                    Positioned(
+                        top: 490.h,
+                        left: 30.w,
+                        child: DetailsMarkersCustom(
+                            ontap: () => showBottomDetails(context),
+                            t: "Cuisinier; 500 / H ;  6 km")),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 75).w,
+                      child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: GestureDetector(
+                            onTap: () =>
+                                controller.isPolyLineEnable.value = true,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CircleAvatar(
+                                    backgroundColor: Colors.black,
+                                    radius: 25.r),
+                                SizedBox(width: 10.w),
+                                Text(
+                                  'Moi',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14.sp,
+                                      fontFamily: 'Inter'),
+                                ),
+                              ],
+                            ),
+                          )),
+                    ),
+                  }
                 ],
               ),
       ),

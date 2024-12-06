@@ -9,6 +9,7 @@ class HomeController extends GetxController {
   RxInt customHomePage = 0.obs;
   MapController mapController = MapController();
   Set<Polyline> polylines = {};
+  RxBool isPolyLineEnable = false.obs;
 
   List<String> imgage = ["bg", "img2", "img3"];
 
